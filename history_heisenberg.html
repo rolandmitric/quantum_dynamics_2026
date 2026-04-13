@@ -1,0 +1,952 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics &#8212; Quantum Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'history_heisenberg';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="🔸 Interaction Picture of Quantum Mechanics" href="interaction_picture.html" />
+    <link rel="prev" title="🔹 Observables in Quantum Mechanics" href="heisenberg_picture.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantum Dynamics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantum Dynamics – SS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classical_mechanics.html">🔸 Crash course in Classical Mechanics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="formalism_hilbert_spaces.html">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_linear_operators.html">🔸 Linear maps, operators and functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_unitary_time_evolution.html">🔸 Formalism of Quantum Mechanics: Unitary time evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hamiltonian_dynamics_crash_course.html">Crash Course: Hamiltonian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubit_dynamics.html">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="rotating_wave.html">🔸 Two level system driven by a harmonic field</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="heisenberg_picture.html">🔹 Observables in Quantum Mechanics</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="interaction_picture.html">🔸 Interaction Picture of Quantum Mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="position_momentum_representation.html">🔸 Position and Momentum Representation</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="particle_linear_potential.html">🔸 Particle in a Linear Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stationary_phase_method.html">Stationary Phase Method applied to Airy function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="path_integrals.html">Path integral representation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_dynamics_2026/main?urlpath=lab/tree/./history_heisenberg.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/edit/main/./history_heisenberg.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/issues/new?title=Issue%20on%20page%20%2Fhistory_heisenberg.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/history_heisenberg.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heisenbergs-quantum-condition">Heisenberg’s Quantum Condition</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-harmonic-oscillator-ala-heisenberg-helgoland-method">Solving the harmonic oscillator ala Heisenberg (“Helgoland” method)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-remark">Concluding remark</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="a-historic-view-on-the-heisenberg-formulation-of-quantum-mechanics">
+<h1>🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics<a class="headerlink" href="#a-historic-view-on-the-heisenberg-formulation-of-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>When we teach quantum mechanics today, we usually begin with Schrödinger’s formulation, which is built on the wavefunction and the corresponding “wave equation.” Because we are intuitively familiar with the concept of waves, we tend to accept Schrödinger’s <em>wave mechanics</em> as a natural starting point. This is one reason why physicists and chemists quickly embraced Schrödinger’s approach to quantum theory.</p>
+<p>It is often overlooked, however, that the <strong>first</strong> formulation of quantum mechanics was not Schrödinger’s but rather <strong>Heisenberg’s</strong>, and it emerged from a very different—and from today’s point of view, much more abstract—starting point.
+Now, since in the year 2025 quantum mechanics celebrates its <strong>100th</strong> anniversary, I find it appropriate to revisit the ideas and chain of thought that led Heisenberg to the formulation of his matrix mechanics in the epoch breaking paper entitled “Über quantentheoretische Umdeutung kinematischer und mechanischer Beziehungen” that was submitted for publication in the <em>“Zeitschrift für Physik”</em> am 29.07.2025.</p>
+<p>Historically, Heisenberg’s approach was the culmination of efforts by many, principally led by Niels Bohr and his school, to explain atomic phenomena, particularly atomic spectra. Heisenberg’s own account of the development of quantum mechanics is given in his beautiful book <em>Das Teil und das Ganze</em>. Apparently, he had a key idea during a vacation on Helgoland Island in <strong>June 1925</strong>.</p>
+<p>Heisenberg followed a path initiated by Niels Bohr and his academic adviser Arnold Sommerfeld that led to the formulation of what is nowadays called the <strong>old quantum theory</strong>.</p>
+<p>Bohr introduced the concept of <strong>stationary states</strong> and postulated—without a proper physical reason—that systems in such states do not radiate light (as they should according to Maxwell’s electrodynamics). He postulated that radiation occurs only during <strong>transitions</strong> between these states, labeled by <strong>two</strong> quantum numbers, <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, and that the frequency of the emitted or absorbed radiation is given by the <strong>Bohr frequency condition</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_{mn} \;=\; \frac{E_m - E_n}{\hbar}.
+\]</div>
+<p>These ideas were introduced in Bohr’s landmark paper <em>“On the Constitution of Atoms and Molecules,”</em> published in <em>Phil. Mag.</em> Ser. 6, Vol. 26, No. 151 (July 1913), and are now considered to be one of the cornerstones in the development of quantum physics.</p>
+<p>Following Bohr’s proposal, experimentalists around the world began to study atomic spectra in great detail. The results of these efforts were essentially tables of transition frequencies <span class="math notranslate nohighlight">\(\omega_{mn}\)</span> and corresponding intensities, which we can denote by <span class="math notranslate nohighlight">\(P_{mn}\)</span>. Heisenberg’s academic teacher Arnold Sommerfeld published his monumental book <em>Atombau und Spektrallinien</em> around 1919; it became a bible of modern physics, popularizing new ideas and theories, and the young Heisenberg—one of its proofreaders—was surely influenced by it.</p>
+<p>Motivated by Bohr’s work, theoreticians attempted to explain these findings by combining classical mechanics with quantization rules (such as the Sommerfeld–Wilson conditions), which selected certain classical orbits as “allowed.”
+These quantization rules chose a countable (discrete) set of classical orbits from the continuum of uncountably many possible ones. Thus, in such a theory the system is represented by a set <span class="math notranslate nohighlight">\(\{x_n \mid n = 0,1,2,\dots\}\)</span> of stationary orbits.</p>
+<p>While this approach successfully reproduced energy levels of some simple systems, it ultimately failed to fully explain the <strong>structure</strong> of atomic spectra and, in particular, could not account for the intensities of the various spectral lines.</p>
+<p>Here is where young Werner Heisenberg comes into play. Heisenberg, a deep thinker with a philosophical inclination, arrived at a radical conclusion by considering various <em>Gedanken</em> experiments devised to measure the stationary orbits. He concluded that on the atomic scale a classical trajectory (for example, of an electron in a hydrogen atom) is fundamentally <strong>not observable</strong>, since any attempt to measure it would disturb the system so much that no continuous trajectory could be reconstructed.</p>
+<p>This led him to the philosophically radical move of abandoning the concept of stationary orbits and postulating that a theory of atomic phenomena should be built <strong>only on observable quantities</strong>.</p>
+<p>And what were the observables at that time? By the 1920s, the scientific community was already immersed in vast tables of transition frequencies <span class="math notranslate nohighlight">\(\omega_{mn}\)</span> and their intensities <span class="math notranslate nohighlight">\(P_{mn}\)</span>. All these quantities were labeled by <strong>two</strong> numbers representing an initial and final state. Inspired by this, Heisenberg proposed to <strong>replace the set of discrete classical orbits</strong> <span class="math notranslate nohighlight">\(x_n(t)\)</span> (labeled by a single index) with functions that depend on time and are labeled by <strong>two</strong> indices associated with a pair of Bohr stationary states:</p>
+<div class="math notranslate nohighlight">
+\[
+x_n(t) \;\longrightarrow\; x_{mn}(t) \;=\; x_{mn}\, e^{-i\omega_{mn} t}.
+\]</div>
+<p>Effectively, he proposes to replace discrete orbits by tables of numbers which we now of course all know as matrices !
+Each entry <span class="math notranslate nohighlight">\(x_{mn}\)</span> was assumed to oscillate with the frequency of the corresponding observable transition <span class="math notranslate nohighlight">\(\omega_{mn}\)</span>. Heisenberg further postulated that the tables should have a specific symmetry that we nowadays recognize as hermiticity:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{nm} \;=\; x_{mn}^{*}.
+\]</div>
+<p>In the original paper there is no explicit motivation given for this assumption. It was probably inspired by the reality of the Fourier coefficients in the expansion of a classical orbit and by the empirical fact—known from Einstein’s work on the <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> coefficients—that the rates of light absorption and stimulated emission are identical. Since the rates (intensities) are related to <span class="math notranslate nohighlight">\(|x_{mn}|^{2}\)</span>, hermiticity is natural. He further reasoned that the same type of assignment of a two-index set of quantities should hold for the momentum or any other physical quantity. A further key assumption was that <strong>all</strong> matrix elements should oscillate with precisely the <strong>same</strong> set of observable frequencies:</p>
+<div class="math notranslate nohighlight">
+\[
+p_{mn}(t) \;\longrightarrow\; p_{mn}\, e^{-i\omega_{mn} t}.
+\]</div>
+<p>At this point, Heisenberg asked another fundamental question related to how one should calculate derived quantities like <span class="math notranslate nohighlight">\(x^{2}\)</span> or <span class="math notranslate nohighlight">\(p^{2}\)</span>, needed to construct the energy (the Hamiltonian) of the system. A naïve element-wise squaring, such as</p>
+<div class="math notranslate nohighlight">
+\[
+(x^{2})_{mn} \;=\; x_{mn}^{2}\, e^{-2i\omega_{mn} t},
+\]</div>
+<p>would generate new frequencies not present in the observed spectra. To fix this, Heisenberg relied on the <strong>Ritz combination principle</strong>,</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_{mn} \;=\; \omega_{ml} + \omega_{ln},
+\]</div>
+<p>and proposed the following rule, which automatically preserves a single set of transition frequencies:</p>
+<div class="math notranslate nohighlight">
+\[
+(x^{2})_{mn}\, e^{-i\omega_{mn} t} \;=\; \sum_{l} x_{ml}\, e^{-i\omega_{ml} t}\; x_{ln}\, e^{-i\omega_{ln} t},
+\]</div>
+<p>or simply,</p>
+<div class="math notranslate nohighlight">
+\[
+(x^{2})_{mn} \;=\; \sum_{l} x_{ml}\, x_{ln}.
+\]</div>
+<p>Interestingly, at the time he was developing quantum mechanics, Heisenberg did not know about matrices and matrix algebra—he discovered all of it by himself because the physics naturally led him to matrix rules!</p>
+<p>The same structure holds for momentum, with</p>
+<div class="math notranslate nohighlight">
+\[
+p = m\dot{x}\quad\Rightarrow\quad p_{mn} = -i m \omega_{mn}\, x_{mn}.
+\]</div>
+<p>Since energy in classical mechanics is a conserved quantity, a time-independent representation for energy requires that the Hamiltonian matrix</p>
+<div class="math notranslate nohighlight">
+\[
+H_{mn}(t) \;=\; H_{mn}\, e^{-i\omega_{mn} t}
+\]</div>
+<p>be time-<strong>independent</strong>. This is obviously achieved by requiring that all off-diagonal elements vanish (the diagonal ones oscillate with <span class="math notranslate nohighlight">\(\omega_{nn} = 0\)</span>). Hence,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H_{mn} \;=\;
+\begin{cases}
+0 &amp; m \neq n,\\[6pt]
+E_{n} &amp; m = n.
+\end{cases}
+\end{split}\]</div>
+<p>With these assumptions, Heisenberg redefined the kinematic quantities to be used in the new quantum theory. Other than that, his goal was to keep as much of the structure of classical mechanics as possible. Thus the new quantities were required to obey equations of motion analogous to the classical ones:</p>
+<div class="math notranslate nohighlight">
+\[
+m\,\ddot{X}_{mn} \;=\; F(X_{mn}),
+\]</div>
+<p>and classical relations such as</p>
+<div class="math notranslate nohighlight">
+\[
+P_{mn} \;=\; m\,\dot{X}_{mn}.
+\]</div>
+<hr class="docutils" />
+<section id="heisenbergs-quantum-condition">
+<h2>Heisenberg’s Quantum Condition<a class="headerlink" href="#heisenbergs-quantum-condition" title="Link to this heading">#</a></h2>
+<p>Redefining the kinematic quantities as above still does not introduce a genuine quantization (no Planck constant appears yet). To “quantize” his theory, Heisenberg needed an additional relation involving <span class="math notranslate nohighlight">\(\hbar\)</span> that would fix the form of the matrix elements as much as possible. The only available guide was the Wilson–Sommerfeld quantization rule, which quantized the phase-space volume enclosed by a bound orbit:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint p\,dx \;=\; n h + \alpha.
+\]</div>
+<p>Heisenberg generalized this rule. First, he differentiated with respect to the integer <span class="math notranslate nohighlight">\(n\)</span> (formally) to eliminate the arbitrary constant <span class="math notranslate nohighlight">\(\alpha\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial n}\oint p\,dx \;=\; h.
+\]</div>
+<p>For a classically periodic system, the trajectory can be exactly represented by a Fourier series,</p>
+<div class="math notranslate nohighlight">
+\[
+x_n(t) \;=\; \sum_{k=-\infty}^{+\infty} x_n(k)\, e^{ik\omega(n) t},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_n(k)\)</span> are Fourier coefficients and <span class="math notranslate nohighlight">\(\omega(n)\)</span> may depend on <span class="math notranslate nohighlight">\(n\)</span>. Inserting this into the quantization rule, and using <span class="math notranslate nohighlight">\(dx = \dot{x}\,dt,\; p = m \dot{x}\)</span>, one finds</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial n}\!\int_{0}^{T}\! m\,(\dot{x})^{2}\,dt \;=\; h,
+\qquad
+\omega(n)\,T = 2\pi.
+\]</div>
+<p>Carrying out the Fourier algebra yields</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^{T} m\,\dot{x}^{2}\,dt
+\;=\;
+-4\pi m \sum_{k=0}^{\infty} k^{2}\,\omega(n)\,\bigl|x_n(k)\bigr|^{2},
+\]</div>
+<p>and hence</p>
+<div class="math notranslate nohighlight">
+\[
+-4\pi m \sum_{k=0}^{\infty}
+k\,\frac{\partial}{\partial n}\!\Bigl[k\,\omega(n)\,\bigl|x_n(k)\bigr|^{2}\Bigr]
+\;=\;
+h,
+\]</div>
+<p>or, using <span class="math notranslate nohighlight">\(\hbar = h/2\pi\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+-\sum_{k=0}^{\infty}
+k\,\frac{\partial}{\partial n}\!\Bigl[k\,\omega(n)\,\bigl|x_n(k)\bigr|^{2}\Bigr]
+\;=\;
+\frac{\hbar}{2m}.
+\]</div>
+<p>Heisenberg replaced the derivative by a finite-difference expression,</p>
+<div class="math notranslate nohighlight">
+\[
+k\,\frac{\partial f}{\partial n} \;\longrightarrow\; f(n+k) - f(n),
+\]</div>
+<p>and applied the Bohr correspondence principle to replace classical frequencies by transition frequencies:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega(n) \;\longrightarrow\; \omega_{n,n-1}, 
+\quad
+k\,\omega(n) \;\longrightarrow\; \omega_{n,n-k},
+\quad
+x_n(k) \;\longrightarrow\; x_{n,n-k}.
+\]</div>
+<p>This led to</p>
+<div class="math notranslate nohighlight">
+\[
+-\sum_{k=0}^{\infty}
+\Bigl[\omega_{n+k,n}\,\bigl|x_{n+k,n}\bigr|^{2}
+      -\omega_{n,n-k}\,\bigl|x_{n,n-k}\bigr|^{2}\Bigr]
+\;=\;
+\frac{\hbar}{2m},
+\]</div>
+<p>which can be written symmetrically as</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{e=-\infty}^{+\infty}
+\omega_{ne}\,\bigl|x_{en}\bigr|^{2}
+\;=\;
+\frac{\hbar}{2m}.
+\]</div>
+<p>Apart from notation, this is precisely the quantization condition Heisenberg postulated in his pioneering paper, where he applied it to the harmonic oscillator, the anharmonic oscillator, and the rotator.</p>
+<p>If you wonder why you have rarely seen this rule, it is because Max Born and Pascual Jordan—after Heisenberg revealed his method to Born—soon found a much more elegant formulation. Consider the commutator</p>
+<div class="math notranslate nohighlight">
+\[
+[X,P] \;:=\; XP - PX
+\]</div>
+<p>and take its diagonal element:</p>
+<div class="math notranslate nohighlight">
+\[
+(XP - PX)_{nn}
+\;=\;
+\sum_{e}\!\bigl[X_{ne}P_{en} - P_{ne}X_{en}\bigr].
+\]</div>
+<p>Using <span class="math notranslate nohighlight">\(P_{mn} = m\dot{X}_{mn} = -i m \omega_{mn} X_{mn}\)</span>, one finds</p>
+<div class="math notranslate nohighlight">
+\[
+(XP - PX)_{nn}
+\;=\;
+-2i\,\sum_{e}\omega_{ne}\,\bigl|x_{ne}\bigr|^{2},
+\]</div>
+<p>so Heisenberg’s quantization condition becomes</p>
+<div class="math notranslate nohighlight">
+\[
+[x,p]_{nn} \;=\; i\hbar,
+\]</div>
+<p>which is just the diagonal part of the canonical commutation relation!</p>
+<p>At this stage, Heisenberg had all he needed to determine the energy levels of an arbitrary system (at least in principle). Summarized, Heisenberg’s prescription for finding energy levels can be stated as follows:</p>
+<ol class="arabic simple">
+<li><p><strong>Construct</strong> the quantities <span class="math notranslate nohighlight">\(X_{mn},\,P_{mn}\)</span> that satisfy the quantum condition and the equations of motion, retaining the classical form.</p></li>
+<li><p><strong>Construct</strong> the Hamiltonian matrix <span class="math notranslate nohighlight">\(H_{mn}\)</span> and <strong>diagonalize</strong> it. The diagonal elements are the quantum energy levels of the system!</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+</section>
+<section id="solving-the-harmonic-oscillator-ala-heisenberg-helgoland-method">
+<h1>Solving the harmonic oscillator ala Heisenberg (“Helgoland” method)<a class="headerlink" href="#solving-the-harmonic-oscillator-ala-heisenberg-helgoland-method" title="Link to this heading">#</a></h1>
+<p>The system Heisenberg first solved as an application of his new mechanics was the harmonic oscillator. Assuming the Newtonian equation holds for the new quantities  (matrix elements) leads to the following equations of motion:</p>
+<div class="math notranslate nohighlight">
+\[
+m \ddot{x} + x = 0 \quad \Rightarrow \quad (\omega_{mn}^2 - \omega^2) x_{mn} = 0,
+\]</div>
+<p>From this it is derived that only transitions with $\omega_{mn} = \pm \omega$ survive, so each row has maximally two non-zero elements. Assuming a lowest-energy state (ground state) exists for which no transition to a lower state is possible and assigning to it an index of <span class="math notranslate nohighlight">\(n=0\)</span>, one deduces:</p>
+<div class="math notranslate nohighlight">
+\[
+X_{01} = \sqrt{\frac{\hbar}{2m\omega}}, \quad X_{10} = X_{01}.
+\]</div>
+<p>The same procedure can now recursively be applied to the second row where one element is already fixed by hermiticity:</p>
+<div class="math notranslate nohighlight">
+\[
+-\omega |X_{10}|^2 + \omega |X_{12}|^2 = \frac{\hbar}{2m} \quad \Rightarrow \quad X_{12} = \sqrt{\frac{2\hbar}{2m\omega}}.
+\]</div>
+<p>This can be easily generalized for any <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+X_{n,n+1} = X_{n+1,n} = \sqrt{\frac{(n+1)\hbar}{2m\omega}}.
+\]</div>
+<p>The matrix $X$ thus takes the tridiagonal form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X = \begin{bmatrix}
+0 &amp; \sqrt{\frac{\hbar}{2m\omega}} &amp; 0 &amp; 0 &amp; \cdots \\
+\sqrt{\frac{\hbar}{2m\omega}} &amp; 0 &amp; \sqrt{\frac{2\hbar}{2m\omega}} &amp; 0 &amp; \cdots \\
+0 &amp; \sqrt{\frac{2\hbar}{2m\omega}} &amp; 0 &amp; \sqrt{\frac{3\hbar}{2m\omega}} &amp; \cdots \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \ddots
+\end{bmatrix}
+\end{split}\]</div>
+<p>Then $P = -im\omega X$, and the Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[
+H = \frac{P^2}{2m} + \frac{1}{2} m \omega^2 X^2
+\]</div>
+<p>yields diagonal elements computed as follows:</p>
+<p><strong>For $n=0$:</strong></p>
+<p>Only $X_{01}$ and $P_{01}$ are nonzero in the first row. We have:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{01} = -im\omega X_{01} = -i\sqrt{\frac{\hbar m\omega}{2}}.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+H_{00} = \frac{1}{2m} |P_{01}|^2 + \frac{1}{2} m \omega^2 |X_{01}|^2 = \frac{1}{2m} \cdot \frac{\hbar m\omega}{2} + \frac{1}{2} m \omega^2 \cdot \frac{\hbar}{2m\omega} = \frac{\hbar\omega}{4} + \frac{\hbar\omega}{4} = \frac{\hbar\omega}{2}.
+\]</div>
+<p><strong>For $n=1$:</strong></p>
+<p>Contributions come from $X_{10}$ and $X_{12}$. We compute:</p>
+<div class="math notranslate nohighlight">
+\[
+|X_{10}|^2 = \frac{\hbar}{2m\omega}, \quad |X_{12}|^2 = \frac{2\hbar}{2m\omega} = \frac{\hbar}{m\omega},
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+H_{11} = \frac{1}{2m} \left( |P_{10}|^2 + |P_{12}|^2 \right) + \frac{1}{2} m \omega^2 (|X_{10}|^2 + |X_{12}|^2).
+\]</div>
+<p>Each kinetic term:</p>
+<div class="math notranslate nohighlight">
+\[
+|P_{10}|^2 = m^2 \omega^2 |X_{10}|^2 = m^2 \omega^2 \cdot \frac{\hbar}{2m\omega} = \frac{\hbar m \omega}{2},
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+|P_{12}|^2 = m^2 \omega^2 |X_{12}|^2 = m^2 \omega^2 \cdot \frac{\hbar}{m\omega} = \hbar m \omega.
+\]</div>
+<p>So total:</p>
+<div class="math notranslate nohighlight">
+\[
+H_{11} = \frac{1}{2m} \left( \frac{\hbar m \omega}{2} + \hbar m \omega \right) + \frac{1}{2} m \omega^2 \left( \frac{\hbar}{2m\omega} + \frac{\hbar}{m\omega} \right) = \frac{3\hbar\omega}{4} + \frac{3\hbar\omega}{4} = \frac{3\hbar\omega}{2}.
+\]</div>
+<p><strong>General case:</strong></p>
+<p>Following the same pattern, each state $n$ has contributions from $X_{n,n-1}$ and $X_{n,n+1}$:</p>
+<div class="math notranslate nohighlight">
+\[
+|X_{n,n-1}|^2 = \frac{n\hbar}{2m\omega}, \quad |X_{n,n+1}|^2 = \frac{(n+1)\hbar}{2m\omega},
+\]</div>
+<p>The energy is:</p>
+<div class="math notranslate nohighlight">
+\[
+H_{nn} = \frac{1}{2m} m^2 \omega^2 (|X_{n,n-1}|^2 + |X_{n,n+1}|^2) + \frac{1}{2} m \omega^2 (|X_{n,n-1}|^2 + |X_{n,n+1}|^2)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= m\omega^2 (|X_{n,n-1}|^2 + |X_{n,n+1}|^2) = m\omega^2 \cdot \frac{(2n+1)\hbar}{2m\omega} = \hbar \omega \left(n + \frac{1}{2}\right).
+\]</div>
+<p>Thus, we recover the well-known energy levels of the quantum harmonic oscillator:</p>
+<div class="math notranslate nohighlight">
+\[
+E_n = \hbar \omega \left(n + \frac{1}{2}\right).
+\]</div>
+</section>
+<section id="concluding-remark">
+<h1>Concluding remark<a class="headerlink" href="#concluding-remark" title="Link to this heading">#</a></h1>
+<p>The work by Heisenberg was the first and most important step in the development of modern quantum mechanics. Soon after he published his paper, his mentor at the time Max Born together with Pascual Jordan submitted a paper for publication in the “<em>Zeitschrift für Physik</em>” with the title “Zur Quantenmechanik” in which the full formalism of the matrix mechanics has been developed almost in the present modern form and the non-commutative algebraic structure behind the quantum mechanics has been for the first time clearly identified. The rest is the history (of quantum mechanics)…</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_dynamics_2026",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="heisenberg_picture.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🔹 Observables in Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="interaction_picture.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🔸 Interaction Picture of Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heisenbergs-quantum-condition">Heisenberg’s Quantum Condition</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-harmonic-oscillator-ala-heisenberg-helgoland-method">Solving the harmonic oscillator ala Heisenberg (“Helgoland” method)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-remark">Concluding remark</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1321 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🔸 Quantum Dynamics of a Two-Level System with Constant Coupling &#8212; Quantum Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'qubit_dynamics';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="🔸 Two level system driven by a harmonic field" href="rotating_wave.html" />
+    <link rel="prev" title="Crash Course: Hamiltonian Dynamics" href="hamiltonian_dynamics_crash_course.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantum Dynamics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantum Dynamics – SS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classical_mechanics.html">🔸 Crash course in Classical Mechanics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="formalism_hilbert_spaces.html">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_linear_operators.html">🔸 Linear maps, operators and functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_unitary_time_evolution.html">🔸 Formalism of Quantum Mechanics: Unitary time evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hamiltonian_dynamics_crash_course.html">Crash Course: Hamiltonian Dynamics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="rotating_wave.html">🔸 Two level system driven by a harmonic field</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="heisenberg_picture.html">🔹 Observables in Quantum Mechanics</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="history_heisenberg.html">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="interaction_picture.html">🔸 Interaction Picture of Quantum Mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="position_momentum_representation.html">🔸 Position and Momentum Representation</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="particle_linear_potential.html">🔸 Particle in a Linear Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stationary_phase_method.html">Stationary Phase Method applied to Airy function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="path_integrals.html">Path integral representation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_dynamics_2026/main?urlpath=lab/tree/./qubit_dynamics.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/edit/main/./qubit_dynamics.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/issues/new?title=Issue%20on%20page%20%2Fqubit_dynamics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/qubit_dynamics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-states-and-time-dependent-wavefunction">🔹 Basis States and Time-Dependent Wavefunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-with-constant-coupling">🔹 1. Hamiltonian with Constant Coupling</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#two-level-system-dynamics-via-analytic-and-symbolic-methods">🔸 Two-Level System: Dynamics via Analytic and Symbolic Methods</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#special-case-rabi-oscillations-resonant-coupling">🔹 Special Case: Rabi Oscillations (Resonant Coupling)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-derivation-of-the-propagator">🔹 1. Analytic Derivation of the Propagator</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolic-derivation-using-sympy-for-those-who-like-symbolic-computations">🔹 2. Symbolic Derivation Using SymPy for those who like symbolic computations…</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dynamics">🔹 Population Dynamics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pulse-and-the-quantum-not-gate">🔸 π/2 Pulse and the Quantum NOT Gate</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-under-a-2-pulse">🔹 Dynamics under a π/2 Pulse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-the-quantum-not-gate">🔹 Connection to the Quantum NOT Gate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-realizations">🔹 Physical Realizations</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#two-level-system-non-resonant-coupling-detuned-case">🔸 Two-Level System: Non-Resonant Coupling (Detuned Case)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-with-detuning">🔹 Hamiltonian with Detuning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-derivation-of-the-time-evolution-operator">🔹 Algebraic Derivation of the Time Evolution Operator</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-series-summation">🔹 Taylor Series Summation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">🔹 Population Dynamics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simulation-leads-to-the-following-physical-insight-about-the-dynamics-in-the-non-resonant-case">🧠 The simulation leads to the following physical insight about the dynamics in the non-resonant case:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-shape-of-the-maximum-excited-state-population">🔸 Spectral Shape of the Maximum Excited State Population</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="quantum-dynamics-of-a-two-level-system-with-constant-coupling">
+<h1>🔸 Quantum Dynamics of a Two-Level System with Constant Coupling<a class="headerlink" href="#quantum-dynamics-of-a-two-level-system-with-constant-coupling" title="Link to this heading">#</a></h1>
+<p>As a first physical application of the formalism we have developed — Hilbert spaces, linear operators, and time evolution — we now turn to a <strong>two-level quantum system</strong>.
+This model is often used to illustrate various features of quantum mechanics and it also has significant practical relevance. Spin-1/2 particles such as electrons and protons can be treated as two level systems in other degrees of freedom can be ignored as is the case in the nuclear or magnetic resonance spectroscopies. Also the basic unit of the quantum information processing - the qubit - is a two level quantum system that can be realized in various physical ways. Two-level systems are also used in the field of chemical physics as a model for molecular systems where only two electronic states couple or as model describing the interaction of trapped atomic ions with laser fields.</p>
+<section id="basis-states-and-time-dependent-wavefunction">
+<h2>🔹 Basis States and Time-Dependent Wavefunction<a class="headerlink" href="#basis-states-and-time-dependent-wavefunction" title="Link to this heading">#</a></h2>
+<p>We work in the orthonormal basis of diabatic (or bare) states:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( |g\rangle \)</span> : ground state</p></li>
+<li><p><span class="math notranslate nohighlight">\( |e\rangle \)</span> : excited state</p></li>
+</ul>
+<p>The general state of the system at time <span class="math notranslate nohighlight">\(t\)</span> is written as a time-dependent linear combinations of the basis states:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi(t)\rangle = c_g(t) |g\rangle + c_e(t) |e\rangle
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_g(t), c_e(t) \in \mathbb{C} \)</span> are the <strong>time-dependent amplitudes</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="hamiltonian-with-constant-coupling">
+<h2>🔹 1. Hamiltonian with Constant Coupling<a class="headerlink" href="#hamiltonian-with-constant-coupling" title="Link to this heading">#</a></h2>
+<p>The first system we treat is the one with a time-independent Hamiltonian of the form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{H} = 
+\begin{pmatrix}
+E_g &amp; V \\
+V &amp; E_e
+\end{pmatrix}
+\end{split}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( E_g \)</span> and <span class="math notranslate nohighlight">\( E_e \)</span> are the energies of the ground and excited states, respectively,</p></li>
+<li><p><span class="math notranslate nohighlight">\( V \in \mathbb{R} \)</span> is the <strong>constant coupling</strong> between the two states.</p></li>
+</ul>
+<p>We will analyze the dynamics in two regimes:</p>
+<ol class="arabic simple">
+<li><p><strong>Resonant Case</strong>: <span class="math notranslate nohighlight">\(E_g = E_e\)</span><br />
+The two levels are degenerate. As we will demonstrate, the constant coupling leads in this situtation to <strong>maximal population transfer</strong> and perfectly symmetric oscillations.</p></li>
+<li><p><strong>Non-Resonant Case</strong>: <span class="math notranslate nohighlight">\(E_g \ne E_e\)</span><br />
+The energy levels are detuned. While the population transfer still occurs, the oscillations are asymmetric, and their amplitude depends on the energy difference.</p></li>
+</ol>
+<p>Our goal is in both cases to compute the <strong>time-evolution operator</strong> explicitly and investigate the behavior of the time-dependent state populations that are defined by:</p>
+<div class="math notranslate nohighlight">
+\[
+P_g(t) = |\langle g | \psi(t)\rangle|^2, \quad P_e(t) = |\langle e | \psi(t)\rangle|^2
+\]</div>
+</section>
+</section>
+<section id="two-level-system-dynamics-via-analytic-and-symbolic-methods">
+<h1>🔸 Two-Level System: Dynamics via Analytic and Symbolic Methods<a class="headerlink" href="#two-level-system-dynamics-via-analytic-and-symbolic-methods" title="Link to this heading">#</a></h1>
+<p>Continuing our study of a two-level system with constant coupling, we now explicitly evaluate the <strong>time-evolution operator</strong>.</p>
+<p>We proceed in two complementary ways:</p>
+<ol class="arabic simple">
+<li><p><strong>Analytic derivation</strong>: Using matrix exponentials.</p></li>
+<li><p><strong>Symbolic computation</strong>: Using the SymPy package.</p></li>
+</ol>
+<p>The Hamiltonian of any two-level system can be represented by a 2x2 hermitian matrix in the basis <span class="math notranslate nohighlight">\(|g\rangle , |e\rangle\)</span>. Such matrices can be expanded in terms of the
+<strong>Pauli matrices</strong> and the <strong>identity matrix</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sigma_x =
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}, \quad
+\sigma_y =
+\begin{pmatrix}
+0 &amp; -i \\
+i &amp; 0
+\end{pmatrix}, \quad
+\sigma_z =
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{pmatrix}, \quad
+I =
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+\end{split}\]</div>
+<p>In this basis the Hamiltonian of any two level system can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = \overline{E} I + V_{x} \sigma_x + V_{y} \sigma_y + \frac{1}{2}\Delta \sigma_z
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\overline{E} \in \mathbb{R}\)</span> is the average energy of the two levels,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta \in \mathbb{R}\)</span> is the energy difference between the ground and excited states,</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_{x}\)</span>, <span class="math notranslate nohighlight">\(V_{y} \in \mathbb{R}\)</span> are real and imaginary parts of the coupling.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="special-case-rabi-oscillations-resonant-coupling">
+<h1>🔹 Special Case: Rabi Oscillations (Resonant Coupling)<a class="headerlink" href="#special-case-rabi-oscillations-resonant-coupling" title="Link to this heading">#</a></h1>
+<p>We specialize to the situation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\overline{E} = 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta = 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_{y} = 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_{x} = V\)</span>,</p></li>
+</ul>
+<p>so that the Hamiltonian simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = V \sigma_x
+\]</div>
+<p>i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{H} =
+V
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="analytic-derivation-of-the-propagator">
+<h1>🔹 1. Analytic Derivation of the Propagator<a class="headerlink" href="#analytic-derivation-of-the-propagator" title="Link to this heading">#</a></h1>
+<p>In the following we calculate the time-evolution operator for the two-level system Hamiltonian analytically using the exponential for for the time-evolution operator:
+The Hamiltonian in our case is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = V \sigma_x
+\]</div>
+<p>which leads to the following time-evolution operator:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}(t) = \exp\left( -\frac{i}{\hbar} \hat{H} t \right) = \exp\left( -i \frac{V}{\hbar} t \sigma_x \right)
+\]</div>
+<p>In order to calculate the operator exponential we need to know what the powers of the <span class="math notranslate nohighlight">\(\sigma_x\)</span> are.
+Recalling properties of the Pauli matrices we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x^2 = I
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the <span class="math notranslate nohighlight">\(2\times 2\)</span> identity matrix.</p>
+<p>Higher powers of <span class="math notranslate nohighlight">\(\sigma_x\)</span> cycle periodically between two values:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\sigma_x^0 &amp;= I, \\
+\sigma_x^1 &amp;= \sigma_x, \\
+\sigma_x^2 &amp;= I, \\
+\sigma_x^3 &amp;= \sigma_x, \\
+\sigma_x^4 &amp;= I, \quad \text{and so on.}
+\end{aligned}
+\end{split}\]</div>
+<p>Thus, for any integer <span class="math notranslate nohighlight">\(n\)</span>, we have generally:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x^{2n} = I, \quad \sigma_x^{2n+1} = \sigma_x
+\]</div>
+<p>Now we can calculate time-evolution operator using the Taylor series expansion of the exponential function:</p>
+<div class="math notranslate nohighlight">
+\[
+e^A = \sum_{n=0}^{\infty} \frac{A^n}{n!}
+\]</div>
+<p>Applying this to <span class="math notranslate nohighlight">\(A = -i \frac{V t}{\hbar} \sigma_x\)</span> we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{U}(t)
+&amp;= \sum_{n=0}^{\infty} \frac{1}{n!} \left( -i \frac{V t}{\hbar} \sigma_x \right)^n \\
+&amp;= \sum_{n=0}^{\infty} \frac{1}{n!} \left( -i \frac{V t}{\hbar} \right)^n \sigma_x^n
+\end{aligned}
+\end{split}\]</div>
+<p>We can now split the sum into <strong>even</strong> and <strong>odd</strong> terms:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{U}(t)
+&amp;= \sum_{k=0}^{\infty} \frac{1}{(2k)!} \left( -i \frac{V t}{\hbar} \right)^{2k} \sigma_x^{2k}
++ \sum_{k=0}^{\infty} \frac{1}{(2k+1)!} \left( -i \frac{V t}{\hbar} \right)^{2k+1} \sigma_x^{2k+1} \\
+&amp;= \left[ \sum_{k=0}^{\infty} \frac{1}{(2k)!} \left( -i \frac{V t}{\hbar} \right)^{2k} \right] I
++ \left[ \sum_{k=0}^{\infty} \frac{1}{(2k+1)!} \left( -i \frac{V t}{\hbar} \right)^{2k+1} \right] \sigma_x
+\end{aligned}
+\end{split}\]</div>
+<p>A well trained eye will recognize in these ugly expressions the series definining the sine and cosine functions:</p>
+<div class="math notranslate nohighlight">
+\[
+\cos\left( \frac{V t}{\hbar} \right) = \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!} \left( \frac{V t}{\hbar} \right)^{2k}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sin\left( \frac{V t}{\hbar} \right) = \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k+1)!} \left( \frac{V t}{\hbar} \right)^{2k+1}
+\]</div>
+<p>Furthermore, we note that:</p>
+<p><span class="math notranslate nohighlight">\(
+\left( -i \right)^{2k} = (-1)^k, \quad \left( -i \right)^{2k+1} = (-1)^k (-i)
+\)</span></p>
+<p>Thus:</p>
+<ul class="simple">
+<li><p>For even powers:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\left( -i \right)^{2k} \left( \frac{V t}{\hbar} \right)^{2k} = (-1)^k \left( \frac{V t}{\hbar} \right)^{2k}
+\]</div>
+<ul class="simple">
+<li><p>For odd powers:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\left( -i \right)^{2k+1} \left( \frac{V t}{\hbar} \right)^{2k+1} = (-1)^k (-i) \left( \frac{V t}{\hbar} \right)^{2k+1}
+\]</div>
+<p>Collecting these results we get the time-evolution operator in a closed analytic form:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}(t) =
+\cos\left( \frac{V t}{\hbar} \right) I
+- i \sin\left( \frac{V t}{\hbar} \right) \sigma_x
+\]</div>
+<p>that can be also written explicitly as a 2x2 matrix operator:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{U}(t) =
+\begin{pmatrix}
+\cos\left( \frac{V t}{\hbar} \right) &amp; -i \sin\left( \frac{V t}{\hbar} \right) \\
+-i \sin\left( \frac{V t}{\hbar} \right) &amp; \cos\left( \frac{V t}{\hbar} \right)
+\end{pmatrix}
+\end{split}\]</div>
+<hr class="docutils" />
+</section>
+<section id="symbolic-derivation-using-sympy-for-those-who-like-symbolic-computations">
+<h1>🔹 2. Symbolic Derivation Using SymPy for those who like symbolic computations…<a class="headerlink" href="#symbolic-derivation-using-sympy-for-those-who-like-symbolic-computations" title="Link to this heading">#</a></h1>
+<p>For those familiar with python I also provide a short symbolic derivation of the above result using <strong>SymPy</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="c1"># Define Pauli matrices and identity</span>
+<span class="n">sigma_x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">sigma_y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">I</span><span class="p">],</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">I</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">sigma_z</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Id</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Define symbols</span>
+<span class="n">H0</span><span class="p">,</span> <span class="n">Delta</span><span class="p">,</span> <span class="n">V_re</span><span class="p">,</span> <span class="n">V_im</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;H0 Delta V_re V_im&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">hbar</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t hbar&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># General Hamiltonian</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">H0</span> <span class="o">*</span> <span class="n">Id</span> <span class="o">+</span> <span class="n">V_re</span> <span class="o">*</span> <span class="n">sigma_x</span> <span class="o">+</span> <span class="n">V_im</span> <span class="o">*</span> <span class="n">sigma_y</span> <span class="o">+</span> <span class="p">(</span><span class="n">Delta</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma_z</span>
+
+<span class="c1"># Specialize to resonant Rabi case</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">H0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Delta</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">V_im</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<span class="c1"># Compute propagator</span>
+<span class="n">Ht</span> <span class="o">=</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">I</span> <span class="o">*</span> <span class="n">H</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="n">hbar</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Ht</span><span class="o">.</span><span class="n">exp</span><span class="p">())</span>  <span class="c1"># Matrix exponential</span>
+<span class="n">U</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\cos{\left(\frac{V_{re} t}{\hbar} \right)} &amp; - i \sin{\left(\frac{V_{re} t}{\hbar} \right)}\\- i \sin{\left(\frac{V_{re} t}{\hbar} \right)} &amp; \cos{\left(\frac{V_{re} t}{\hbar} \right)}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</section>
+<section id="population-dynamics">
+<h1>🔹 Population Dynamics<a class="headerlink" href="#population-dynamics" title="Link to this heading">#</a></h1>
+<p>We now study the dynamics assuming that the system starts in the  ground state <span class="math notranslate nohighlight">\(|\psi(0)\rangle = |g\rangle\)</span> at the initial time <span class="math notranslate nohighlight">\(t=0\)</span>:
+The ground state population as the system evolves can be calculated by applying the time-evolution operator and calculating the absolute square of the population which leads to:</p>
+<div class="math notranslate nohighlight">
+\[
+P_e(t) =  \sin^2\left( \frac{V t}{\hbar} \right)
+\]</div>
+<p>For the ground state we get:</p>
+<div class="math notranslate nohighlight">
+\[
+P_g(t) = \cos^2\left( \frac{V t}{\hbar} \right)
+\]</div>
+<p>As it should be the total population is normalized <span class="math notranslate nohighlight">\(P_g(t) + P_e(t) = 1\)</span>. The plot of the population dynamics is provided in the Figure below.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">hbar</span> <span class="o">=</span> <span class="mf">1.0</span>  
+<span class="n">V_re</span> <span class="o">=</span> <span class="mf">1.0</span> 
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># From 0 to 10 * pi</span>
+<span class="n">P_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">V_re</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="n">hbar</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">P_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">V_re</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="n">hbar</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">P_g</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$P_g(t) = \cos^2\left(\frac{V_{\mathrm</span><span class="si">{re}</span><span class="s1">} t}{\hbar}\right)$&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">P_e</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$P_e(t) = \sin^2\left(\frac{V_{\mathrm</span><span class="si">{re}</span><span class="s1">} t}{\hbar}\right)$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Rabi Oscillations in a Two-Level System&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time $t$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/190d0bf325f915bd97bcf2e4da05e9bff9ea9d0398a94869b20e707e8a1a68b7.png" src="_images/190d0bf325f915bd97bcf2e4da05e9bff9ea9d0398a94869b20e707e8a1a68b7.png" />
+</div>
+</div>
+</section>
+<section id="pulse-and-the-quantum-not-gate">
+<h1>🔸 π/2 Pulse and the Quantum NOT Gate<a class="headerlink" href="#pulse-and-the-quantum-not-gate" title="Link to this heading">#</a></h1>
+<p>We now consider a central concept in both quantum dynamics and quantum information theory: the <strong>π/2 pulse</strong>.</p>
+<p>A π/2 pulse refers to a resonant driving of a two-level system such that the system undergoes a <strong>coherent population transfer</strong> from the ground state <span class="math notranslate nohighlight">\(|g\rangle\)</span> to the excited state <span class="math notranslate nohighlight">\(|e\rangle\)</span>. This is a key example of <strong>Rabi oscillations</strong>.</p>
+<section id="dynamics-under-a-2-pulse">
+<h2>🔹 Dynamics under a π/2 Pulse<a class="headerlink" href="#dynamics-under-a-2-pulse" title="Link to this heading">#</a></h2>
+<p>Let us return to the resonant Hamiltonian:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{H} = V \sigma_x = V
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+\end{split}\]</div>
+<p>The time-evolution operator is:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}(t) = \exp\left(-\frac{i}{\hbar} \hat{H} t \right) = \cos\left(\frac{Vt}{\hbar}\right) I - i \sin\left(\frac{Vt}{\hbar}\right) \sigma_x
+\]</div>
+<p>Acting on an initial ground state <span class="math notranslate nohighlight">\(|\psi(0)\rangle = |g\rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}\)</span>, we find the time-evolved state:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi(t)\rangle = \cos\left(\frac{Vt}{\hbar}\right)|g\rangle - i \sin\left(\frac{Vt}{\hbar}\right)|e\rangle
+\]</div>
+<p>For a <strong>π/2 pulse</strong>, we choose the interaction time <span class="math notranslate nohighlight">\(t\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{Vt}{\hbar} = \frac{\pi}{2}
+\quad \Rightarrow \quad
+t = \frac{\pi \hbar}{2V}
+\]</div>
+<p>At this moment, the system is found in:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi(t)\rangle = -i |e\rangle
+\]</div>
+<p>up to a global phase. Hence, the system has <strong>fully transferred</strong> from <span class="math notranslate nohighlight">\(|g\rangle\)</span> to <span class="math notranslate nohighlight">\(|e\rangle\)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="connection-to-the-quantum-not-gate">
+<h2>🔹 Connection to the Quantum NOT Gate<a class="headerlink" href="#connection-to-the-quantum-not-gate" title="Link to this heading">#</a></h2>
+<p>The <strong>quantum NOT gate</strong> (also called the Pauli-X gate) is defined by its action:</p>
+<div class="math notranslate nohighlight">
+\[
+X |0\rangle = |1\rangle, \quad X |1\rangle = |0\rangle
+\]</div>
+<p>This gate is represented by the same matrix as <span class="math notranslate nohighlight">\(\sigma_x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X =
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+\end{split}\]</div>
+<p>In the context of Rabi dynamics, a π pulse (not π/2) maps <span class="math notranslate nohighlight">\(|g\rangle \rightarrow |e\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle \rightarrow |g\rangle\)</span>, just as the NOT gate does. Therefore, the π pulse <strong>implements a quantum NOT gate</strong> in the two-level system. The π/2 pulse, on the other hand, is associated with a <strong>Hadamard-like</strong> transformation (placing the system into a coherent superposition), but a π pulse is the true NOT operation.</p>
+</section>
+<hr class="docutils" />
+<section id="physical-realizations">
+<h2>🔹 Physical Realizations<a class="headerlink" href="#physical-realizations" title="Link to this heading">#</a></h2>
+<p>Quantum NOT gate described above is a simple example of a quantum gate that have been by now realized in a variety of platforms used to implement the qubits:</p>
+<ul>
+<li><p><strong>Trapped Ions</strong>: Quantum operations are  implemented by resonant laser pulses that drive transitions between internal electronic levels of ions trapped in electromagnetic fields.</p>
+<p>→ <em>Cirac, J. I., &amp; Zoller, P. (1995). Quantum computations with cold trapped ions. Physical Review Letters, 74(20), 4091.</em></p>
+</li>
+<li><p><strong>Superconducting Qubits</strong>: Microwave pulses play the role of driving fields for Josephson junction-based qubits, performing quantum gates by engineering the duration and phase of the pulse.</p>
+<p>→ <em>Barends, R., et al. (2014). Superconducting quantum circuits at the surface code threshold for fault tolerance. Nature, 508(7497), 500–503.</em></p>
+</li>
+<li><p><strong>NMR Qubits</strong>: Nuclear magnetic resonance experiments naturally implement single-qubit gates as rotations driven by radiofrequency fields.</p>
+<p>→ <em>Cory, D. G., Fahmy, A. F., &amp; Havel, T. F. (1997). Ensemble quantum computing by NMR spectroscopy. PNAS, 94(5), 1634–1639.</em></p>
+</li>
+</ul>
+<hr class="docutils" />
+<p>This illustrates how <strong>control over interaction time</strong> (via the pulse area) allows direct implementation of logical operations on qubits in physical systems.</p>
+</section>
+</section>
+<section id="two-level-system-non-resonant-coupling-detuned-case">
+<h1>🔸 Two-Level System: Non-Resonant Coupling (Detuned Case)<a class="headerlink" href="#two-level-system-non-resonant-coupling-detuned-case" title="Link to this heading">#</a></h1>
+<p>We now extend the analysis to a situation where the two states are <strong>not degenerate</strong>. The finite energy difference between the ground and excited states is denoted by <span class="math notranslate nohighlight">\(\Delta\)</span>.
+We will see that the fact that the states are not resonant leads to <strong>detuned Rabi oscillations</strong> with reduced amplitude and also a reduced frequencies that are dependent on the detuning.</p>
+<hr class="docutils" />
+</section>
+<section id="hamiltonian-with-detuning">
+<h1>🔹 Hamiltonian with Detuning<a class="headerlink" href="#hamiltonian-with-detuning" title="Link to this heading">#</a></h1>
+<p>The two-level Hamiltonian now has an aditional term that is proportional to the Pauli z-Matrix:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = V_{\text{re}} \sigma_x + \Delta \sigma_z.
+\]</div>
+<p>Here we use the followung notation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V_{\text{re}}\)</span> is the real coupling strength,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta\)</span> is the energy splitting between the two bare states.</p></li>
+</ul>
+<p>Written explictly the Hamiltonian matrix thus reads:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{H} =
+\begin{pmatrix}
+\Delta &amp; V_{\text{re}} \\
+V_{\text{re}} &amp; -\Delta
+\end{pmatrix}
+\end{split}\]</div>
+<hr class="docutils" />
+</section>
+<section id="algebraic-derivation-of-the-time-evolution-operator">
+<h1>🔹 Algebraic Derivation of the Time Evolution Operator<a class="headerlink" href="#algebraic-derivation-of-the-time-evolution-operator" title="Link to this heading">#</a></h1>
+<p>Again, we calculate the <strong>time-evolution operator</strong> using algebraic properties of the Pauli-matrices starting from the exponential form of the operator:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}(t) = \exp\left( -\frac{i}{\hbar} \hat{H} t \right)
+\]</div>
+<p>To compute <span class="math notranslate nohighlight">\(\hat{U}(t)\)</span>, we expand the exponential using the Taylor series:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}(t) = \sum_{n=0}^{\infty} \frac{1}{n!} \left( -\frac{i}{\hbar} t \hat{H} \right)^n
+\]</div>
+<p>Thus, in order to construct the time-evolution operators we need to calculate the powers of <span class="math notranslate nohighlight">\(\hat{H}\)</span> which now requires calculating powers of somewhat more complicated combination of Pauli-matrices. In order to proceed we will use the following relations between the Pauli-matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\sigma_x^2 &amp;= I, \quad \sigma_z^2 = I, \\
+\sigma_x \sigma_z &amp;= i \sigma_y, \quad \sigma_z \sigma_x = -i \sigma_y, \\
+\sigma_x \sigma_z + \sigma_z \sigma_x &amp;= 0 \quad \text{(anticommutation relation)}.
+\end{aligned}
+\end{split}\]</div>
+<p>We start by calculating the second power of the Hamiltonian and subsequently generalize inductively to higher powers:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{H}^2
+&amp;= (V_{\text{re}} \sigma_x + \Delta \sigma_z)^2 \\
+&amp;= V_{\text{re}}^2 \sigma_x^2 + \Delta^2 \sigma_z^2 + V_{\text{re}} \Delta (\sigma_x \sigma_z + \sigma_z \sigma_x) \\
+&amp;= (V_{\text{re}}^2 + \Delta^2) I
+\end{aligned}
+\end{split}\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}^2 = (V_{\text{re}}^2 + \Delta^2) I
+\]</div>
+<p>This can now be straightforwardly generalized to higher powers leading to:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{H}^{2n} = (V_{\text{re}}^2 + \Delta^2)^n I\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{H}^{2n+1} = (V_{\text{re}}^2 + \Delta^2)^n \hat{H}\)</span></p></li>
+</ul>
+<p>for any integer <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<hr class="docutils" />
+</section>
+<section id="taylor-series-summation">
+<h1>🔹 Taylor Series Summation<a class="headerlink" href="#taylor-series-summation" title="Link to this heading">#</a></h1>
+<p>Substituting back into the Taylor series:</p>
+<p>[
+\begin{aligned}
+\hat{U}(t)
+&amp;= \sum_{n=0}^{\infty} \frac{1}{(2n)!} \left( -\frac{i}{\hbar} t \right)^{2n} (V_{\text{re}}^2 + \Delta^2)^n I \
+&amp;\quad + \sum_{n=0}^{\infty} \frac{1}{(2n+1)!} \left( -\frac{i}{\hbar} t \right)^{2n+1} (V_{\text{re}}^2 + \Delta^2)^n \hat{H}
+\end{aligned}
+]</p>
+<p>Factor terms:</p>
+<p>[
+\begin{aligned}
+\hat{U}(t)
+&amp;= \left[ \sum_{n=0}^{\infty} \frac{1}{(2n)!} \left( -i \frac{\Omega t}{\hbar} \right)^{2n} \right] I \
+&amp;\quad + \left[ \sum_{n=0}^{\infty} \frac{1}{(2n+1)!} \left( -i \frac{\Omega t}{\hbar} \right)^{2n+1} \right] \frac{\hat{H}}{\Omega}
+\end{aligned}
+]</p>
+<p>where we define the <strong>generalized Rabi frequency</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\Omega = \sqrt{V_{\text{re}}^2 + \Delta^2}
+\]</div>
+<p>Recognizing the Taylor series of cosine and sine:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\cos\left( \frac{\Omega t}{\hbar} \right) &amp;= \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} \left( \frac{\Omega t}{\hbar} \right)^{2n} \\
+\sin\left( \frac{\Omega t}{\hbar} \right) &amp;= \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} \left( \frac{\Omega t}{\hbar} \right)^{2n+1}
+\end{aligned}
+\end{split}\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}(t) = \cos\left( \frac{\Omega t}{\hbar} \right) I - i \sin\left( \frac{\Omega t}{\hbar} \right) \frac{\hat{H}}{\Omega}
+\]</div>
+<p>In its final form the propagator becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}(t) =
+\cos\left( \frac{\Omega t}{\hbar} \right) I
+- i \frac{V_{\text{re}} \sigma_x + \Delta \sigma_z}{\Omega} \sin\left( \frac{\Omega t}{\hbar} \right)
+\]</div>
+<p>written explicitly as a matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{U}(t) =
+\begin{pmatrix}
+\cos\left( \frac{\Omega t}{\hbar} \right) - i \frac{\Delta}{\Omega} \sin\left( \frac{\Omega t}{\hbar} \right)
+&amp;
+-i \frac{V_{\text{re}}}{\Omega} \sin\left( \frac{\Omega t}{\hbar} \right) \\
+-i \frac{V_{\text{re}}}{\Omega} \sin\left( \frac{\Omega t}{\hbar} \right)
+&amp;
+\cos\left( \frac{\Omega t}{\hbar} \right) + i \frac{\Delta}{\Omega} \sin\left( \frac{\Omega t}{\hbar} \right)
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="id1">
+<h1>🔹 Population Dynamics<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>We again study the dynamics assuming that the system starts in the  ground state <span class="math notranslate nohighlight">\(|\psi(0)\rangle = |g\rangle\)</span> at the initial time <span class="math notranslate nohighlight">\(t=0\)</span>:
+The ground state population as the system evolves can be calculated by applying the time-evolution operator and calculating the absolute square of the population which leads to:</p>
+<div class="math notranslate nohighlight">
+\[
+P_g(t) = \cos^2\left( \frac{\Omega t}{\hbar} \right) + \left( \frac{\Delta}{\Omega} \right)^2 \sin^2\left( \frac{\Omega t}{\hbar} \right)
+\]</div>
+<p>For the excited state we get:</p>
+<div class="math notranslate nohighlight">
+\[
+P_e(t) = \left( \frac{V_{\text{re}}}{\Omega} \right)^2 \sin^2\left( \frac{\Omega t}{\hbar} \right)
+\]</div>
+<p>As it should be the total population is normalized <span class="math notranslate nohighlight">\(P_g(t) + P_e(t) = 1\)</span>.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Physical constants</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Use natural units: hbar = 1</span>
+<span class="n">V_re</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Coupling strength</span>
+
+<span class="c1"># Detuning values</span>
+<span class="n">deltas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">V_re</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">V_re</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$\Delta = 0$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\Delta = 0.5 V_{\mathrm</span><span class="si">{re}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\Delta = V_{\mathrm</span><span class="si">{re}</span><span class="s1">}$&#39;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">]</span>
+
+<span class="c1"># Time grid</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Plot setup</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">delta</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">deltas</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+    <span class="n">Omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V_re</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">delta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Generalized Rabi frequency</span>
+    <span class="n">P_e</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_re</span> <span class="o">/</span> <span class="n">Omega</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">/</span> <span class="n">hbar</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># Excited state population</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">P_e</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Plot formatting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Detuned Rabi Oscillations&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time $t$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Excited State Population $P_e(t)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/891dcce6b82d82a176ddae53ff77b3528b5a1c7eb180eb2f1999a63c93267a79.png" src="_images/891dcce6b82d82a176ddae53ff77b3528b5a1c7eb180eb2f1999a63c93267a79.png" />
+</div>
+</div>
+<section id="the-simulation-leads-to-the-following-physical-insight-about-the-dynamics-in-the-non-resonant-case">
+<h2>🧠 The simulation leads to the following physical insight about the dynamics in the non-resonant case:<a class="headerlink" href="#the-simulation-leads-to-the-following-physical-insight-about-the-dynamics-in-the-non-resonant-case" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Detuning <span class="math notranslate nohighlight">\(\Delta \neq 0\)</span> increases the effective oscillation frequency to <span class="math notranslate nohighlight">\(\Omega\)</span>.</p></li>
+<li><p>The maximum population transfer is reduced to <span class="math notranslate nohighlight">\(\left( \frac{V_{\text{re}}}{\Omega} \right)^2\)</span>.</p></li>
+<li><p>In the limit <span class="math notranslate nohighlight">\(\Delta \to 0\)</span>, we recover full Rabi oscillations with full transfer between states.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Physical constants</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Natural units</span>
+<span class="n">V_re</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Coupling strength</span>
+
+<span class="c1"># Detuning range</span>
+<span class="n">Delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">V_re</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">V_re</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>  <span class="c1"># From 0 to 3 * V_re</span>
+
+<span class="c1"># Maximum excited state population</span>
+<span class="n">P_e_max</span> <span class="o">=</span> <span class="n">V_re</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">V_re</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Delta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Delta</span><span class="p">,</span> <span class="n">P_e_max</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Maximum Excited State Population vs Detuning&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Detuning $\Delta$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Maximum Population $P_e^{\mathrm</span><span class="si">{max}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/87fde24b8d9e01882f4f0dfdebe89ccc9d8a8849c5878ddd21a26ef3649765dc.png" src="_images/87fde24b8d9e01882f4f0dfdebe89ccc9d8a8849c5878ddd21a26ef3649765dc.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="spectral-shape-of-the-maximum-excited-state-population">
+<h1>🔸 Spectral Shape of the Maximum Excited State Population<a class="headerlink" href="#spectral-shape-of-the-maximum-excited-state-population" title="Link to this heading">#</a></h1>
+<p>In the previous plot, we observed how the <strong>maximum population transfer</strong> to the excited state <span class="math notranslate nohighlight">\(|e\rangle\)</span> depends on the <strong>detuning</strong> <span class="math notranslate nohighlight">\(\Delta\)</span>.</p>
+<p>The functional form is:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{e, \mathrm{max}}(\Delta) = \frac{V_{\mathrm{re}}^2}{V_{\mathrm{re}}^2 + \Delta^2}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_{\mathrm{re}}\)</span> is the coupling strength and <span class="math notranslate nohighlight">\(\Delta\)</span> is the energy difference between the two levels (detuning). This function is in physics known as the  <strong>Lorentzian function</strong> centered at <span class="math notranslate nohighlight">\(\Delta = 0\)</span>, with <strong>full width at half maximum (FWHM)</strong> equal to <span class="math notranslate nohighlight">\(2 V_{\mathrm{re}}\)</span>. Physically, the spectral response is sharp if <span class="math notranslate nohighlight">\(V_{\mathrm{re}}\)</span> is small (narrow peak) and broad if <span class="math notranslate nohighlight">\(V_{\mathrm{re}}\)</span> is large.</p>
+<p>The <strong>Lorentzian spectral profile</strong> is typical for the <strong>resonance behavior</strong> of a two-level quantum system in quantum mechanics (and also for a driven and damped harmonic oscillator in classical mechanics):</p>
+<ul class="simple">
+<li><p>At exact resonance (<span class="math notranslate nohighlight">\(\Delta = 0\)</span>), the transition probability is maximal (<span class="math notranslate nohighlight">\(P_e^{\mathrm{max}} = 1\)</span>).</p></li>
+<li><p>Away from resonance, the probability <strong>decreases rapidly to zero</strong>.</p></li>
+<li><p>The coupling strength <span class="math notranslate nohighlight">\(V_{\mathrm{re}}\)</span> determines the “width” of the resonance.</p></li>
+</ul>
+<p>This behavior is encountered in <strong>spectroscopy</strong>, <strong>quantum optics</strong>, and <strong>magnetic resonance</strong> phenomena, where transition probabilities depend sensitively on detuning.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_dynamics_2026",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hamiltonian_dynamics_crash_course.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crash Course: Hamiltonian Dynamics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="rotating_wave.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🔸 Two level system driven by a harmonic field</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basis-states-and-time-dependent-wavefunction">🔹 Basis States and Time-Dependent Wavefunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-with-constant-coupling">🔹 1. Hamiltonian with Constant Coupling</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#two-level-system-dynamics-via-analytic-and-symbolic-methods">🔸 Two-Level System: Dynamics via Analytic and Symbolic Methods</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#special-case-rabi-oscillations-resonant-coupling">🔹 Special Case: Rabi Oscillations (Resonant Coupling)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-derivation-of-the-propagator">🔹 1. Analytic Derivation of the Propagator</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolic-derivation-using-sympy-for-those-who-like-symbolic-computations">🔹 2. Symbolic Derivation Using SymPy for those who like symbolic computations…</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dynamics">🔹 Population Dynamics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pulse-and-the-quantum-not-gate">🔸 π/2 Pulse and the Quantum NOT Gate</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-under-a-2-pulse">🔹 Dynamics under a π/2 Pulse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-the-quantum-not-gate">🔹 Connection to the Quantum NOT Gate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-realizations">🔹 Physical Realizations</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#two-level-system-non-resonant-coupling-detuned-case">🔸 Two-Level System: Non-Resonant Coupling (Detuned Case)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian-with-detuning">🔹 Hamiltonian with Detuning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-derivation-of-the-time-evolution-operator">🔹 Algebraic Derivation of the Time Evolution Operator</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-series-summation">🔹 Taylor Series Summation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">🔹 Population Dynamics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simulation-leads-to-the-following-physical-insight-about-the-dynamics-in-the-non-resonant-case">🧠 The simulation leads to the following physical insight about the dynamics in the non-resonant case:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-shape-of-the-maximum-excited-state-population">🔸 Spectral Shape of the Maximum Excited State Population</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1178 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🔸 Formalism of Quantum Mechanics: Hilbert Spaces &#8212; Quantum Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'formalism_hilbert_spaces';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="🔸 Linear maps, operators and functionals" href="formalism_linear_operators.html" />
+    <link rel="prev" title="🔸 Crash course in Classical Mechanics" href="classical_mechanics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantum Dynamics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantum Dynamics – SS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classical_mechanics.html">🔸 Crash course in Classical Mechanics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_linear_operators.html">🔸 Linear maps, operators and functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_unitary_time_evolution.html">🔸 Formalism of Quantum Mechanics: Unitary time evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hamiltonian_dynamics_crash_course.html">Crash Course: Hamiltonian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubit_dynamics.html">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="rotating_wave.html">🔸 Two level system driven by a harmonic field</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="heisenberg_picture.html">🔹 Observables in Quantum Mechanics</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="history_heisenberg.html">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="interaction_picture.html">🔸 Interaction Picture of Quantum Mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="position_momentum_representation.html">🔸 Position and Momentum Representation</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="particle_linear_potential.html">🔸 Particle in a Linear Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stationary_phase_method.html">Stationary Phase Method applied to Airy function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="path_integrals.html">Path integral representation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_dynamics_2026/main?urlpath=lab/tree/./formalism_hilbert_spaces.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/edit/main/./formalism_hilbert_spaces.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/issues/new?title=Issue%20on%20page%20%2Fformalism_hilbert_spaces.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/formalism_hilbert_spaces.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🔸 Formalism of Quantum Mechanics: Hilbert Spaces</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-states">Classical states</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-classical-phase-space-for-one-particle-in-1d">🖼️ Illustration: Classical Phase Space for One Particle in 1D</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-states">Quantum States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-quantum-dynamics">🔁 Linearity of Quantum Dynamics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-foundations-from-vector-spaces-to-hilbert-spaces">📘 Mathematical Foundations: From Vector Spaces to Hilbert Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-vector-space">🔹  Definition: Vector Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-for-the-inner-product">🔹 Motivation for the Inner Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-inner-product">🔹 Definition: Inner Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-norm">🔹 Definition: Norm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-induced-by-inner-product">🔹 Norm Induced by Inner Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-cauchyschwarzbunyakowsky-inequality">🔸 Theorem: Cauchy–Schwarz–Bunyakowsky Inequality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">🔹 Proof</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-interpretation">🧠 Physical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-the-inner-product-induces-a-norm">🔸 Theorem: The Inner Product Induces a Norm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">🔹 Proof</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-definiteness">(1) Positive-definiteness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity">(2) Homogeneity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle-inequality">(3) Triangle inequality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corollary-inner-product-spaces-are-normed-spaces">🔸 Corollary: Inner Product Spaces Are Normed Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-hilbert-space">🔸 Definition: Hilbert Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-significance">🧠 Physical Significance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-structure">🔍 Summary of Structure</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="formalism-of-quantum-mechanics-hilbert-spaces">
+<h1>🔸 Formalism of Quantum Mechanics: Hilbert Spaces<a class="headerlink" href="#formalism-of-quantum-mechanics-hilbert-spaces" title="Link to this heading">#</a></h1>
+<p>We begin by reviewing the formalism of quantum mechanics which is assumed to be known from previous courses. Althought most of the material should be known to everybody we will reformulate the theory in a more general and somewhat more abstract mathematical framework.</p>
+<p>We begin by introducing the space of quantum states and discuss the fundamental difference in the mathematical descriptio  of physical states in classical and in quantum mechanics.</p>
+<section id="classical-states">
+<h2>Classical states<a class="headerlink" href="#classical-states" title="Link to this heading">#</a></h2>
+<p>In classical physics, the state of a system such as a point particle is fully specified by its position and momentum. Mathematically, the state is just a point in a phase space. For a single classical point particle moving in three-dimensional space, the state is given by three position coordinates and three momentum components. Hence, the phase space of such a system is simply the set <span class="math notranslate nohighlight">\(\mathbb{R}^6\)</span>.</p>
+<p>More generally, for a system of <span class="math notranslate nohighlight">\(N\)</span> classical point particles, each with three position and three momentum degrees of freedom, the full classical state space (phase space) is <span class="math notranslate nohighlight">\(\mathbb{R}^{6N}\)</span>. Each point in this <span class="math notranslate nohighlight">\(6N\)</span>-dimensional space corresponds to a complete specification of the instantaneous state of the system.</p>
+<p>The term “set” in this context refers to the collection of all possible such states. For those familiar with classical mechanics, the classical phase space is in fact a manifold equipped with a natural symplectic structure of the Hamiltonian mechanics, which allows the formulation of equations of motion in terms of so-called Poisson brackets.</p>
+<section id="illustration-classical-phase-space-for-one-particle-in-1d">
+<h3>🖼️ Illustration: Classical Phase Space for One Particle in 1D<a class="headerlink" href="#illustration-classical-phase-space-for-one-particle-in-1d" title="Link to this heading">#</a></h3>
+<p>For a single particle moving in one dimension, the state is given by its position <span class="math notranslate nohighlight">\(q\)</span> and momentum <span class="math notranslate nohighlight">\(p\)</span>). The phase space is <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, and a point in this plane represents the complete classical state of the system.</p>
+<p><img alt="Classical Phase Space" src="_images/classical_phase_space.svg" /></p>
+</section>
+</section>
+<section id="quantum-states">
+<h2>Quantum States<a class="headerlink" href="#quantum-states" title="Link to this heading">#</a></h2>
+<p>In quantum mechanics, the situation is <strong>fundamentally different</strong> from classical physics.</p>
+<p>Experiments such as the <strong>double-slit experiment</strong> and the <strong>Stern–Gerlach experiment</strong> demonstrate that quantum systems can exist in <strong>superpositions</strong> of states. That is, if a system can be in state <span class="math notranslate nohighlight">\(\psi_1\)</span> and also in state <span class="math notranslate nohighlight">\( \psi_2 \)</span>, then any <strong>linear combination</strong> of these two states is also a <strong>physically realizable state</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi = a\psi_1 + b\psi_2, \quad \text{with} \quad a, b \in \mathbb{C}.
+\]</div>
+<blockquote>
+<div><p>This principle of <strong>superposition</strong> has no classical counterpart.<br />
+In classical mechanics, adding two points in phase space yields a new point mathematically but it does <strong>not</strong> represent a physically meaningful state.</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="linearity-of-quantum-dynamics">
+<h3>🔁 Linearity of Quantum Dynamics<a class="headerlink" href="#linearity-of-quantum-dynamics" title="Link to this heading">#</a></h3>
+<p>The <strong>time-dependent Schrödinger equation</strong>, which governs the evolution of quantum states, is <strong>linear</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+i\hbar \frac{\partial}{\partial t} \psi(\mathbf{r},t) = \hat{H} \psi(\mathbf{r},t)
+\]</div>
+<p>This means:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\( \psi_1(t)\)</span> and <span class="math notranslate nohighlight">\(\psi_2(t)\)</span> are solutions, then so is any combination:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\Psi(t) = a\psi_1(t) + b\psi_2(t)
+\]</div>
+<ul class="simple">
+<li><p>This property is a cornerstone of quantum theory and leads to many <strong>counterintuitive</strong> phenomena, such as interference, tunneling, and entanglement.</p></li>
+</ul>
+<p>In the following, we introduce a precise mathematical framework of quantum mechanics that formalizes the above observations. The formalism is based on a mathematical structure named <strong>vector space</strong>. Vector spaces are quantum-mechanical counterpart of the classical phase space. Intuitively, since we ourselves are creatures living in 3D space we have much better picture of a classical phase space in our minds (even if for a single particle it is a six-dimensional space!). In this context, the vector spaces are for us much more abstract and less intuitive. After all we do not around ourselves cat’s that are simultaneously dead and alive.
+Nevertheless, we need to learn how to deal with such abstract structures in order to make predictions about real quantum systems.</p>
+<p>We now formally state an axiom defining what a state space for quantum systems.</p>
+<p><strong>Axiom I (Quantum State Space):</strong><br><br>
+The state of a quantum system is represented by a unit vector in a complex Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.<br />
+Each physical (pure) state corresponds to a <em>ray</em> in <span class="math notranslate nohighlight">\( \mathcal{H}\)</span>, i.e., a one-dimensional subspace spanned by a unit vector <span class="math notranslate nohighlight">\( |\psi\rangle \in \mathcal{H} \)</span>.</p>
+<p>This implies that two state vectors differing only by a global phase factor represent the same physical state. That is, <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> and <span class="math notranslate nohighlight">\(e^{i\theta}|\psi\rangle\)</span>, with <span class="math notranslate nohighlight">\(\theta \in \mathbb{R}\)</span>, correspond to the same state.</p>
+</section>
+</section>
+<section id="mathematical-foundations-from-vector-spaces-to-hilbert-spaces">
+<h2>📘 Mathematical Foundations: From Vector Spaces to Hilbert Spaces<a class="headerlink" href="#mathematical-foundations-from-vector-spaces-to-hilbert-spaces" title="Link to this heading">#</a></h2>
+<p>In order to understand the state axiom we review the mathematical foundation of  of <strong>Hilbert spaces</strong>. In a nutshell, Hilbert spaces are specially structured vector spaces equipped with inner products and some additional properties related to convergence of infinite series of vectors. We start with the definition of a vector space:</p>
+</section>
+<hr class="docutils" />
+<section id="definition-vector-space">
+<h2>🔹  Definition: Vector Space<a class="headerlink" href="#definition-vector-space" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> be a field (in quantum mechanics, typically <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>). A <strong>vector space</strong> over <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> is a <strong>set</strong> <span class="math notranslate nohighlight">\(V\)</span> together with:</p>
+<ul class="simple">
+<li><p>A <strong>binary operation</strong> called <strong>vector addition</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
++ : V \times V \rightarrow V,\quad (|\psi\rangle, |\phi\rangle) \mapsto |\psi\rangle + |\phi\rangle
+\]</div>
+<ul class="simple">
+<li><p>A <strong>scalar multiplication operation</strong>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\cdot : \mathbb{F} \times V \rightarrow V,\quad (a, |\psi\rangle) \mapsto a|\psi\rangle
+\]</div>
+<p>such that the following <strong>axioms</strong> hold for all <span class="math notranslate nohighlight">\(|\psi\rangle, |\phi\rangle, |\chi\rangle \in V\)</span> and <span class="math notranslate nohighlight">\(a, b \in \mathbb{F}\)</span>:</p>
+<ol class="arabic simple">
+<li><p><strong>Commutativity of addition</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   |\psi\rangle + |\phi\rangle = |\phi\rangle + |\psi\rangle
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Associativity of addition</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   (|\psi\rangle + |\phi\rangle) + |\chi\rangle = |\psi\rangle + (|\phi\rangle + |\chi\rangle)
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Existence of zero vector</strong>: There exists a vector <span class="math notranslate nohighlight">\(|0\rangle \in V\)</span> such that</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   |\psi\rangle + |0\rangle = |\psi\rangle
+\]</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Existence of additive inverse</strong>: For each <span class="math notranslate nohighlight">\(|\psi\rangle \in V\)</span>, there exists a vector <span class="math notranslate nohighlight">\(-|\psi\rangle\)</span> such that</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   |\psi\rangle + (-|\psi\rangle) = |0\rangle
+\]</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Compatibility with scalar multiplication</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   a(b|\psi\rangle) = (ab)|\psi\rangle
+\]</div>
+<ol class="arabic simple" start="6">
+<li><p><strong>Multiplicative identity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   1 \cdot |\psi\rangle = |\psi\rangle
+\]</div>
+<ol class="arabic simple" start="7">
+<li><p><strong>Distributivity over vector addition</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   a(|\psi\rangle + |\phi\rangle) = a|\psi\rangle + a|\phi\rangle
+\]</div>
+<ol class="arabic simple" start="8">
+<li><p><strong>Distributivity over scalar addition</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   (a + b)|\psi\rangle = a|\psi\rangle + b|\psi\rangle
+\]</div>
+</section>
+<section id="motivation-for-the-inner-product">
+<h2>🔹 Motivation for the Inner Product<a class="headerlink" href="#motivation-for-the-inner-product" title="Link to this heading">#</a></h2>
+<p>By associating vector spaces to quantum states we still do not have any access to something that is measurable. Yes, we can combine states to get new states but how do we actually charaterize the state. In experiments, we characterize states by associating the numbers that represent the outcome of a measurement. So we need a mathematical structure to associate some numbers to the states of quantum systems!</p>
+<p>In elementary quantum mechanics, we learned that the product of a wavefunction with its complex conjugate, <span class="math notranslate nohighlight">\(\psi^*(x)\psi(x)\)</span>, corresponds physically to a <strong>probability density</strong> for the position of a particle. This is the contect of the so called Born rule for calculating quantum probabilities.</p>
+<p>Now, the definition of a vector space (as given above) allows us to <strong>add vectors</strong> (states) and to <strong>scale them</strong> by complex numbers. However, this structure does <strong>not yet</strong> permit us to compute any kind of <strong>products of vectors</strong> and associate numbers to them. Thus we need to define some kind of product for quantum states in order to evaluate the quantities of interest, such as:</p>
+<ul class="simple">
+<li><p><strong>Probability amplitudes</strong>: <span class="math notranslate nohighlight">\(\langle \phi | \psi \rangle\)</span></p></li>
+<li><p><strong>Expectation values of observables</strong></p></li>
+<li><p><strong>Transition probabilities between quantum states</strong></p></li>
+</ul>
+<p>These operations require an additional structure: a way to <strong>pair vectors</strong> and obtain a <strong>scalar</strong> (a complex number) out of such a pair.
+This motivates the introduction of the <strong>inner product</strong> sometimes also called <strong>scalar product</strong>.</p>
+</section>
+<section id="definition-inner-product">
+<h2>🔹 Definition: Inner Product<a class="headerlink" href="#definition-inner-product" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a complex vector space. An <strong>inner product</strong> on <span class="math notranslate nohighlight">\(V\)</span> is a function</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \cdot | \cdot \rangle : V \times V \to \mathbb{C}
+\]</div>
+<p>that assigns to each pair of vectors <span class="math notranslate nohighlight">\((|\phi\rangle, |\psi\rangle)\)</span> a complex number <span class="math notranslate nohighlight">\(\langle \phi | \psi \rangle\)</span>, and satisfies the following axioms for all <span class="math notranslate nohighlight">\(|\phi\rangle, |\psi\rangle, |\chi\rangle \in V\)</span> and all scalars <span class="math notranslate nohighlight">\(a \in \mathbb{C}\)</span>:</p>
+<ol class="arabic simple">
+<li><p><strong>Hermiticity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   \langle \phi | \psi \rangle = {\langle \psi | \phi \rangle^*}
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Linearity in the second argument</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   \langle \phi | \psi + \chi \rangle = \langle \phi | \psi \rangle + \langle \phi | \chi \rangle
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Homogeneity in the second argument</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   \langle \phi | a \psi \rangle = a \langle \phi | \psi \rangle
+\]</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Positive-definiteness</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+   \langle \psi | \psi \rangle \geq 0, \quad \text{and} \quad \langle \psi | \psi \rangle = 0 \iff |\psi\rangle = |0\rangle
+\]</div>
+<blockquote>
+<div><p>📝 <em>Note:</em> In mathematics, linearity is often taken in the <strong>first</strong> argument. In physics, however, it is conventional to define linearity in the <strong>second</strong> argument, as above.</p>
+</div></blockquote>
+<p>A vector space equiped with a scalar produc ist in mathematics called <strong>unitary space</strong>. If we refer back to our first axiom we see that states correspond to unit vectors (vector of length 1!). So we need to define what a lenght (or <strong>norm</strong>) of a vector is. The following section provides a formal definition of the norm on vector spaces.</p>
+</section>
+<section id="definition-norm">
+<h2>🔹 Definition: Norm<a class="headerlink" href="#definition-norm" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a vector space over the field <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> (typically <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> in quantum mechanics). A <strong>norm</strong> on <span class="math notranslate nohighlight">\(V\)</span> is a function</p>
+<div class="math notranslate nohighlight">
+\[
+\| \cdot \| : V \to \mathbb{R}_{\geq 0}, \quad |\psi\rangle \mapsto \| |\psi\rangle \|
+\]</div>
+<p>that assigns to each vector a non-negative real number — interpreted as the <strong>length</strong> of the vector — and satisfies the following axioms for all <span class="math notranslate nohighlight">\(|\psi\rangle, |\phi\rangle \in V\)</span> and all scalars <span class="math notranslate nohighlight">\(a \in \mathbb{F}\)</span>:</p>
+<ol class="arabic simple">
+<li><p><strong>Positive-definiteness</strong>:
+$<span class="math notranslate nohighlight">\(
+\| |\psi\rangle \| \geq 0, \quad \text{and} \quad \| |\psi\rangle \| = 0 \iff |\psi\rangle = |0\rangle
+\)</span>$</p></li>
+<li><p><strong>Homogeneity (absolute scalability)</strong>:
+$<span class="math notranslate nohighlight">\(
+\| a |\psi\rangle \| = |a| \cdot \| |\psi\rangle \|
+\)</span>$</p></li>
+<li><p><strong>Triangle inequality</strong>:
+$<span class="math notranslate nohighlight">\(
+\| |\psi\rangle + |\phi\rangle \| \leq \| |\psi\rangle \| + \| |\phi\rangle \|
+\)</span>$</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="norm-induced-by-inner-product">
+<h2>🔹 Norm Induced by Inner Product<a class="headerlink" href="#norm-induced-by-inner-product" title="Link to this heading">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(V\)</span> is equipped with an inner product <span class="math notranslate nohighlight">\(\langle \cdot | \cdot \rangle\)</span>, the norm is naturally <strong>induced</strong> by that same inner product:</p>
+<div class="math notranslate nohighlight">
+\[
+\| |\psi\rangle \| := \sqrt{\langle \psi | \psi \rangle}
+\]</div>
+<p>The vector space equipped with an inner product is usually called <strong>unitary space</strong> and a vector space equipped with a norm is called <strong>normed space</strong>. We will now prove that any unitary space is automatically a normed space.</p>
+<p>In order to prove that the scalar product induces the norm we now present our first theorem. The theorem introduces a famous inequality called Cauchy-Schwarz-Bunyakowsky inequality that plays a fundamental role both in mathematics as well as in many phyical applications.</p>
+</section>
+<section id="theorem-cauchyschwarzbunyakowsky-inequality">
+<h2>🔸 Theorem: Cauchy–Schwarz–Bunyakowsky Inequality<a class="headerlink" href="#theorem-cauchyschwarzbunyakowsky-inequality" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> and <span class="math notranslate nohighlight">\(|\phi\rangle\)</span> be vectors in a complex inner product space (e.g. a Hilbert space). Then:</p>
+<div class="math notranslate nohighlight">
+\[
+|\langle \phi | \psi \rangle|^2 \leq \langle \psi | \psi \rangle \cdot \langle \phi | \phi \rangle
+\]</div>
+<p>Equivalently, using the norm induced by the inner product:</p>
+<div class="math notranslate nohighlight">
+\[
+|\langle \phi | \psi \rangle| \leq \| |\psi\rangle \| \cdot \| |\phi\rangle \|
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="proof">
+<h2>🔹 Proof<a class="headerlink" href="#proof" title="Link to this heading">#</a></h2>
+<p>We define a (complex-valued) function of an scalar parameter <span class="math notranslate nohighlight">\(\lambda \in \mathbb{C}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(\lambda) = \langle \psi + \lambda \phi | \psi + \lambda \phi \rangle
+\]</div>
+<p>By the defining properties of the inner product this is certainly non-negative for all <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+f(\lambda)  \geq 0 \quad \text{for all } \lambda \in \mathbb{C}
+\]</div>
+<p>We now expand <span class="math notranslate nohighlight">\(f(\lambda)\)</span> using the properties of the inner product:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+f(\lambda) &amp;= \langle \psi | \psi \rangle + \lambda \langle \phi | \psi \rangle +{\lambda}^* \langle \psi | \phi \rangle + |\lambda|^2 \langle \phi | \phi \rangle \\
+&amp;= \langle \psi | \psi \rangle + 2 \operatorname{Re} \left( \lambda \langle \phi | \psi \rangle \right) + |\lambda|^2 \langle \phi | \phi \rangle
+\end{aligned}
+\end{split}\]</div>
+<p>To <strong>minimize</strong> this non-negative function, we choose for <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = -\frac{\langle \phi | \psi \rangle}{\langle \phi | \phi \rangle}
+\]</div>
+<p>Substituting this into <span class="math notranslate nohighlight">\(f(\lambda)\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+f(\lambda) &amp;= \langle \psi | \psi \rangle 
+- \frac{|\langle \phi | \psi \rangle|^2}{\langle \phi | \phi \rangle} 
+- \frac{|\langle \phi | \psi \rangle|^2}{\langle \phi | \phi \rangle} 
++ \frac{|\langle \phi | \psi \rangle|^2}{\langle \phi | \phi \rangle} \\
+&amp;= \langle \psi | \psi \rangle - \frac{|\langle \phi | \psi \rangle|^2}{\langle \phi | \phi \rangle}
+\end{aligned}
+\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(f(\lambda) \geq 0\)</span> for all <span class="math notranslate nohighlight">\(\lambda\)</span>, in particular it must be non-negative at this minimizing value of <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi | \psi \rangle - \frac{|\langle \phi | \psi \rangle|^2}{\langle \phi | \phi \rangle} \geq 0
+\]</div>
+<p>Rearranging gives the desired inequality:</p>
+<div class="math notranslate nohighlight">
+\[
+|\langle \phi | \psi \rangle|^2 \leq \langle \psi | \psi \rangle \cdot \langle \phi | \phi \rangle
+\]</div>
+<p>This completes the proof.</p>
+</section>
+<hr class="docutils" />
+<section id="physical-interpretation">
+<h2>🧠 Physical Interpretation<a class="headerlink" href="#physical-interpretation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The inequality expresses the fact that the <strong>overlap</strong> between two quantum states cannot exceed the product of their norms.</p></li>
+<li><p>Equality holds <strong>if and only if</strong> the vectors are <strong>linearly dependent</strong>:
+$<span class="math notranslate nohighlight">\(
+|\psi\rangle = \alpha |\phi\rangle \quad \text{for some } \alpha \in \mathbb{C}
+\)</span>$</p></li>
+<li><p>In this case, the vector <span class="math notranslate nohighlight">\(|\psi\rangle + \lambda |\phi\rangle\)</span> becomes zero for a suitable <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Now that we are equipped with the CSB inequality, we can prove that the scalar product indeed induces a norm!</p>
+</section>
+<section id="theorem-the-inner-product-induces-a-norm">
+<h2>🔸 Theorem: The Inner Product Induces a Norm<a class="headerlink" href="#theorem-the-inner-product-induces-a-norm" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a complex inner product space equipped with an inner product <span class="math notranslate nohighlight">\(\langle \cdot | \cdot \rangle\)</span>. Define, for all <span class="math notranslate nohighlight">\(|\psi\rangle \in V\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\| |\psi\rangle \| := \sqrt{ \langle \psi | \psi \rangle }
+\]</div>
+<p>Then this function <span class="math notranslate nohighlight">\(\| \cdot \| : V \to \mathbb{R}_{\geq 0}\)</span> defines a <strong>norm</strong> on <span class="math notranslate nohighlight">\(V\)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2>🔹 Proof<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>We must verify the three axioms of a norm:</p>
+<hr class="docutils" />
+<section id="positive-definiteness">
+<h3>(1) Positive-definiteness<a class="headerlink" href="#positive-definiteness" title="Link to this heading">#</a></h3>
+<p>We show that:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\| |\psi\rangle \| \geq 0\)</span> for all <span class="math notranslate nohighlight">\(|\psi\rangle \in V\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\| |\psi\rangle \| = 0\)</span> if and only if <span class="math notranslate nohighlight">\(|\psi\rangle = |0\rangle\)</span></p></li>
+</ul>
+<p>Since <span class="math notranslate nohighlight">\(\langle \psi | \psi \rangle\)</span> is a real, non-negative number by the properties of the inner product, its square root exists and is non-negative:</p>
+<div class="math notranslate nohighlight">
+\[
+\| |\psi\rangle \| = \sqrt{ \langle \psi | \psi \rangle } \geq 0
+\]</div>
+<p>Furthermore, <span class="math notranslate nohighlight">\(\langle \psi | \psi \rangle = 0\)</span> <strong>if and only if</strong> <span class="math notranslate nohighlight">\(|\psi\rangle = |0\rangle\)</span> by the <strong>positive-definiteness</strong> of the inner product.</p>
+<p>✅ This proves positive-definiteness.</p>
+</section>
+<hr class="docutils" />
+<section id="homogeneity">
+<h3>(2) Homogeneity<a class="headerlink" href="#homogeneity" title="Link to this heading">#</a></h3>
+<p>We need to show that for all <span class="math notranslate nohighlight">\(a \in \mathbb{C}\)</span> and all <span class="math notranslate nohighlight">\(|\psi\rangle \in V\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\| a |\psi\rangle \| = |a| \cdot \| |\psi\rangle \|
+\]</div>
+<p>Compute:</p>
+<p>[
+\begin{aligned}
+| a|\psi\rangle | &amp;= \sqrt{ \langle a\psi | a\psi \rangle } \
+&amp;= \sqrt{ a^* a \langle \psi | \psi \rangle } \
+&amp;= \sqrt{ |a|^2 \cdot \langle \psi | \psi \rangle } \
+&amp;= |a| \cdot \sqrt{ \langle \psi | \psi \rangle } = |a| \cdot | |\psi\rangle |
+\end{aligned}
+]</p>
+<p>✅ Homogeneity is satisfied.</p>
+</section>
+<hr class="docutils" />
+<section id="triangle-inequality">
+<h3>(3) Triangle inequality<a class="headerlink" href="#triangle-inequality" title="Link to this heading">#</a></h3>
+<p>Finally, we need to show that for all <span class="math notranslate nohighlight">\(|\psi\rangle, |\phi\rangle \in V\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\| |\psi\rangle + |\phi\rangle \| \leq \| |\psi\rangle \| + \| |\phi\rangle \|
+\]</div>
+<p>This is the point where we use the CSB inequality.</p>
+<p>We expand the squared norm:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\| |\psi\rangle + |\phi\rangle \|^2 
+&amp;= \langle \psi + \phi | \psi + \phi \rangle \\
+&amp;= \langle \psi | \psi \rangle + \langle \psi | \phi \rangle + \langle \phi | \psi \rangle + \langle \phi | \phi \rangle \\
+&amp;= \| |\psi\rangle \|^2 + \| |\phi\rangle \|^2 + 2 \operatorname{Re} \langle \psi | \phi \rangle
+\end{aligned}
+\end{split}\]</div>
+<p>Using the property of complex numbers that:</p>
+<div class="math notranslate nohighlight">
+\[
+2 \operatorname{Re} \langle \psi | \phi \rangle \leq 2 |\langle \psi | \phi \rangle|
+\]</div>
+<p>and applying the <strong>Cauchy–Schwarz inequality</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+|\langle \psi | \phi \rangle| \leq \| |\psi\rangle \| \cdot \| |\phi\rangle \|
+\]</div>
+<p>we obtain:</p>
+<div class="math notranslate nohighlight">
+\[
+\| |\psi\rangle + |\phi\rangle \|^2 
+\leq \| |\psi\rangle \|^2 + \| |\phi\rangle \|^2 + 2 \| |\psi\rangle \| \cdot \| |\phi\rangle \| 
+= \left( \| |\psi\rangle \| + \| |\phi\rangle \| \right)^2
+\]</div>
+<p>Taking square roots:</p>
+<div class="math notranslate nohighlight">
+\[
+\| |\psi\rangle + |\phi\rangle \| \leq \| |\psi\rangle \| + \| |\phi\rangle \|
+\]</div>
+<p>✅ The triangle inequality is verified.</p>
+</section>
+</section>
+<section id="corollary-inner-product-spaces-are-normed-spaces">
+<h2>🔸 Corollary: Inner Product Spaces Are Normed Spaces<a class="headerlink" href="#corollary-inner-product-spaces-are-normed-spaces" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a complex inner product space with inner product <span class="math notranslate nohighlight">\(\langle \cdot | \cdot \rangle\)</span>.</p>
+<p>Then the function</p>
+<div class="math notranslate nohighlight">
+\[
+\| |\psi\rangle \| := \sqrt{ \langle \psi | \psi \rangle }
+\]</div>
+<p>defines a <strong>norm</strong> on <span class="math notranslate nohighlight">\(V\)</span>. Hence, every inner product space is also a <strong>normed vector space</strong>.</p>
+<hr class="docutils" />
+<p>This means we can use all geometric notions associated with normed spaces — such as:</p>
+<ul class="simple">
+<li><p>Lengths of vectors</p></li>
+<li><p>Distance between vectors:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  d(|\psi\rangle, |\phi\rangle) := \| |\psi\rangle - |\phi\rangle \|
+\]</div>
+<ul class="simple">
+<li><p>Limits and Cauchy sequences:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  \text{A sequence } |\psi_n\rangle \text{ is Cauchy if } \forall \varepsilon &gt; 0, \exists N \text{ s.t. } \| |\psi_n\rangle - |\psi_m\rangle \| &lt; \varepsilon \text{ for all } n,m &gt; N
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="definition-hilbert-space">
+<h2>🔸 Definition: Hilbert Space<a class="headerlink" href="#definition-hilbert-space" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a complex inner product space with inner product <span class="math notranslate nohighlight">\(\langle \cdot | \cdot \rangle\)</span> and the norm <span class="math notranslate nohighlight">\(\| \cdot \| induced by the scalar product\)</span>.</p>
+<p>We say that <span class="math notranslate nohighlight">\(V\)</span> is a <strong>Hilbert space</strong> if it is <strong>complete</strong> with respect to this norm i. e.  every <strong>Cauchy sequence</strong> in <span class="math notranslate nohighlight">\(V\)</span> converges to a vector in <span class="math notranslate nohighlight">\(V\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \text{If } \| |\psi_n\rangle - |\psi_m\rangle \| \to 0 \text{ as } n,m \to \infty, \quad \text{then } \exists |\psi\rangle \in V \text{ such that } \| |\psi_n\rangle - |\psi\rangle \| \to 0
+\]</div>
+<hr class="docutils" />
+<section id="physical-significance">
+<h3>🧠 Physical Significance<a class="headerlink" href="#physical-significance" title="Link to this heading">#</a></h3>
+<p>In quantum mechanics:</p>
+<ul class="simple">
+<li><p>The space of physical (pure) states is modeled by a <strong>Hilbert space</strong>.</p></li>
+<li><p>Completeness ensures that infinite linear combinations (e.g. Fourier series or general wave packets that we create by infinite superpositions of states) <strong>converge to physical states</strong>.</p></li>
+</ul>
+<p>Think of a quantum wavefunction built as an infinite sum of basis states (e.g., discrete energy eigenstates of some system such sa harmonic oscillator etc.):</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle = \sum_{n=1}^{\infty} c_n |n\rangle
+\]</div>
+<p>We want this sum to <strong>converge to a state in our space</strong>. Completeness ensures that such sums (Cauchy sequences of partial sums) produce a valid, well-defined quantum state.</p>
+<p>Without completeness, we might build a sequence of better and better approximations — but never actually reach a physical state!</p>
+</section>
+<hr class="docutils" />
+<section id="summary-of-structure">
+<h3>🔍 Summary of Structure<a class="headerlink" href="#summary-of-structure" title="Link to this heading">#</a></h3>
+<p>We now have the following hierarchy:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Structure</p></th>
+<th class="head"><p>Additional Data</p></th>
+<th class="head"><p>Properties Enforced</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Vector space</p></td>
+<td><p>Addition and scalar multiplication</p></td>
+<td><p>Linear algebra rules</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inner product space</p></td>
+<td><p>Inner product $\langle \cdot</p></td>
+<td><p>\cdot \rangle$</p></td>
+</tr>
+<tr class="row-even"><td><p>Normed space</p></td>
+<td><p>Norm $| \cdot | = \sqrt{\langle \cdot</p></td>
+<td><p>\cdot \rangle}$</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hilbert space</strong></p></td>
+<td><p><strong>Completeness</strong></p></td>
+<td><p>Infinite limits are well-defined within space</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_dynamics_2026",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="classical_mechanics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🔸 Crash course in Classical Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="formalism_linear_operators.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🔸 Linear maps, operators and functionals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-states">Classical states</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-classical-phase-space-for-one-particle-in-1d">🖼️ Illustration: Classical Phase Space for One Particle in 1D</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-states">Quantum States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity-of-quantum-dynamics">🔁 Linearity of Quantum Dynamics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-foundations-from-vector-spaces-to-hilbert-spaces">📘 Mathematical Foundations: From Vector Spaces to Hilbert Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-vector-space">🔹  Definition: Vector Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-for-the-inner-product">🔹 Motivation for the Inner Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-inner-product">🔹 Definition: Inner Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-norm">🔹 Definition: Norm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-induced-by-inner-product">🔹 Norm Induced by Inner Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-cauchyschwarzbunyakowsky-inequality">🔸 Theorem: Cauchy–Schwarz–Bunyakowsky Inequality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">🔹 Proof</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-interpretation">🧠 Physical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-the-inner-product-induces-a-norm">🔸 Theorem: The Inner Product Induces a Norm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">🔹 Proof</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-definiteness">(1) Positive-definiteness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity">(2) Homogeneity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangle-inequality">(3) Triangle inequality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corollary-inner-product-spaces-are-normed-spaces">🔸 Corollary: Inner Product Spaces Are Normed Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-hilbert-space">🔸 Definition: Hilbert Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-significance">🧠 Physical Significance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-structure">🔍 Summary of Structure</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

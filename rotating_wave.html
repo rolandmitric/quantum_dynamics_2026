@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🔸 Two level system driven by a harmonic field &#8212; Quantum Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'rotating_wave';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="🔹 Observables in Quantum Mechanics" href="heisenberg_picture.html" />
+    <link rel="prev" title="🔸 Quantum Dynamics of a Two-Level System with Constant Coupling" href="qubit_dynamics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantum Dynamics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantum Dynamics – SS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classical_mechanics.html">🔸 Crash course in Classical Mechanics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="formalism_hilbert_spaces.html">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_linear_operators.html">🔸 Linear maps, operators and functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_unitary_time_evolution.html">🔸 Formalism of Quantum Mechanics: Unitary time evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hamiltonian_dynamics_crash_course.html">Crash Course: Hamiltonian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubit_dynamics.html">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🔸 Two level system driven by a harmonic field</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="heisenberg_picture.html">🔹 Observables in Quantum Mechanics</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="history_heisenberg.html">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="interaction_picture.html">🔸 Interaction Picture of Quantum Mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="position_momentum_representation.html">🔸 Position and Momentum Representation</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="particle_linear_potential.html">🔸 Particle in a Linear Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stationary_phase_method.html">Stationary Phase Method applied to Airy function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="path_integrals.html">Path integral representation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_dynamics_2026/main?urlpath=lab/tree/./rotating_wave.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/edit/main/./rotating_wave.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/issues/new?title=Issue%20on%20page%20%2Frotating_wave.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/rotating_wave.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🔸 Two level system driven by a harmonic field</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 Two level system driven by a harmonic field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks-on-the-justification-of-the-rotating-wave-approximation-rwa">🔸 Remarks on the Justification of the Rotating Wave Approximation (RWA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-argument-riemannlebesgue-lemma">⚬ Mathematical Argument: Riemann–Lebesgue Lemma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-argument-energy-conservation-and-photon-processes">⚬ Physical Argument: Energy Conservation and Photon Processes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-time-evolution-operator-in-the-rwa-approximation">🔸 Derivation of the time-evolution operator in the RWA approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-of-pauli-matrices">Rotation of Pauli matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-to-the-time-dependent-rotation">Apply to the time-dependent rotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-simplified-equation">Final simplified equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-using-time-evolution-operator">Solution Using Time-Evolution Operator</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-multilevel-class-implementation">The <code class="docutils literal notranslate"><span class="pre">MultiLevel</span></code> Class Implementation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-vs-analytical-rwa-propagation-of-a-two-level-system">Numerical vs Analytical (RWA) Propagation of a Two-Level System</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#two-level-system-with-harmonic-coupling-numerical-propagation">Two-Level System with harmonic coupling: Numerical propagation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-between-the-rwa-and-numerical-propagation-for-a-resonant-coupling">Comparison between the RWA and numerical propagation for a resonant coupling</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="two-level-system-driven-by-a-harmonic-field">
+<h1>🔸 Two level system driven by a harmonic field<a class="headerlink" href="#two-level-system-driven-by-a-harmonic-field" title="Link to this heading">#</a></h1>
+<p>We now study the dynamics of a two-level system under a periodic driving potential of the form</p>
+<div class="math notranslate nohighlight">
+\[
+V(t) = V_0 \cdot \cos(\omega t),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is the driving frequency.</p>
+<p>The Hamiltonian reads:</p>
+<div class="math notranslate nohighlight">
+\[
+H = \frac{1}{2} \Delta \sigma_z + V_0 \cos(\omega t) \, \sigma_x.
+\]</div>
+<p>In order to make the problem analytically tractable, we introduce an approximation that is commonly known in the literature as the <strong>rotating wave approximation (RWA)</strong>.</p>
+<p>The idea is as follows:<br />
+By expanding the cosine term,</p>
+<div class="math notranslate nohighlight">
+\[
+\cos(\omega t) = \frac{1}{2} \left(e^{i \omega t} + e^{-i \omega t} \right) = \frac{1}{2} e^{i \omega t} \left(1 + e^{-2 i \omega t} \right),
+\]</div>
+<p>the Hamiltonian can be written (in matrix form) as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(t) = \begin{bmatrix}
+0 &amp; \frac{1}{2} V_0 e^{i \omega t} \left(1 + e^{-2 i \omega t} \right) \\
+\frac{1}{2} V_0 e^{-i \omega t} \left(1 + e^{2 i \omega t} \right) &amp; 0
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Notice that in the second row we have extracted the term <span class="math notranslate nohighlight">\(e^{-i \omega t}\)</span> such that the leading terms are Hermitian conjugates of each other.<br />
+We see that the additional terms (<span class="math notranslate nohighlight">\(e^{-2 i \omega t}\)</span> and <span class="math notranslate nohighlight">\(e^{2 i \omega t}\)</span>) rotate with double the frequency and in the opposite direction compared to the <span class="math notranslate nohighlight">\(e^{\pm i \omega t}\)</span> terms.</p>
+<p>We will show below that these rapidly oscillating terms can be neglected if the driving frequency is close to resonance and the coupling term is not too large. This will be justified by comparison with the numerically exact solution later.</p>
+<p>This is the essence of the <strong>rotating wave approximation</strong>, often used in the literature:</p>
+<div class="math notranslate nohighlight">
+\[
+H = \frac{1}{2} \Delta \sigma_z + V_0 \cos(\omega t) \, \sigma_x
+\quad \Rightarrow \quad
+H_{\text{RWA}} = \frac{1}{2} \Delta \sigma_z + \frac{1}{2} V_0 e^{i \omega t} \sigma_+ + \frac{1}{2} V_0 e^{-i \omega t} \sigma_-.
+\]</div>
+<p>Using the relations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\sigma_+ &amp;= \sigma_x + i \sigma_y, \\
+\sigma_- &amp;= \sigma_x - i \sigma_y,
+\end{aligned}
+\end{split}\]</div>
+<p>we express the Hamiltonian in terms of the raising and lowering operators.</p>
+<section id="remarks-on-the-justification-of-the-rotating-wave-approximation-rwa">
+<h2>🔸 Remarks on the Justification of the Rotating Wave Approximation (RWA)<a class="headerlink" href="#remarks-on-the-justification-of-the-rotating-wave-approximation-rwa" title="Link to this heading">#</a></h2>
+<p>We now provide two further, more or less heuristic, justifications for the rotating wave approximation (RWA). The first is based on a somewhat overstretched application of the <strong>Riemann–Lebesgue lemma</strong> from mathematical analysis.</p>
+<section id="mathematical-argument-riemannlebesgue-lemma">
+<h3>⚬ Mathematical Argument: Riemann–Lebesgue Lemma<a class="headerlink" href="#mathematical-argument-riemannlebesgue-lemma" title="Link to this heading">#</a></h3>
+<p><strong>Lemma (Riemann–Lebesgue):</strong>
+Let <span class="math notranslate nohighlight">\(f : \mathbb{R} \rightarrow \mathbb{C}\)</span> be a function such that <span class="math notranslate nohighlight">\(\int\_{-\infty}^{\infty} |f(t)| , dt &lt; \infty\)</span>. Then, for any fixed $a, b \in \mathbb{R}$, the following holds:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\omega \to \infty} \int_a^b f(t) e^{i \omega t} \, dt = 0.
+\]</div>
+<p>Now, recall that the time evolution operator formally satisfies the differential equation</p>
+<div class="math notranslate nohighlight">
+\[
+i \hbar \frac{dU}{dt} = H(t) U(t),
+\]</div>
+<p>which can be written as an integral equation:</p>
+<div class="math notranslate nohighlight">
+\[
+U(t) = \mathbb{1} + \frac{1}{i \hbar} \int_0^t H(\tau) U(\tau) \, d\tau.
+\]</div>
+<p>In this form, the fast-oscillating terms in the Hamiltonian—such as those proportional to $e^{2i \omega t}$—will lead to integrals of the type:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^t e^{2i \omega \tau} U(\tau) \, d\tau,
+\]</div>
+<p>while slower-oscillating terms (like $e^{i \omega t}$) contribute as:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^t e^{i \omega \tau} U(\tau) \, d\tau.
+\]</div>
+<p>By invoking the Riemann–Lebesgue lemma, we expect that integrals involving rapidly oscillating factors (i.e., higher powers of <span class="math notranslate nohighlight">\(\omega\)</span>) will become small in the limit <span class="math notranslate nohighlight">\(\omega \to \infty\)</span>. Therefore, the RWA is based on the assumption that terms oscillating with <span class="math notranslate nohighlight">\(2\omega\)</span> can be neglected, as if <span class="math notranslate nohighlight">\(2\omega\)</span> were “effectively infinite.”</p>
+</section>
+<section id="physical-argument-energy-conservation-and-photon-processes">
+<h3>⚬ Physical Argument: Energy Conservation and Photon Processes<a class="headerlink" href="#physical-argument-energy-conservation-and-photon-processes" title="Link to this heading">#</a></h3>
+<p>A more physical and intuitive justification comes from analyzing the interaction term in the Hamiltonian. Suppose we couple a two-level system via a time-dependent term of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+V(t) = V_0 \cos(\omega t) \cdot \sigma_x.
+\]</div>
+<p>Using the ladder operators defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_+ = \frac{1}{2}(\sigma_x + i \sigma_y), \quad \sigma_- = \frac{1}{2}(\sigma_x - i \sigma_y),
+\]</div>
+<p>we can rewrite the coupling term:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V(t) &amp;= V_0 \cos(\omega t)(\sigma_+ + \sigma_-) \\
+&amp;= \frac{V_0}{2} \left(e^{i \omega t} + e^{-i \omega t} \right)(\sigma_+ + \sigma_-) \\
+&amp;= \frac{V_0}{2} \left( e^{i \omega t} \sigma_+ + e^{i \omega t} \sigma_- + e^{-i \omega t} \sigma_+ + e^{-i \omega t} \sigma_- \right).
+\end{aligned}
+\end{split}\]</div>
+<p>We can now interpret the exponential terms as follows:</p>
+<ul class="simple">
+<li><p>$e^{i \omega t} \sigma_+$: <strong>Photon absorption</strong> with system <strong>excitation</strong>.</p></li>
+<li><p>$e^{-i \omega t} \sigma_-$: <strong>Photon emission</strong> with system <strong>de-excitation</strong>.</p></li>
+</ul>
+<p>These are the <strong>energy-conserving terms</strong> and are retained in the RWA.</p>
+<p>However, the other two terms:</p>
+<ul class="simple">
+<li><p>$e^{i \omega t} \sigma_-$: System <strong>de-excites</strong> while <strong>absorbing</strong> a photon.</p></li>
+<li><p>$e^{-i \omega t} \sigma_+$: System <strong>excites</strong> while <strong>emitting</strong> a photon.</p></li>
+</ul>
+<p>These describe processes that <strong>violate energy conservation</strong> in the rotating frame and are typically referred to as <strong>non-resonant</strong> or <strong>virtual</strong> terms. Intuitively, we expect these to be negligible because they represent highly off-resonant processes. This provides a physically motivated basis for neglecting them in the RWA.</p>
+<p>Pictorially the processes can be represented by:
+<img src="rwa_figure.pdf" width="600"></p>
+</section>
+</section>
+<section id="derivation-of-the-time-evolution-operator-in-the-rwa-approximation">
+<h2>🔸 Derivation of the time-evolution operator in the RWA approximation<a class="headerlink" href="#derivation-of-the-time-evolution-operator-in-the-rwa-approximation" title="Link to this heading">#</a></h2>
+<p>The Hamiltonian of the system in the RWA approximation limit may be now written in the form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+H_{\text{RWA}} 
+&amp;= \frac{1}{2} \Delta \sigma_z + \frac{1}{2} V_0 e^{i \omega t} (\sigma_x + i \sigma_y) + \frac{1}{2} V_0 e^{-i \omega t} (\sigma_x - i \sigma_y) \\
+&amp;= \frac{1}{2} \Delta \sigma_z + V_0 \cos(\omega t) \, \sigma_x - V_0 \sin(\omega t) \, \sigma_y
+\end{aligned}
+\end{split}\]</div>
+<p>We now proceed to calculate the time-evolution operator in the RWA approximation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dU}{dt} = H_{\text{RWA}} U 
+= \left[ \frac{1}{2} \Delta \sigma_z + V_0 \left( \cos(\omega t) \, \sigma_x - \sin(\omega t) \, \sigma_y \right) \right] U
+\]</div>
+<p>To simplify the solution, we move to a <strong>rotating frame of reference</strong>.<br />
+The intuition behind this is that in the rotating frame the coupling term appears static, reducing the problem to a previously solved case of a constant perturbation.<br />
+Thus, we define:</p>
+<div class="math notranslate nohighlight">
+\[
+U(t) = e^{-\frac{i}{2} \omega t \sigma_z} \, \tilde{U}(t)
+\]</div>
+<p>The time derivative of <span class="math notranslate nohighlight">\(U\)</span> becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dU}{dt} = -\frac{i}{2} \omega \sigma_z U + e^{-\frac{i}{2} \omega t \sigma_z} \frac{d\tilde{U}}{dt}
+\]</div>
+<p>Inserting into the time-dependent Schrödinger equation for <span class="math notranslate nohighlight">\(U(t)\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\hbar \omega}{2} \sigma_z e^{-\frac{i}{2} \omega t \sigma_z} \tilde{U}
++ i \hbar e^{-\frac{i}{2} \omega t \sigma_z} \frac{d\tilde{U}}{dt}
+= \frac{1}{2} \Delta \sigma_z e^{-\frac{i}{2} \omega t \sigma_z} \tilde{U}
++ \left( V_0 \cos(\omega t) \, \sigma_x - V_0 \sin(\omega t) \, \sigma_y \right) e^{-\frac{i}{2} \omega t \sigma_z} \tilde{U}
+\]</div>
+<p>By defining <span class="math notranslate nohighlight">\(\Delta = \hbar \omega_0\)</span>, we can write:</p>
+<div class="math notranslate nohighlight">
+\[
+i \hbar e^{-\frac{i}{2} \omega t \sigma_z} \frac{d\tilde{U}}{dt}
+= \frac{1}{2} \hbar (\omega_0 - \omega) \sigma_z e^{-\frac{i}{2} \omega t \sigma_z} \tilde{U}
++ \left( V_0 \cos(\omega t) \, \sigma_x - V_0 \sin(\omega t) \, \sigma_y \right) e^{-\frac{i}{2} \omega t \sigma_z} \tilde{U}
+\]</div>
+<p>We can now multiply both sides by <span class="math notranslate nohighlight">\(e^{\frac{i}{2} \omega t \sigma_z}\)</span> from the left, getting:</p>
+<p>We now have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\tilde{U}}{dt} = \left[ \frac{1}{2} \hbar(\omega_0 - \omega) \sigma_z + V_0 \, e^{\frac{i}{2} \omega t \sigma_z} \left( \cos(\omega t) \, \sigma_x - \sin(\omega t) \, \sigma_y \right) e^{-\frac{i}{2} \omega t \sigma_z} \right] \tilde{U}
+\]</div>
+<p>To simplify this, we need to compute the similarity transformations of the Pauli matrices under rotations generated by <span class="math notranslate nohighlight">\(\sigma_z\)</span>. Specifically:</p>
+</section>
+<section id="rotation-of-pauli-matrices">
+<h2>Rotation of Pauli matrices<a class="headerlink" href="#rotation-of-pauli-matrices" title="Link to this heading">#</a></h2>
+<p>We use the identity</p>
+<div class="math notranslate nohighlight">
+\[
+e^{i \theta \sigma_z} \, \sigma_x \, e^{-i \theta \sigma_z} = \cos(2\theta) \, \sigma_x + \sin(2\theta) \, \sigma_y,
+\]</div>
+<p>and similarly,</p>
+<div class="math notranslate nohighlight">
+\[
+e^{i \theta \sigma_z} \, \sigma_y \, e^{-i \theta \sigma_z} = \cos(2\theta) \, \sigma_y - \sin(2\theta) \, \sigma_x.
+\]</div>
+<p>These follow from the <strong>Baker-Campbell-Hausdorff</strong> formula or by applying the <strong>Euler operator identity</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+e^{i A x} = \cos(x) \cdot I + i A \sin(x),
+\]</div>
+<p>which is valid when <span class="math notranslate nohighlight">\(A^2 = I\)</span>. For Pauli matrices, <span class="math notranslate nohighlight">\(\sigma_z^2 = I\)</span>.</p>
+</section>
+<section id="apply-to-the-time-dependent-rotation">
+<h2>Apply to the time-dependent rotation<a class="headerlink" href="#apply-to-the-time-dependent-rotation" title="Link to this heading">#</a></h2>
+<p>Set <span class="math notranslate nohighlight">\(\theta = \frac{\omega t}{2}\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+e^{i \frac{\omega t}{2} \sigma_z} \sigma_x e^{-i \frac{\omega t}{2} \sigma_z} &amp;= \cos(\omega t) \, \sigma_x + \sin(\omega t) \, \sigma_y, \\
+e^{i \frac{\omega t}{2} \sigma_z} \sigma_y e^{-i \frac{\omega t}{2} \sigma_z} &amp;= \cos(\omega t) \, \sigma_y - \sin(\omega t) \, \sigma_x.
+\end{aligned}
+\end{split}\]</div>
+<p>Therefore, the rotated expression becomes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; e^{i \frac{\omega t}{2} \sigma_z} \left( \cos(\omega t) \, \sigma_x - \sin(\omega t) \, \sigma_y \right) e^{-i \frac{\omega t}{2} \sigma_z} \\
+&amp;= \cos(\omega t) \left[ \cos(\omega t) \, \sigma_x + \sin(\omega t) \, \sigma_y \right] 
+- \sin(\omega t) \left[ \cos(\omega t) \, \sigma_y - \sin(\omega t) \, \sigma_x \right] \\
+&amp;= \left( \cos^2(\omega t) + \sin^2(\omega t) \right) \sigma_x + 2 \cos(\omega t) \sin(\omega t) \sigma_y - 2 \cos(\omega t) \sin(\omega t) \sigma_y \\
+&amp;= \sigma_x.
+\end{aligned}
+\end{split}\]</div>
+<p>Hence, the entire rotated term simplifies beautifully to:</p>
+<div class="math notranslate nohighlight">
+\[
+e^{i \frac{\omega t}{2} \sigma_z} \left( \cos(\omega t) \, \sigma_x - \sin(\omega t) \, \sigma_y \right) e^{-i \frac{\omega t}{2} \sigma_z} = \sigma_x.
+\]</div>
+</section>
+<section id="final-simplified-equation">
+<h2>Final simplified equation<a class="headerlink" href="#final-simplified-equation" title="Link to this heading">#</a></h2>
+<p>The time-evolution equation in the rotating frame now reads:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\tilde{U}}{dt} = \left[ \frac{1}{2} \hbar(\omega_0 - \omega) \sigma_z + V_0 \sigma_x \right] \tilde{U}.
+\]</div>
+<p>This is a <strong>time-independent</strong> Schrödinger equation in the rotating frame.<br />
+It describes a two-level system under a static effective Hamiltonian:</p>
+<div class="math notranslate nohighlight">
+\[
+H_{\text{eff}} = \frac{1}{2} \hbar(\omega_0 - \omega) \sigma_z + V_0 \sigma_x.
+\]</div>
+</section>
+<section id="solution-using-time-evolution-operator">
+<h2>Solution Using Time-Evolution Operator<a class="headerlink" href="#solution-using-time-evolution-operator" title="Link to this heading">#</a></h2>
+<p>In order to propagate the system in the rotating frame we can now use the time-evolution operator that we constructed for a non-resonant coupling case. We get for <span class="math notranslate nohighlight">\(U(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+U(t) = \cos\left(\frac{\Omega_R t}{2}\right) \, \mathbb{I}
+- i \sin\left(\frac{\Omega_R t}{2}\right)
+\left( \frac{2V_0}{\hbar \Omega_R} \sigma_x + \frac{\delta}{\Omega_R} \sigma_z \right).
+\]</div>
+<hr class="docutils" />
+<p>Assume the initial state is the ground state:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\psi(0)\rangle = |0\rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}.
+\end{split}\]</div>
+<p>Then the evolved state is:
+$<span class="math notranslate nohighlight">\(
+|\psi(t)\rangle = U(t) |\psi(0)\rangle.
+\)</span>$</p>
+<p>Carrying out the multiplication:
+$$
+|\psi(t)\rangle =
+\left[
+\cos\left( \frac{\Omega_R t}{2} \right)</p>
+<ul class="simple">
+<li><p>i \frac{\delta}{\Omega_R} \sin\left( \frac{\Omega_R t}{2} \right)
+\right] \begin{pmatrix}1 \ 0\end{pmatrix}</p></li>
+<li><p>i \frac{2V_0}{\hbar \Omega_R} \sin\left( \frac{\Omega_R t}{2} \right) \begin{pmatrix}0 \ 1\end{pmatrix}.
+$$</p></li>
+</ul>
+<p>So the wavefunction becomes:
+$$
+|\psi(t)\rangle =
+\begin{pmatrix}
+\cos\left( \frac{\Omega_R t}{2} \right)</p>
+<ul class="simple">
+<li><p>i \frac{\delta}{\Omega_R} \sin\left( \frac{\Omega_R t}{2} \right) \</p></li>
+<li><p>i \frac{2V_0}{\hbar \Omega_R} \sin\left( \frac{\Omega_R t}{2} \right)
+\end{pmatrix}.
+$$</p></li>
+</ul>
+<hr class="docutils" />
+<p>From this, the population in the <strong>excited state</strong> is:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{\text{excited}}(t) =
+\left| - i \frac{2V_0}{\hbar \Omega_R} \sin\left( \frac{\Omega_R t}{2} \right) \right|^2
+= \frac{4V_0^2}{\hbar^2 \Omega_R^2} \sin^2\left( \frac{\Omega_R t}{2} \right).
+\]</div>
+<p>And since <span class="math notranslate nohighlight">\(\Omega_R^2 = \delta^2 + \left( \frac{2V_0}{\hbar} \right)^2\)</span>, we recover the familiar expression:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{\text{excited}}(t) =
+\frac{\left(\frac{2V_0}{\hbar}\right)^2}
+{\delta^2 + \left(\frac{2V_0}{\hbar}\right)^2}
+\cdot \sin^2\left( \frac{\Omega_R t}{2} \right).
+\]</div>
+<hr class="docutils" />
+<p>This completes the derivation using the general time-evolution operator for a two-level system with constant coupling.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-multilevel-class-implementation">
+<h1>The <code class="docutils literal notranslate"><span class="pre">MultiLevel</span></code> Class Implementation<a class="headerlink" href="#the-multilevel-class-implementation" title="Link to this heading">#</a></h1>
+<p>We implement a simple Python class to define and propagate quantum states in an N-level system.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">expm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MultiLevel</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span> <span class="o">=</span> <span class="n">ndim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ndim</span><span class="p">,</span> <span class="n">ndim</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>  
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ndim</span><span class="p">,</span> <span class="n">ndim</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>  
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_hamiltonian</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diagonal</span><span class="p">):</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">diagonal</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_coupling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">V_func</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">V_func</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">getH</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">propagate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">nstep</span><span class="p">):</span>
+
+        <span class="n">psi0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+        <span class="n">psi_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nstep</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+        <span class="n">psi_t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi0</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nstep</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">dt</span><span class="o">/</span><span class="mi">2</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getH</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+            <span class="n">U</span> <span class="o">=</span> <span class="n">expm</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">H</span> <span class="o">*</span> <span class="n">dt</span><span class="p">)</span>
+            <span class="n">psi_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">U</span> <span class="o">@</span> <span class="n">psi_t</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">psi_t</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="numerical-vs-analytical-rwa-propagation-of-a-two-level-system">
+<h2>Numerical vs Analytical (RWA) Propagation of a Two-Level System<a class="headerlink" href="#numerical-vs-analytical-rwa-propagation-of-a-two-level-system" title="Link to this heading">#</a></h2>
+<p>We now use the <code class="docutils literal notranslate"><span class="pre">MultiLevel</span></code> class to simulate a driven two-level system and compare it to the analytical solution
+obtained using the Rotating Wave Approximation (RWA). This allows us to validate the RWA in the weak-driving, near-resonant regime,
+and to observe its breakdown outside this regime.</p>
+<p>We consider a Hamiltonian of the form:</p>
+<div class="math notranslate nohighlight">
+\[
+H(t) = \frac{1}{2} \hbar \Delta \sigma_z + V_0 \cos(\omega t) \, \sigma_x
+\]</div>
+<p>and compare the numerical solution to the analytical RWA result:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{\text{exc}}^{\text{RWA}}(t) = \frac{4 V_0^2}{\hbar^2 \Omega_R^2} \sin^2\left( \frac{\Omega_R t}{2} \right),
+\quad \text{with } \Omega_R = \sqrt{\delta^2 + \left(\frac{2 V_0}{\hbar}\right)^2},\; \delta = \omega_0 - \omega.
+\]</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="two-level-system-with-harmonic-coupling-numerical-propagation">
+<h1>Two-Level System with harmonic coupling: Numerical propagation<a class="headerlink" href="#two-level-system-with-harmonic-coupling-numerical-propagation" title="Link to this heading">#</a></h1>
+<p>Consider a two-level system with energies <span class="math notranslate nohighlight">\( E_0 = 0 \)</span>, <span class="math notranslate nohighlight">\( E_1 = \Delta \)</span>, and a Gaussian coupling:</p>
+<div class="math notranslate nohighlight">
+\[
+ V_{01} = V_{10} = V_0 \cos(\omega t)
+ \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Delta</span> <span class="o">=</span> <span class="mf">1.0</span>     <span class="c1"># Energy difference</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="mf">0.1</span>       <span class="c1"># Coupling strength</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">1.0</span>    <span class="c1"># Frequency of a light-field</span>
+<span class="n">coupling</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="n">V0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="p">],</span>
+                               <span class="p">[</span><span class="n">V0</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span> <span class="o">=</span> <span class="n">MultiLevel</span><span class="p">(</span><span class="n">ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">set_hamiltonian</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Delta</span><span class="p">])</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">set_coupling</span><span class="p">(</span><span class="n">coupling</span><span class="p">)</span>
+<span class="n">psi0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="n">dtype</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nstep</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">psi_t</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">psi0</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">nstep</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">psi_t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">coh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ti,tj-&gt;tij&#39;</span><span class="p">,</span><span class="n">psi_t</span><span class="o">.</span><span class="n">conj</span><span class="p">(),</span><span class="n">psi_t</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">100.0</span><span class="p">,</span><span class="mi">1000</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">pop</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">lw</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">pop</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">coh</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Two-Level System Driven by harmonic coupling&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c9eaf6ffde4f087ff7110b9f3ea8e67ff1a6ef9415ed7797b1b80e1c11cfbe12.png" src="_images/c9eaf6ffde4f087ff7110b9f3ea8e67ff1a6ef9415ed7797b1b80e1c11cfbe12.png" />
+</div>
+</div>
+<section id="comparison-between-the-rwa-and-numerical-propagation-for-a-resonant-coupling">
+<h2>Comparison between the RWA and numerical propagation for a resonant coupling<a class="headerlink" href="#comparison-between-the-rwa-and-numerical-propagation-for-a-resonant-coupling" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">expm</span>
+
+<span class="n">Δ</span> <span class="o">=</span> <span class="mf">1.0</span>       <span class="c1"># Energy splitting</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mf">.3</span>      <span class="c1"># Driving strength</span>
+<span class="n">ω</span> <span class="o">=</span> <span class="mf">1.0</span>     <span class="c1"># Driving frequency (resonant)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">t_max</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># Initial state: ground state |g&gt; = [1, 0]</span>
+<span class="n">ψ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">ψs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Time evolution under full Hamiltonian</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="n">Δ</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span> <span class="o">+</span> <span class="n">V</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">dt</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">U</span> <span class="o">=</span> <span class="n">expm</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">H</span> <span class="o">*</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">ψ</span> <span class="o">=</span> <span class="n">U</span> <span class="o">@</span> <span class="n">ψ</span>
+    <span class="n">ψs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ψ</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Excited state population</span>
+
+<span class="n">P_rwa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">V</span> <span class="o">*</span> <span class="n">times</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+
+<span class="c1"># Plot comparison</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">ψs</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numerical&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">P_rwa</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RWA&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Excited State Population&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Numerical vs RWA&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b7fec5ad52ef336d45fe9f75c844883b5caac51a0b7230eea5abe6faeea0f57a.png" src="_images/b7fec5ad52ef336d45fe9f75c844883b5caac51a0b7230eea5abe6faeea0f57a.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_dynamics_2026",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="qubit_dynamics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="heisenberg_picture.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🔹 Observables in Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 Two level system driven by a harmonic field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks-on-the-justification-of-the-rotating-wave-approximation-rwa">🔸 Remarks on the Justification of the Rotating Wave Approximation (RWA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-argument-riemannlebesgue-lemma">⚬ Mathematical Argument: Riemann–Lebesgue Lemma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-argument-energy-conservation-and-photon-processes">⚬ Physical Argument: Energy Conservation and Photon Processes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-time-evolution-operator-in-the-rwa-approximation">🔸 Derivation of the time-evolution operator in the RWA approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotation-of-pauli-matrices">Rotation of Pauli matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-to-the-time-dependent-rotation">Apply to the time-dependent rotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-simplified-equation">Final simplified equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-using-time-evolution-operator">Solution Using Time-Evolution Operator</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-multilevel-class-implementation">The <code class="docutils literal notranslate"><span class="pre">MultiLevel</span></code> Class Implementation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-vs-analytical-rwa-propagation-of-a-two-level-system">Numerical vs Analytical (RWA) Propagation of a Two-Level System</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#two-level-system-with-harmonic-coupling-numerical-propagation">Two-Level System with harmonic coupling: Numerical propagation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-between-the-rwa-and-numerical-propagation-for-a-resonant-coupling">Comparison between the RWA and numerical propagation for a resonant coupling</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

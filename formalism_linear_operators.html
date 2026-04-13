@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🔸 Linear maps, operators and functionals &#8212; Quantum Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'formalism_linear_operators';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="🔸 Formalism of Quantum Mechanics: Unitary time evolution" href="formalism_unitary_time_evolution.html" />
+    <link rel="prev" title="🔸 Formalism of Quantum Mechanics: Hilbert Spaces" href="formalism_hilbert_spaces.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantum Dynamics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantum Dynamics – SS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classical_mechanics.html">🔸 Crash course in Classical Mechanics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="formalism_hilbert_spaces.html">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🔸 Linear maps, operators and functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_unitary_time_evolution.html">🔸 Formalism of Quantum Mechanics: Unitary time evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hamiltonian_dynamics_crash_course.html">Crash Course: Hamiltonian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubit_dynamics.html">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="rotating_wave.html">🔸 Two level system driven by a harmonic field</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="heisenberg_picture.html">🔹 Observables in Quantum Mechanics</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="history_heisenberg.html">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="interaction_picture.html">🔸 Interaction Picture of Quantum Mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="position_momentum_representation.html">🔸 Position and Momentum Representation</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="particle_linear_potential.html">🔸 Particle in a Linear Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stationary_phase_method.html">Stationary Phase Method applied to Airy function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="path_integrals.html">Path integral representation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_dynamics_2026/main?urlpath=lab/tree/./formalism_linear_operators.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/edit/main/./formalism_linear_operators.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/issues/new?title=Issue%20on%20page%20%2Fformalism_linear_operators.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/formalism_linear_operators.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🔸 Linear maps, operators and functionals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linear-map">🔹 Definition: Linear Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linear-operator">🔹 Definition: Linear Operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linear-functional">🔹 Definition: Linear Functional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-riesz-representation-theorem-finite-dimensional-case">🔸 The Riesz Representation Theorem (Finite-Dimensional Case)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-finite-dimensional-case">🔹 Proof (Finite-Dimensional Case)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-bras-using-riesz">🔹 Defining Bras Using Riesz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">🧠 Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">🔍 Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riesz-representation-theorem-in-infinite-dimensions">🔸 Riesz Representation Theorem in Infinite Dimensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-dimensional-version-rieszfrechet-theorem">🔹 Infinite-Dimensional Version (Riesz–Fréchet Theorem)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-dual-vectors-to-adjoint-operators">🔸 From Dual Vectors to Adjoint Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-adjoint-operator">🔹 Definition: Adjoint Operator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-existence-and-uniqueness-of-the-adjoint-operator">🔸 Theorem (Existence and Uniqueness of the Adjoint Operator)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-adjoint-and-hermitian-operators">🔹 Self-Adjoint and Hermitian Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-unitary-operators">🔹 Definition: Unitary Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insights">🧠 Key Insights</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-maps-operators-and-functionals">
+<h1>🔸 Linear maps, operators and functionals<a class="headerlink" href="#linear-maps-operators-and-functionals" title="Link to this heading">#</a></h1>
+<p>A natural way to understand any mathematical structure is to study mappings
+that preserve that structure.
+This idea is in the core of mathematics and also physics: we gain insight into a structure or a system not only by studying its <strong>elements</strong>, but by examining its <strong>symmetries</strong> and <strong>transformations</strong> that respect the rules of the structure.</p>
+<p>In the case of <strong>vector spaces</strong>, the core structure is linearity: vector addition and scalar multiplication. So the natural class of mappings to study are those that <strong>preserve linear sturcture</strong>. Such maps must have two propersties: <strong>additivity</strong> and <strong>homogeneity</strong>.</p>
+<p>In the following we define such maps depending on what the domain and the target space is. Depending on that slightly different terminology is used.</p>
+<hr class="docutils" />
+<section id="definition-linear-map">
+<h2>🔹 Definition: Linear Map<a class="headerlink" href="#definition-linear-map" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\( V \)</span> and <span class="math notranslate nohighlight">\( W \)</span> be vector spaces over the same field <span class="math notranslate nohighlight">\(\mathbb{F} \)</span> (typically <span class="math notranslate nohighlight">\( \mathbb{C} \)</span>).</p>
+<p>A function<span class="math notranslate nohighlight">\(T: V \to W\)</span> is called a <strong>linear map</strong> if it satisfies the following two conditions for all <span class="math notranslate nohighlight">\( |\psi\rangle, |\phi\rangle \in V\)</span> and all scalars <span class="math notranslate nohighlight">\(a \in \mathbb{F} \)</span>:</p>
+<ol class="arabic simple">
+<li><p><strong>Additivity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+ T(|\psi\rangle + |\phi\rangle) = T|\psi\rangle + T|\phi\rangle
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Homogeneity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+T(a |\psi\rangle) = a \cdot T|\psi\rangle
+\]</div>
+<hr class="docutils" />
+</section>
+<section id="definition-linear-operator">
+<h2>🔹 Definition: Linear Operator<a class="headerlink" href="#definition-linear-operator" title="Link to this heading">#</a></h2>
+<p>A <strong>linear operator</strong> is a linear map from a vector space to itself.</p>
+<p>Let <span class="math notranslate nohighlight">\( V \)</span> be a vector space over <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>. A function <span class="math notranslate nohighlight">\( A: V \to V \)</span> is a <strong>linear operator</strong> if:</p>
+<ol class="arabic simple">
+<li><p><strong>Additivity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+A(|\psi\rangle + |\phi\rangle) = A|\psi\rangle + A|\phi\rangle
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Homogeneity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+A(a |\psi\rangle) = a \cdot A|\psi\rangle
+\]</div>
+<hr class="docutils" />
+</section>
+<section id="definition-linear-functional">
+<h2>🔹 Definition: Linear Functional<a class="headerlink" href="#definition-linear-functional" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a vector space over <span class="math notranslate nohighlight">\( \mathbb{F}\)</span>. A <strong>linear functional</strong> is a linear map from <span class="math notranslate nohighlight">\( V\)</span> to the field <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f: V \to \mathbb{F}
+\]</div>
+<p>It satisfies the same linearity conditions:</p>
+<ol class="arabic simple">
+<li><p><strong>Additivity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f(|\psi\rangle + |\phi\rangle) = f(|\psi\rangle) + f(|\phi\rangle)
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Homogeneity</strong>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f(a |\psi\rangle) = a \cdot f(|\psi\rangle)
+\]</div>
+<p>Linear functionals are the elements of the <strong>dual space</strong> <span class="math notranslate nohighlight">\(V^*\)</span>, which we will define next.</p>
+<p>In Dirac notation, linear functionals appear as <strong>bras</strong> as we will see later:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi | : V \to \mathbb{C}, \quad |\phi\rangle \mapsto \langle \psi | \phi \rangle
+\]</div>
+</section>
+<section id="the-riesz-representation-theorem-finite-dimensional-case">
+<h2>🔸 The Riesz Representation Theorem (Finite-Dimensional Case)<a class="headerlink" href="#the-riesz-representation-theorem-finite-dimensional-case" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a finite-dimensional complex inner product space with inner product <span class="math notranslate nohighlight">\(\langle \cdot | \cdot \rangle\)</span>.</p>
+<p>Then for <strong>every linear functional</strong> <span class="math notranslate nohighlight">\(f \in V^*\)</span> (that is, every linear map <span class="math notranslate nohighlight">\(f: V \to \mathbb{C}\)</span>), there exists a <strong>unique vector</strong> <span class="math notranslate nohighlight">\(|\phi\rangle \in V\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+f(|\psi\rangle) = \langle \phi | \psi \rangle \quad \text{for all } |\psi\rangle \in V
+\]</div>
+<p>This is called the <strong>Riesz representation</strong> of the functional <span class="math notranslate nohighlight">\(f\)</span> by the vector <span class="math notranslate nohighlight">\(|\phi\rangle\)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="proof-finite-dimensional-case">
+<h2>🔹 Proof (Finite-Dimensional Case)<a class="headerlink" href="#proof-finite-dimensional-case" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\dim V = n\)</span> and let <span class="math notranslate nohighlight">\(\{ |e_i\rangle \}_{i=1}^n\)</span> be an orthonormal basis of <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(f \in V^*\)</span> be a linear functional. We want to find a vector <span class="math notranslate nohighlight">\(|\phi\rangle \in V\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+f(|\psi\rangle) = \langle \phi | \psi \rangle \quad \forall |\psi\rangle \in V
+\]</div>
+<p>Write any <span class="math notranslate nohighlight">\(|\psi\rangle \in V\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle = \sum_{i=1}^n \psi_i |e_i\rangle
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(f\)</span> is linear:</p>
+<div class="math notranslate nohighlight">
+\[
+f(|\psi\rangle) = \sum_{i=1}^n \psi_i f(|e_i\rangle)
+\]</div>
+<p>Now define:</p>
+<div class="math notranslate nohighlight">
+\[
+|\phi\rangle := \sum_{i=1}^n f(|e_i\rangle)^* |e_i\rangle
+\]</div>
+<p>Then compute:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle \phi | \psi \rangle 
+&amp;= \left\langle \sum_{i=1}^n {f(|e_i\rangle)^* |e_i\rangle} \Big| \sum_{j=1}^n \psi_j |e_j\rangle \right\rangle \\
+&amp;= \sum_{i,j=1}^n f(|e_i\rangle)^* \psi_j \langle e_i | e_j \rangle \\
+&amp;= \sum_{i=1}^n f(|e_i\rangle)^* \psi_i \\
+&amp;= \sum_{i=1}^n \psi_i f(|e_i\rangle) = f(|\psi\rangle)
+\end{aligned}
+\end{split}\]</div>
+<p>Thus <span class="math notranslate nohighlight">\(f(|\psi\rangle) = \langle \phi | \psi \rangle\)</span> for all <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, and the vector <span class="math notranslate nohighlight">\(|\phi\rangle\)</span> is unique due to the non-degeneracy of the inner product, completing the proof.</p>
+</section>
+<hr class="docutils" />
+<section id="defining-bras-using-riesz">
+<h2>🔹 Defining Bras Using Riesz<a class="headerlink" href="#defining-bras-using-riesz" title="Link to this heading">#</a></h2>
+<p>We now define the <strong>dual vector</strong> (bra) corresponding to a ket <span class="math notranslate nohighlight">\(|\psi\rangle \in V\)</span> as the unique linear functional:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi | : V \to \mathbb{C}, \quad |\phi\rangle \mapsto \langle \psi | \phi \rangle
+\]</div>
+<p>By the Riesz theorem, this bra <span class="math notranslate nohighlight">\(\langle \psi |\)</span> is an element of the <strong>dual space</strong> <span class="math notranslate nohighlight">\(V^*\)</span>.</p>
+<p>This defines a <strong>bijection</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+V \xrightarrow{\text{Riesz}} V^*, \quad |\psi\rangle \mapsto \langle \psi |
+\]</div>
+<hr class="docutils" />
+<section id="interpretation">
+<h3>🧠 Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The inner product <span class="math notranslate nohighlight">\(\langle \psi | \phi \rangle\)</span> is interpreted as <strong>applying the bra</strong> <span class="math notranslate nohighlight">\(\langle \psi |\)</span> to the ket <span class="math notranslate nohighlight">\(|\phi\rangle\)</span>.</p></li>
+<li><p>The Riesz theorem tells us that every linear functional on <span class="math notranslate nohighlight">\(V\)</span> arises in this way.</p></li>
+<li><p>This justifies Dirac’s notation commonly used in physics:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  \langle \psi | \phi \rangle = \text{“apply the functional } \langle \psi | \text{ to the vector } |\phi\rangle \text{&quot;}
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>🔍 Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concept</p></th>
+<th class="head"><p>Space</p></th>
+<th class="head"><p>Notation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ket (state vector)</p></td>
+<td><p><span class="math notranslate nohighlight">\(V\)</span></p></td>
+<td><p>$</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bra (dual vector)</p></td>
+<td><p><span class="math notranslate nohighlight">\(V^*\)</span></p></td>
+<td><p>$\langle \psi</p></td>
+</tr>
+<tr class="row-even"><td><p>Inner product</p></td>
+<td><p>$\langle \cdot</p></td>
+<td><p>\cdot \rangle$</p></td>
+</tr>
+<tr class="row-odd"><td><p>Linear functional</p></td>
+<td><p><span class="math notranslate nohighlight">\(f \in V^*\)</span></p></td>
+<td><p>$f(</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="riesz-representation-theorem-in-infinite-dimensions">
+<h2>🔸 Riesz Representation Theorem in Infinite Dimensions<a class="headerlink" href="#riesz-representation-theorem-in-infinite-dimensions" title="Link to this heading">#</a></h2>
+<p>In the finite-dimensional case, the Riesz Representation Theorem gives a <strong>bijective correspondence</strong> between a Hilbert space <span class="math notranslate nohighlight">\(V\)</span> and its dual space <span class="math notranslate nohighlight">\(V^*\)</span> via the inner product:</p>
+<div class="math notranslate nohighlight">
+\[
+f \in V^* \quad \Longleftrightarrow \quad \exists! \, |\phi\rangle \in V \text{ such that } f(|\psi\rangle) = \langle \phi | \psi \rangle \quad \forall |\psi\rangle \in V
+\]</div>
+<p>This result extends — with some technical care — to <strong>infinite-dimensional Hilbert spaces</strong>.</p>
+<hr class="docutils" />
+<section id="infinite-dimensional-version-rieszfrechet-theorem">
+<h3>🔹 Infinite-Dimensional Version (Riesz–Fréchet Theorem)<a class="headerlink" href="#infinite-dimensional-version-rieszfrechet-theorem" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> be a (possibly infinite-dimensional) <strong>Hilbert space</strong> over <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.</p>
+<p>Then for every continuous linear functional <span class="math notranslate nohighlight">\(f : \mathcal{H} \to \mathbb{C}\)</span>, there exists a <strong>unique</strong> vector <span class="math notranslate nohighlight">\(|\phi\rangle \in \mathcal{H}\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+f(|\psi\rangle) = \langle \phi | \psi \rangle \quad \text{for all } |\psi\rangle \in \mathcal{H}
+\]</div>
+<blockquote>
+<div><p>🧠 The crucial difference is the requirement that <span class="math notranslate nohighlight">\(f\)</span> be <strong>continuous</strong>. In infinite dimensions, not all linear functionals are continuous — but the Riesz representation holds <strong>exactly</strong> for those that are.</p>
+</div></blockquote>
+<p>This general form justifies identifying the <strong>continuous dual</strong> <span class="math notranslate nohighlight">\(\mathcal{H}^*\)</span> with <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> itself via the inner product.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="from-dual-vectors-to-adjoint-operators">
+<h2>🔸 From Dual Vectors to Adjoint Operators<a class="headerlink" href="#from-dual-vectors-to-adjoint-operators" title="Link to this heading">#</a></h2>
+<p>Now that we understand bras as elements of the dual space <span class="math notranslate nohighlight">\(V^*\)</span>, and the inner product as a bridge between kets and bras via Riesz, we can move on to defining the <strong>adjoint of a linear operator</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="definition-adjoint-operator">
+<h2>🔹 Definition: Adjoint Operator<a class="headerlink" href="#definition-adjoint-operator" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(A : \mathcal{H} \to \mathcal{H}\)</span> be a linear operator on a Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p>
+<p>The <strong>adjoint operator</strong> <span class="math notranslate nohighlight">\(A^\dagger : \mathcal{H} \to \mathcal{H}\)</span> is the unique operator satisfying:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \phi | A |\psi\rangle = \langle A^\dagger \phi | \psi \rangle \quad \text{for all } |\psi\rangle, |\phi\rangle \in \mathcal{H}
+\]</div>
+<blockquote>
+<div><p>In words: the <strong>action of <span class="math notranslate nohighlight">\(A\)</span> on the ket <span class="math notranslate nohighlight">\(|\psi\rangle\)</span></strong>, tested by the bra <span class="math notranslate nohighlight">\(\langle \phi |\)</span>, is <strong>equivalent</strong> to the <strong>action of <span class="math notranslate nohighlight">\(A^\dagger\)</span> on the bra</strong>.</p>
+</div></blockquote>
+<p>This relation defines <span class="math notranslate nohighlight">\(A^\dagger\)</span> completely, due to the non-degeneracy of the inner product.</p>
+<section id="theorem-existence-and-uniqueness-of-the-adjoint-operator">
+<h3>🔸 Theorem (Existence and Uniqueness of the Adjoint Operator)<a class="headerlink" href="#theorem-existence-and-uniqueness-of-the-adjoint-operator" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(A: \mathcal{H} \to \mathcal{H}\)</span> be a linear operator on a finite-dimensional Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>.</p>
+<p>Then:</p>
+<p>✅ There exists a <strong>unique</strong> linear operator <span class="math notranslate nohighlight">\(A^\dagger: \mathcal{H} \to \mathcal{H}\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \phi | A |\psi\rangle = \langle A^\dagger \phi | \psi \rangle \quad \text{for all } |\phi\rangle, |\psi\rangle \in \mathcal{H}.
+\]</div>
+<p>The operator <span class="math notranslate nohighlight">\(A^\dagger\)</span> is called an <strong>adjoint</strong> of the operator <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<hr class="docutils" />
+<p>🔹 Proof</p>
+<p>This theorem can be proven by using the Riesz theorem.</p>
+<ul class="simple">
+<li><p>For each fixed <span class="math notranslate nohighlight">\(|\phi\rangle \in \mathcal{H}\)</span>, we define:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\Phi_\phi : \mathcal{H} \to \mathbb{C}, \quad \Phi_\phi(|\psi\rangle) := \langle \phi | A |\psi\rangle.
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Phi_\phi\)</span> is linear a linear functional in <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> as can be proven by using the linearity of <span class="math notranslate nohighlight">\(A\)</span> and the linearity of the scalar product in the second theorem.</p></li>
+<li><p>By the <strong>Riesz Representation Theorem</strong>, there exists a <strong>unique</strong> vector <span class="math notranslate nohighlight">\(A^\dagger |\phi\rangle \in \mathcal{H}\)</span> such that:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\Phi_\phi(|\psi\rangle) = \langle A^\dagger \phi | \psi \rangle \quad \text{for all } |\psi\rangle \in \mathcal{H}.
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \phi | A |\psi\rangle = \langle A^\dagger \phi | \psi\rangle
+\]</div>
+<p>for all <span class="math notranslate nohighlight">\(|\phi\rangle, |\psi\rangle \in \mathcal{H}\)</span>.</p>
+<p>The operator <span class="math notranslate nohighlight">\(A^\dagger\)</span> is therefore <strong>well-defined</strong> and is also <strong>uniquely determined</strong>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="self-adjoint-and-hermitian-operators">
+<h2>🔹 Self-Adjoint and Hermitian Operators<a class="headerlink" href="#self-adjoint-and-hermitian-operators" title="Link to this heading">#</a></h2>
+<p>An operator <span class="math notranslate nohighlight">\(A\)</span> is called <strong>self-adjoint</strong> if:</p>
+<div class="math notranslate nohighlight">
+\[
+A = A^\dagger.
+\]</div>
+<p>In physics, self-adjoint operators are often also referred to as <strong>Hermitian operators</strong>. As we already know, in quantum mechanics, <strong>observables</strong> (measurable quantities like position, momentum, energy) are represented by <strong>self-adjoint operators</strong> because they have a nice property that their eigenvalues are real.
+One of the most important mathematical facts about self-adjoing operators is the <strong>spectral theorem</strong> that we now shortly address.</p>
+<hr class="docutils" />
+<blockquote>
+<div><p><strong>Spectral Theorem (finite-dimensional version):</strong><br />
+If <span class="math notranslate nohighlight">\(A\)</span> is a self-adjoint operator on a finite-dimensional Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, then:</p>
+<ul class="simple">
+<li><p>All eigenvalues of <span class="math notranslate nohighlight">\(A\)</span> are real.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{H}\)</span> has an orthonormal basis consisting of eigenvectors of <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> can be diagonalized as:
+$<span class="math notranslate nohighlight">\(
+A = \sum_k \lambda_k |\lambda_k\rangle \langle \lambda_k|,
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\lambda_k<span class="math notranslate nohighlight">\( are the eigenvalues and \)</span>|\lambda_k\rangle$ the corresponding orthonormal eigenvectors.</p></li>
+</ul>
+</div></blockquote>
+<p>Thus, self-adjoint operators behave analogously to symmetric matrices over <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>: they can be fully diagonalized with an orthonormal basis.</p>
+</section>
+<hr class="docutils" />
+<section id="definition-unitary-operators">
+<h2>🔹 Definition: Unitary Operators<a class="headerlink" href="#definition-unitary-operators" title="Link to this heading">#</a></h2>
+<p>A linear operator <span class="math notranslate nohighlight">\(U: \mathcal{H} \to \mathcal{H}\)</span> is called <strong>unitary</strong> if:</p>
+<div class="math notranslate nohighlight">
+\[
+U^\dagger U = U U^\dagger = I.
+\]</div>
+<p>Equivalently, <span class="math notranslate nohighlight">\(U\)</span> preserves the inner product:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle U\phi | U\psi \rangle = \langle \phi | \psi \rangle \quad \text{for all } |\phi\rangle, |\psi\rangle \in \mathcal{H}.
+\]</div>
+<p>Uunitary operators generalize the idea of <strong>rotations</strong> to the Hilbert spaces: they shuffle vectors into other vectors <strong>without changing their norms or inner products</strong>.</p>
+<hr class="docutils" />
+<section id="key-insights">
+<h3>🧠 Key Insights<a class="headerlink" href="#key-insights" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Adjoint operators</strong> generalize the idea of taking the conjugate transpose of matrices.</p></li>
+<li><p><strong>Self-adjoint (Hermitian) operators</strong> represent <strong>observable quantities</strong> and have <strong>real eigenvalues</strong>.</p></li>
+<li><p>The <strong>spectral theorem</strong> ensures that any Hermitian operator can be understood via its eigenvectors and eigenvalues.</p></li>
+<li><p><strong>Unitary operators</strong> represent <strong>symmetries</strong> and <strong>time evolution</strong> in quantum mechanics, preserving probabilities and inner products.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_dynamics_2026",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="formalism_hilbert_spaces.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="formalism_unitary_time_evolution.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🔸 Formalism of Quantum Mechanics: Unitary time evolution</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linear-map">🔹 Definition: Linear Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linear-operator">🔹 Definition: Linear Operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-linear-functional">🔹 Definition: Linear Functional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-riesz-representation-theorem-finite-dimensional-case">🔸 The Riesz Representation Theorem (Finite-Dimensional Case)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-finite-dimensional-case">🔹 Proof (Finite-Dimensional Case)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-bras-using-riesz">🔹 Defining Bras Using Riesz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">🧠 Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">🔍 Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riesz-representation-theorem-in-infinite-dimensions">🔸 Riesz Representation Theorem in Infinite Dimensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-dimensional-version-rieszfrechet-theorem">🔹 Infinite-Dimensional Version (Riesz–Fréchet Theorem)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-dual-vectors-to-adjoint-operators">🔸 From Dual Vectors to Adjoint Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-adjoint-operator">🔹 Definition: Adjoint Operator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-existence-and-uniqueness-of-the-adjoint-operator">🔸 Theorem (Existence and Uniqueness of the Adjoint Operator)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-adjoint-and-hermitian-operators">🔹 Self-Adjoint and Hermitian Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-unitary-operators">🔹 Definition: Unitary Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insights">🧠 Key Insights</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

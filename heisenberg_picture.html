@@ -1,0 +1,1166 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🔹 Observables in Quantum Mechanics &#8212; Quantum Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'heisenberg_picture';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics" href="history_heisenberg.html" />
+    <link rel="prev" title="🔸 Two level system driven by a harmonic field" href="rotating_wave.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantum Dynamics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantum Dynamics – SS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classical_mechanics.html">🔸 Crash course in Classical Mechanics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="formalism_hilbert_spaces.html">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_linear_operators.html">🔸 Linear maps, operators and functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_unitary_time_evolution.html">🔸 Formalism of Quantum Mechanics: Unitary time evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hamiltonian_dynamics_crash_course.html">Crash Course: Hamiltonian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubit_dynamics.html">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="rotating_wave.html">🔸 Two level system driven by a harmonic field</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🔹 Observables in Quantum Mechanics</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="history_heisenberg.html">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="interaction_picture.html">🔸 Interaction Picture of Quantum Mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="position_momentum_representation.html">🔸 Position and Momentum Representation</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="particle_linear_potential.html">🔸 Particle in a Linear Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stationary_phase_method.html">Stationary Phase Method applied to Airy function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="path_integrals.html">Path integral representation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_dynamics_2026/main?urlpath=lab/tree/./heisenberg_picture.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/edit/main/./heisenberg_picture.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/issues/new?title=Issue%20on%20page%20%2Fheisenberg_picture.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/heisenberg_picture.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🔹 Observables in Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔹 Observables in Quantum Mechanics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiom-observable">Axiom (Observable):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-spectral-theorem">Theorem (Spectral Theorem):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">🔸 Proof:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-decomposition">🔸 Spectral Decomposition</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-measurement">🔹 Quantum Measurement</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiom-measurement-postulate">Axiom (Measurement Postulate):</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-an-observable">🔹 Expectation Value of an Observable</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heisenberg-picture">🔹 Heisenberg Picture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-operators-in-the-heisenberg-picture">🔹 Time Evolution of Operators in the Heisenberg Picture</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-shared-by-commutators-and-poisson-brackets">🔹 Properties shared by Commutators and Poisson Brackets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">1. <strong>Linearity</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antisymmetry">2. <strong>Antisymmetry</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leibniz-rule-derivation-property">3. <strong>Leibniz Rule (Derivation Property)</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jacobi-identity">4. <strong>Jacobi Identity</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lie-algebras-and-the-geometric-structure-behind-the-bracket">🔹 Lie Algebras and the Geometric Structure Behind the Bracket</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-lie-algebra">💡 <strong>Definition (Lie Algebra)</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-derivations-and-lie-derivatives">🔹 Relation to Derivations and Lie Derivatives</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leibniz-rule-derivations">▶️ <strong>Leibniz Rule ⇨ Derivations</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lie-derivatives">▶️ <strong>Lie Derivatives</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commutators-and-lie-algebras-in-quantum-mechanics">▶️ <strong>Commutators and Lie Algebras in Quantum Mechanics</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="observables-in-quantum-mechanics">
+<h1>🔹 Observables in Quantum Mechanics<a class="headerlink" href="#observables-in-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>As we have learned physical systems in quantum mechanics are described by state vectors <span class="math notranslate nohighlight">\(|\psi(t)\rangle\)</span> in a complex Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, and the dynamics are governed by unitary time-evolution evolution. To extract physical information from these states—such as position, momentum, energy—we need a framework for representing <em>measurable quantities</em> that are in quantum mechanics usually called <strong>observables</strong>.</p>
+<p>In the following section we postulate how observables are mathematically represented and how the outcomes of measurements can be extracted given a quantum state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>.</p>
+<section id="axiom-observable">
+<h2>Axiom (Observable):<a class="headerlink" href="#axiom-observable" title="Link to this heading">#</a></h2>
+<p>An <strong>observable</strong> is represented by a <strong>Hermitian operator</strong> <span class="math notranslate nohighlight">\(A\)</span> on the Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+ A = A^\dagger,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(A^\dagger\)</span> is the adjoint of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>The motivation for this postulate lies in the mathematical properties of Hermitian operators: they always have real eigenvalues (ensuring real-valued measurement results) and a complete set of orthogonal eigenvectors (allowing decomposition of any state). These features are mathematically guaranteed by the <strong>spectral theorem</strong>, which we now state and prove in the finite-dimensional case.</p>
+</section>
+<section id="theorem-spectral-theorem">
+<h2>Theorem (Spectral Theorem):<a class="headerlink" href="#theorem-spectral-theorem" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(V\)</span> be a finite-dimensional complex Hilbert space, and let <span class="math notranslate nohighlight">\(A: V \to V\)</span> be a Hermitian operator. Then:</p>
+<ol class="arabic simple">
+<li><p>All eigenvalues of <span class="math notranslate nohighlight">\(A\)</span> are real.</p></li>
+<li><p>There exists an <strong>orthonormal basis</strong> of <span class="math notranslate nohighlight">\(V\)</span> consisting of eigenvectors of <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>In this basis, <span class="math notranslate nohighlight">\(A\)</span> is represented by a diagonal matrix with real entries.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="proof">
+<h2>🔸 Proof:<a class="headerlink" href="#proof" title="Link to this heading">#</a></h2>
+<p>We first prove, that if an eigevector exists the corresponding eigenvalue is real. Let <span class="math notranslate nohighlight">\(\lambda \in \mathbb{C}\)</span> be an eigenvalue of <span class="math notranslate nohighlight">\(A\)</span>, and let <span class="math notranslate nohighlight">\(|v\rangle \neq 0\)</span> be the corresponding eigenvector:</p>
+<div class="math notranslate nohighlight">
+\[
+A|v\rangle = \lambda |v\rangle.
+\]</div>
+<p>Taking the inner product with $|v\rangle$ gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v| A |v\rangle = \lambda \langle v|v\rangle.
+\]</div>
+<p>Using Hermiticity and the antilinearity of the inner product in the first argument we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v| A |v\rangle = \langle A v|v\rangle =  \lambda^* \langle v|v\rangle.
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\langle v|v\rangle &gt; 0\)</span>, it follows that <span class="math notranslate nohighlight">\(\lambda = \lambda^\*\)</span>, i.e., the eigenvalue is real.</p>
+<p>Let us now show that at least one eigenvalue exists. Select any nonzero vector <span class="math notranslate nohighlight">\(|v\rangle \in V\)</span>. Consider the finite set of vectors:</p>
+<div class="math notranslate nohighlight">
+\[
+|v\rangle, \quad A|v\rangle, \quad A^2|v\rangle, \quad \dots, \quad A^n|v\rangle,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(n = \dim V\)</span>. This set contains <span class="math notranslate nohighlight">\(n+1\)</span> vectors in an <span class="math notranslate nohighlight">\(n\)</span>-dimensional space, so they must be linearly dependent. That is, there exist complex coefficients <span class="math notranslate nohighlight">\(a\_0, a\_1, \dots, a\_n \in \mathbb{C}\)</span>, not all zero, such that:</p>
+<div class="math notranslate nohighlight">
+\[
+(a_n A^n + a_{n-1} A^{n-1} + \cdots + a_1 A + a_0 I) |v\rangle = 0.
+\]</div>
+<p>Define the complex polynomial:</p>
+<div class="math notranslate nohighlight">
+\[
+p(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0,
+\]</div>
+<p>so that:</p>
+<div class="math notranslate nohighlight">
+\[
+p(A) |v\rangle = 0.
+\]</div>
+<p>This means that $|v\rangle$ lies in the <strong>kernel</strong> of the operator <span class="math notranslate nohighlight">\(p(A)\)</span>.</p>
+<p>By the <strong>Fundamental Theorem of Algebra</strong>, the polynomial $p(z)$ factorizes over $\mathbb{C}$:</p>
+<div class="math notranslate nohighlight">
+\[
+p(z) = c (z - \lambda_1)(z - \lambda_2)\cdots(z - \lambda_m),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(c \neq 0\)</span>, <span class="math notranslate nohighlight">\(\lambda_k \in \mathbb{C}\)</span>, and <span class="math notranslate nohighlight">\(m \leq n\)</span>. Applying this factorization to $A$ gives:</p>
+<div class="math notranslate nohighlight">
+\[
+p(A) = c (A - \lambda_1 I)(A - \lambda_2 I)\cdots(A - \lambda_m I),
+\]</div>
+<p>so the equation <span class="math notranslate nohighlight">\(p(A) |v\rangle = 0\)</span> becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+(A - \lambda_1 I)(A - \lambda_2 I)\cdots(A - \lambda_m I) |v\rangle = 0.
+\]</div>
+<p>Now suppose that <strong>none</strong> of the factors <span class="math notranslate nohighlight">\((A - \lambda_k I)\)</span> annihilate <span class="math notranslate nohighlight">\(|v\rangle\)</span>, i.e., that <span class="math notranslate nohighlight">\((A - \lambda_k I) |w\rangle \neq 0\)</span> for all <span class="math notranslate nohighlight">\(k\)</span>. Then, we could recursively define:</p>
+<div class="math notranslate nohighlight">
+\[
+|v_1\rangle := (A - \lambda_m I) |v\rangle, \quad |v_2\rangle := (A - \lambda_{m-1} I) |v_1\rangle, \quad \dots
+\]</div>
+<p>and finally obtain a contradiction, because applying <span class="math notranslate nohighlight">\(p(A)\)</span> to <span class="math notranslate nohighlight">\(|v\rangle\)</span> would produce a nonzero vector. Hence, <strong>at least one</strong> of the factors <span class="math notranslate nohighlight">\((A - \lambda_j I)\)</span> must satisfy:</p>
+<div class="math notranslate nohighlight">
+\[
+(A - \lambda_j I)|w\rangle = 0
+\]</div>
+<p>for some nonzero <span class="math notranslate nohighlight">\(|w\rangle \in V\)</span>. That is, <span class="math notranslate nohighlight">\(|w\rangle\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(A\)</span>, with eigenvalue <span class="math notranslate nohighlight">\(\lambda_j \in \mathbb{C}\)</span>.</p>
+<p>Since we already showed that all eigenvalues of Hermitian operators are real, we conclude that <span class="math notranslate nohighlight">\(\lambda_j \in \mathbb{R}\)</span>.</p>
+<p>To construct an orthonormal eigenbasis,we proceed by induction on $\dim V$:</p>
+<ul>
+<li><p>For $n = 1$, any nonzero vector is an eigenvector.</p></li>
+<li><p>Suppose the theorem holds for $\dim V = n - 1$. Let $|v_1\rangle$ be an eigenvector with eigenvalue $\lambda_1$, and define:</p>
+<div class="math notranslate nohighlight">
+\[
+  W := \{ |w\rangle \in V \mid \langle w | v_1 \rangle = 0 \}.
+  \]</div>
+<p>One can show $W$ is invariant under $A$, and $A|_W$ is Hermitian. By the induction hypothesis, $A|_W$ has an orthonormal eigenbasis. Together with $|v_1\rangle$, we obtain a full orthonormal eigenbasis of $V$.</p>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="spectral-decomposition">
+<h2>🔸 Spectral Decomposition<a class="headerlink" href="#spectral-decomposition" title="Link to this heading">#</a></h2>
+<p>Let ${ |v_i\rangle }_{i=1}^n$ be an orthonormal eigenbasis of $A$, with corresponding eigenvalues $\lambda_i \in \mathbb{R}$. Then:</p>
+<div class="math notranslate nohighlight">
+\[
+A = \sum_{i=1}^n \lambda_i |v_i\rangle \langle v_i|,
+\]</div>
+<p>where each $P_i := |v_i\rangle \langle v_i|$ is a <strong>projection operator</strong>.</p>
+<p>In general, when eigenvalues are degenerate and eigenspaces have dimension &gt; 1, we write:</p>
+<div class="math notranslate nohighlight">
+\[
+A = \sum_k \lambda_k P_k,
+\]</div>
+<p>where the $P_k$ are <strong>orthogonal projection operators</strong> satisfying:</p>
+<ul class="simple">
+<li><p>$P_k^2 = P_k$ (idempotent),</p></li>
+<li><p>$P_k^\dagger = P_k$ (Hermitian),</p></li>
+<li><p>$P_j P_k = \delta_{jk} P_k$ (orthogonality),</p></li>
+<li><p>$\sum_k P_k = I$ (completeness).</p></li>
+</ul>
+<p>The set containing all operators ${P_k}$ is called a <strong>complete set of orthogonal projectors</strong>.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="quantum-measurement">
+<h1>🔹 Quantum Measurement<a class="headerlink" href="#quantum-measurement" title="Link to this heading">#</a></h1>
+<p>We now formalize the notion of measurement in quantum mechanics.</p>
+<section id="axiom-measurement-postulate">
+<h2>Axiom (Measurement Postulate):<a class="headerlink" href="#axiom-measurement-postulate" title="Link to this heading">#</a></h2>
+<p>Let ${P_k}$ be a complete set of orthogonal projectors associated with the Hermitian observable $A = \sum_k \lambda_k P_k$.</p>
+<p>Then:</p>
+<ul class="simple">
+<li><p>When measuring $A$ in the state $|\psi\rangle$, the probability of obtaining outcome $\lambda_k$ is:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+p(k) = \langle \psi | P_k | \psi \rangle = \| P_k |\psi\rangle \|^2.
+\]</div>
+<ul class="simple">
+<li><p>Immediately after the measurement, the system is projected into the subspace $\mathcal{H}_k = \text{Im}(P_k)$:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle_{\text{after}} = \frac{P_k |\psi\rangle}{\| P_k |\psi\rangle \|}.
+\]</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="expectation-value-of-an-observable">
+<h1>🔹 Expectation Value of an Observable<a class="headerlink" href="#expectation-value-of-an-observable" title="Link to this heading">#</a></h1>
+<p>The <strong>expectation value</strong> (or average outcome) of an observable $A$ in the state $|\psi\rangle$ is:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A \rangle = \sum_k \lambda_k \, p(k) = \sum_k \lambda_k \langle \psi | P_k | \psi \rangle.
+\]</div>
+<p>Using the spectral decomposition of $A$, we also have:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A \rangle = \langle \psi | A | \psi \rangle.
+\]</div>
+</section>
+<section id="heisenberg-picture">
+<h1>🔹 Heisenberg Picture<a class="headerlink" href="#heisenberg-picture" title="Link to this heading">#</a></h1>
+<p>We have seen that the quantum evolution of a system is described by a mapping from the real time axis into the Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, such that each instant of time is associated with a state vector <span class="math notranslate nohighlight">\(|\psi(t)\rangle \in \mathcal{H}\)</span>. It is important to emphasize that the state vectors themselves do not <em>contain</em> time; instead, time appears as a parameter that labels a continuous family of states visited during the evolution:</p>
+<div class="math notranslate nohighlight">
+\[
+t \mapsto |\psi(t)\rangle \in \mathcal{H}
+\]</div>
+<p>This mapping defines a trajectory through Hilbert space, and the unitary time-evolution postulate guarantees that this trajectory is uniquely determined by the initial state <span class="math notranslate nohighlight">\(|\psi(t\_0)\rangle\)</span>. Each state along the trajectory can be generated from the initial state by applying a unitary time-evolution operator:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi(t)\rangle = U(t, t_0)\,|\psi(t_0)\rangle
+\]</div>
+<p>Hence, the family of states</p>
+<div class="math notranslate nohighlight">
+\[
+\left\{ |\psi(t)\rangle \,\middle|\, |\psi(t_0)\rangle \text{ given} \right\}
+\]</div>
+<p>is fully determined by the unitary dynamics.</p>
+<p>Now we ask: <strong>How do expectation values of quantum observables depend on time?</strong></p>
+<p>Given a time-evolved state <span class="math notranslate nohighlight">\(|\psi(t)\rangle\)</span>, the expectation value of an observable <span class="math notranslate nohighlight">\(A\$ at time \$t\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A(t)\rangle = \langle \psi(t) | A | \psi(t) \rangle
+\]</div>
+<p>Assuming the initial state <span class="math notranslate nohighlight">\(|\psi(t\_0)\rangle\)</span> is normalized, unitarity ensures that <span class="math notranslate nohighlight">\(|\psi(t)\rangle\)</span> remains normalized for all times.</p>
+<p>Using the expression <span class="math notranslate nohighlight">\(|\psi(t)\rangle = U(t, t\_0) |\psi(t\_0)\rangle\)</span>, we can write the dual vector as:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi(t)| = \langle \psi(t_0) | U^\dagger(t, t_0)
+\]</div>
+<p>Thus, the time-dependent expectation value becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A(t)\rangle = \langle \psi(t_0) | U^\dagger(t, t_0)\, A\, U(t, t_0) | \psi(t_0) \rangle
+\]</div>
+<p>So far, we have described quantum dynamics in the <strong>Schrödinger picture</strong>, where the <em>state vectors</em> evolve in time while the <em>observables</em> (operators like <span class="math notranslate nohighlight">\(A\)</span>) remain time-independent elements of the operator algebra <span class="math notranslate nohighlight">\(\mathscr{L}(\mathcal{H})\)</span>.</p>
+<p>The form of the expectation value above motivates a change in perspective. Instead of viewing the states as evolving, we can <strong>transfer the time dependence to the operators</strong> themselves.</p>
+<p>Since the state of the system at any time $t$ is uniquely determined by the initial state $|\psi(t_0)\rangle$, this initial state provides a complete description of the system’s dynamics. The expression for the expectation value $\langle A(t) \rangle$ allows us to “shift” the time dependence from the state vectors to the operators themselves:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle A(t) \rangle 
+&amp;= \langle \psi_S(t) | A | \psi_S(t) \rangle \\
+&amp;= \langle \psi_S(t_0) | U^\dagger(t, t_0)\, A\, U(t, t_0) | \psi_S(t_0) \rangle \\
+&amp;= \langle \psi_H(t_0) | A_H(t) | \psi_H(t_0) \rangle
+\end{aligned}
+\end{split}\]</div>
+<p>Here, we have introduced the <strong>Heisenberg-picture operator</strong> and the corresponding state:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A_H(t) &amp;= U^\dagger(t, t_0)\, A\, U(t, t_0) \\
+|\psi_H(t_0)\rangle &amp;= |\psi_S(t_0)\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>Thus, in the <strong>Heisenberg picture</strong>, the <em>state vector</em> $|\psi_H(t_0)\rangle$ remains constant in time, while the <em>operators</em> evolve. Although mathematically equivalent to the Schrödinger picture, the Heisenberg formulation is often conceptually closer to classical mechanics. In classical dynamics, we associate time-dependent functions $x(t)$ and $p(t)$ with a particle’s position and momentum. Similarly, in the Heisenberg picture, these observables become time-dependent operators $x_H(t)$ and $p_H(t)$.</p>
+<p>Since the state of the system at any time $t$ is uniquely determined by $\left|\psi\left(t_0\right)\right\rangle$, the vector $\left|\psi\left(t_0\right)\right\rangle$ provides a full description of the system. The expression for $\langle A\rangle$ allows us to “shift” the time dependence from the state vectors to the operators in the following way:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle A\rangle &amp; =\left\langle\psi_S(t)\right| A\left|\psi_S(t)\right\rangle=\left\langle\psi_S\left(t_0\right)\right| U^{+} A U\left|\psi_S\left(t_0\right)\right\rangle \\
+&amp; =\left\langle\psi_H\left(t_0\right)\right| A_H(t)\left|\psi_H\left(t_0\right)\right\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>where we have defined the Heisenberg-picture operator</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+A_H(t)=U^{+}\left(t, t_0\right) A U\left(t, t_0\right) \\
+\text{and} \\
+\left|\psi_H\left(t_0\right)\right\rangle=\left|\psi_S\left(t_0\right)\right\rangle
+\end{gathered}
+\end{split}\]</div>
+<p>Thus, in the Heisenberg picture, the states $\left|\psi_H\left(t_0\right)\right\rangle$ do not change with time, but the operators associated with the observables do. Although fully equivalent to the Schrödinger picture, Heisenberg’s viewpoint is closer to our classical intuition. After all, in classical mechanics, we associate time-dependent position and momentum functions $x(t), p(t)$ with classically moving particles. In the Heisenberg picture of quantum mechanics, they become time-dependent operators $x_n(t)$ and $p_1(t)$.</p>
+<hr class="docutils" />
+<section id="time-evolution-of-operators-in-the-heisenberg-picture">
+<h2>🔹 Time Evolution of Operators in the Heisenberg Picture<a class="headerlink" href="#time-evolution-of-operators-in-the-heisenberg-picture" title="Link to this heading">#</a></h2>
+<p>We now derive a differential equation for the time evolution of operators in the Heisenberg picture, starting from their definition:</p>
+<div class="math notranslate nohighlight">
+\[
+A_H(t)=U^{+}\left(t, t_0\right) A U\left(t, t_0\right)
+\]</div>
+<p>In order not to lose generality, we may assume that $A$ also contains some intrinsic time dependence (such as, for example, time dependence arising from the interaction with some external electric field). In this case, we get, after performing the time derivatives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d A_H}{d t} = \frac{d U^{+}\left(t, t_0\right)}{d t} A(t) U\left(t, t_0\right) + U^{+}\left(t, t_0\right) \frac{\partial A}{\partial t} U\left(t, t_0\right) + U^{+}\left(t, t_0\right) A \frac{d U\left(t, t_0\right)}{d t}
+\]</div>
+<p>From the operator form of the TDSE, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; i \hbar \frac{d U}{d t} = H U \quad \Rightarrow \quad \frac{d U}{d t} = \frac{1}{i \hbar} H U \\
+&amp; \frac{d U^{+}}{d t} = -\frac{1}{i \hbar}(H U)^{+} = -\frac{1}{i \hbar} U^{+} H
+\end{aligned}
+\end{split}\]</div>
+<p>From this, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d A_H}{d t} = U^{+} \left( \frac{\partial A}{\partial t} \right) U + \frac{1}{i \hbar} \left[ U^{+} A H U - U^{+} H A U \right]
+\]</div>
+<p>By definition, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial A_H}{\partial t} := U^{+} \frac{\partial A}{\partial t} U
+\]</div>
+<p>and, after inserting the identity operator at appropriate places:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d A_H}{d t} = \frac{\partial A_H}{\partial t} + \frac{1}{i \hbar} \left[ U^{+} A U\, U^{+} H U - U^{+} H U\, U^{+} A U \right]
+\]</div>
+<p>Since $U^{+} H U = H$ (why?) and $A_H = U^{+} A U$, we obtain the equation of motion for Heisenberg operators:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{d A_H}{d t} &amp;= \frac{\partial A_H}{\partial t} + \frac{1}{i \hbar} \left[ A_H H - H A_H \right] \\
+&amp;= \frac{\partial A_H}{\partial t} + \frac{1}{i \hbar} \left[ A_H, H \right]
+\end{aligned}
+\end{split}\]</div>
+<p>For time-independent Schrödinger operators such as $x$, $p$, etc., we get:</p>
+<div class="math notranslate nohighlight">
+\[
+i \hbar \frac{d A_H}{d t} = \left[ A_H, H \right]
+\]</div>
+<p>We see that the time evolution of operators is determined by their commutators with the Hamiltonian!</p>
+<hr class="docutils" />
+<p><strong>Connection to classical mechanics:</strong>
+Consider a classical mechanical system evolving according to Hamilton’s equations:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{x} = \frac{\partial H}{\partial p}, \quad \dot{p} = -\frac{\partial H}{\partial x}
+\]</div>
+<p>How does a classical observable $A(x, p, t)$ evolve in time along classical trajectories that are solutions of Hamilton’s equations? Well, let us calculate the time derivative!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{d A}{d t} &amp;= \frac{\partial A}{\partial t} + \frac{\partial A}{\partial x} \cdot \dot{x} + \frac{\partial A}{\partial p} \cdot \dot{p} \\
+&amp;= \frac{\partial A}{\partial t} + \frac{\partial A}{\partial x} \cdot \frac{\partial H}{\partial p} - \frac{\partial A}{\partial p} \cdot \frac{\partial H}{\partial x}
+\end{aligned}
+\end{split}\]</div>
+<p>We now “invent” a bit of new notation and define what is called the <strong>Poisson bracket</strong> of two classical phase space functions:</p>
+<div class="math notranslate nohighlight">
+\[
+\{A, H\} := \frac{\partial A}{\partial x} \cdot \frac{\partial H}{\partial p} - \frac{\partial A}{\partial p} \cdot \frac{\partial H}{\partial x}
+\]</div>
+<p>With this notation, the equation for $dA/dt$ can be rewritten as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d A}{d t} = \frac{\partial A}{\partial t} + \{A, H\}
+\]</div>
+<p>This has an analogous form to the quantum relation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d A_H}{d t} = \frac{\partial A_H}{\partial t} + \frac{1}{i \hbar} \left[ A_H, H \right]
+\]</div>
+<p>if we identify the quantum commutator with the classical Poisson bracket:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{i \hbar} \left[ A_H, H \right] \xrightarrow[\text{classical limit}]{} \{A, H\}
+\]</div>
+<p>This may seem like a bit of cheating, since after all we have only defined a suggestive notation for the Poisson bracket. However, the real point is that quantum commutators and Poisson brackets, defined in the above way, share an algebraic structure and mathematical properties. The following properties can be easily shown to be valid both for quantum commutators and for classical Poisson brackets:</p>
+</section>
+</section>
+<section id="properties-shared-by-commutators-and-poisson-brackets">
+<h1>🔹 Properties shared by Commutators and Poisson Brackets<a class="headerlink" href="#properties-shared-by-commutators-and-poisson-brackets" title="Link to this heading">#</a></h1>
+<p>Let $A$, $B$, and $C$ be observables (operators in quantum mechanics or smooth functions on phase space in classical mechanics). The following algebraic properties are satisfied both by the <strong>quantum commutator</strong> $[A, B] = AB - BA$ and the <strong>classical Poisson bracket</strong> ${A, B}$:</p>
+<section id="linearity">
+<h2>1. <strong>Linearity</strong>:<a class="headerlink" href="#linearity" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+[\alpha A + \beta B, C] = \alpha [A, C] + \beta [B, C]
+\]</div>
+</section>
+<section id="antisymmetry">
+<h2>2. <strong>Antisymmetry</strong>:<a class="headerlink" href="#antisymmetry" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+[A, B] = -[B, A]
+\]</div>
+</section>
+<section id="leibniz-rule-derivation-property">
+<h2>3. <strong>Leibniz Rule (Derivation Property)</strong>:<a class="headerlink" href="#leibniz-rule-derivation-property" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+[AB, C] = A[B, C] + [A, C]B
+\]</div>
+<p>(Another commonly seen form of the product rule is:)</p>
+<div class="math notranslate nohighlight">
+\[
+[A, BC] = [A, B]C + B[A, C]
+\]</div>
+<p>(You also wrote this expression, possibly a misstatement of the Leibniz rule:)</p>
+<div class="math notranslate nohighlight">
+\[
+[A, B, C] = B[A, C] + [A, B]C
+\]</div>
+</section>
+<section id="jacobi-identity">
+<h2>4. <strong>Jacobi Identity</strong>:<a class="headerlink" href="#jacobi-identity" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+[A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0
+\]</div>
+<blockquote>
+<div><p>✅ <strong>All these properties remain valid if we replace commutator brackets with Poisson brackets.</strong></p>
+</div></blockquote>
+<hr class="docutils" />
+</section>
+</section>
+<section id="lie-algebras-and-the-geometric-structure-behind-the-bracket">
+<h1>🔹 Lie Algebras and the Geometric Structure Behind the Bracket<a class="headerlink" href="#lie-algebras-and-the-geometric-structure-behind-the-bracket" title="Link to this heading">#</a></h1>
+<p>For those who like to know more about the connections between the structure of quantum and classical mechanics to the concepts also used in differential geometry I summarize some useful terms for further self study…</p>
+<section id="definition-lie-algebra">
+<h2>💡 <strong>Definition (Lie Algebra)</strong>:<a class="headerlink" href="#definition-lie-algebra" title="Link to this heading">#</a></h2>
+<p>A <strong>Lie algebra</strong> is a vector space <span class="math notranslate nohighlight">\(V\)</span> over a field (e.g., <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> or <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>), equipped with a bilinear operation <span class="math notranslate nohighlight">\([\cdot, \cdot]: V \times V \to V\)</span>, called the <strong>Lie bracket</strong>, satisfying:</p>
+<ol class="arabic simple">
+<li><p><strong>Bilinearity</strong>: <span class="math notranslate nohighlight">\([aA + bB, C] = a[A, C] + b[B, C]\)</span> for all scalars <span class="math notranslate nohighlight">\(a,b\)</span></p></li>
+<li><p><strong>Antisymmetry</strong>: <span class="math notranslate nohighlight">\([A, B] = -[B, A]\)</span></p></li>
+<li><p><strong>Jacobi identity</strong>: <span class="math notranslate nohighlight">\([A, [B, C]] + [B, [C, A]] + [C, [A, B]] = 0\)</span></p></li>
+</ol>
+<p>In both classical and quantum mechanics, the set of observables with their respective brackets (Poisson or commutator) forms a <strong>Lie algebra</strong>.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="relation-to-derivations-and-lie-derivatives">
+<h1>🔹 Relation to Derivations and Lie Derivatives<a class="headerlink" href="#relation-to-derivations-and-lie-derivatives" title="Link to this heading">#</a></h1>
+<section id="leibniz-rule-derivations">
+<h2>▶️ <strong>Leibniz Rule ⇨ Derivations</strong>:<a class="headerlink" href="#leibniz-rule-derivations" title="Link to this heading">#</a></h2>
+<p>The Leibniz rule reflects that the bracket defines a <strong>derivation</strong>, i.e., a linear operation $D$ satisfying:</p>
+<div class="math notranslate nohighlight">
+\[
+D(AB) = D(A)B + A D(B)
+\]</div>
+<p>This is true for both the <strong>Poisson bracket</strong> (where ${f, \cdot}$ acts as a derivation) and the <strong>quantum commutator</strong> (where <span class="math notranslate nohighlight">\([A, \cdot]\)</span> acts as a derivation).</p>
+<p>In this sense, each observable generates a <strong>flow</strong> or <strong>infinitesimal transformation</strong> on the space of observables, much like a vector field acting via a <strong>Lie derivative</strong> in differential geometry.</p>
+</section>
+<hr class="docutils" />
+<section id="lie-derivatives">
+<h2>▶️ <strong>Lie Derivatives</strong>:<a class="headerlink" href="#lie-derivatives" title="Link to this heading">#</a></h2>
+<p>In differential geometry, the <strong>Lie derivative</strong> <span class="math notranslate nohighlight">\(\mathcal{L}\_X\)</span> with respect to a vector field <span class="math notranslate nohighlight">\(X\)</span> is also a derivation on the algebra of smooth functions or tensor fields:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}_X(fg) = (\mathcal{L}_X f) g + f (\mathcal{L}_X g)
+\]</div>
+<p>In classical mechanics, each function <span class="math notranslate nohighlight">\(H\)</span> defines a <strong>Hamiltonian vector field</strong> and the Poisson bracket ${A, H}$ is the Lie derivative of <span class="math notranslate nohighlight">\(A\)</span> along $X_H$:</p>
+<div class="math notranslate nohighlight">
+\[
+\{A, H\} = \mathcal{L}_{X_H} A
+\]</div>
+<p>Thus, Poisson brackets are directly related to <strong>Lie derivatives</strong> generated by Hamiltonian flows on phase space.</p>
+</section>
+<hr class="docutils" />
+<section id="commutators-and-lie-algebras-in-quantum-mechanics">
+<h2>▶️ <strong>Commutators and Lie Algebras in Quantum Mechanics</strong>:<a class="headerlink" href="#commutators-and-lie-algebras-in-quantum-mechanics" title="Link to this heading">#</a></h2>
+<p>In quantum mechanics, observables form a non-commutative algebra, and the <strong>commutator</strong> <span class="math notranslate nohighlight">\([A, \cdot]\)</span> acts as a derivation on this algebra. This is why time evolution in the Heisenberg picture,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dA_H}{dt} = \frac{1}{i\hbar}[A_H, H]
+\]</div>
+<p>resembles the action of a Lie derivative: the Hamiltonian $H$ generates a flow on the algebra of observables through the commutator.</p>
+</section>
+</section>
+<section id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Classical Mechanics</p></th>
+<th class="head"><p>Quantum Mechanics</p></th>
+<th class="head"><p>Geometric Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\({A, H}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{i\hbar} [A, H]\)</span></p></td>
+<td><p>Generator of infinitesimal transformation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Poisson bracket</p></td>
+<td><p>Commutator bracket</p></td>
+<td><p>Lie bracket</p></td>
+</tr>
+<tr class="row-even"><td><p>Derivation on functions</p></td>
+<td><p>Derivation on operators</p></td>
+<td><p>Lie derivative / Hamiltonian flow</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hamiltonian vector field</p></td>
+<td><p>Heisenberg generator</p></td>
+<td><p>Infinitesimal symmetry</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_dynamics_2026",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="rotating_wave.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🔸 Two level system driven by a harmonic field</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="history_heisenberg.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔹 Observables in Quantum Mechanics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiom-observable">Axiom (Observable):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-spectral-theorem">Theorem (Spectral Theorem):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">🔸 Proof:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-decomposition">🔸 Spectral Decomposition</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-measurement">🔹 Quantum Measurement</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiom-measurement-postulate">Axiom (Measurement Postulate):</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-an-observable">🔹 Expectation Value of an Observable</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heisenberg-picture">🔹 Heisenberg Picture</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution-of-operators-in-the-heisenberg-picture">🔹 Time Evolution of Operators in the Heisenberg Picture</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-shared-by-commutators-and-poisson-brackets">🔹 Properties shared by Commutators and Poisson Brackets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">1. <strong>Linearity</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antisymmetry">2. <strong>Antisymmetry</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leibniz-rule-derivation-property">3. <strong>Leibniz Rule (Derivation Property)</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jacobi-identity">4. <strong>Jacobi Identity</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lie-algebras-and-the-geometric-structure-behind-the-bracket">🔹 Lie Algebras and the Geometric Structure Behind the Bracket</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-lie-algebra">💡 <strong>Definition (Lie Algebra)</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-derivations-and-lie-derivatives">🔹 Relation to Derivations and Lie Derivatives</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leibniz-rule-derivations">▶️ <strong>Leibniz Rule ⇨ Derivations</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lie-derivatives">▶️ <strong>Lie Derivatives</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commutators-and-lie-algebras-in-quantum-mechanics">▶️ <strong>Commutators and Lie Algebras in Quantum Mechanics</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

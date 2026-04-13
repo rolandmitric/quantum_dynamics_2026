@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🔸 Position and Momentum Representation &#8212; Quantum Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e936a729" />
+    <link rel="stylesheet" type="text/css" href="_static/wide_v2.css?v=bfe64621" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'position_momentum_representation';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="🔸 Particle in a Linear Potential" href="particle_linear_potential.html" />
+    <link rel="prev" title="🔸 Interaction Picture of Quantum Mechanics" href="interaction_picture.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantum Dynamics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Quantum Dynamics – SS 2026
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classical_mechanics.html">🔸 Crash course in Classical Mechanics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="formalism_hilbert_spaces.html">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_linear_operators.html">🔸 Linear maps, operators and functionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formalism_unitary_time_evolution.html">🔸 Formalism of Quantum Mechanics: Unitary time evolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hamiltonian_dynamics_crash_course.html">Crash Course: Hamiltonian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qubit_dynamics.html">🔸 Quantum Dynamics of a Two-Level System with Constant Coupling</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="rotating_wave.html">🔸 Two level system driven by a harmonic field</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="heisenberg_picture.html">🔹 Observables in Quantum Mechanics</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="history_heisenberg.html">🔸 A Historic View on the Heisenberg Formulation of Quantum Mechanics</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="interaction_picture.html">🔸 Interaction Picture of Quantum Mechanics</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🔸 Position and Momentum Representation</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="particle_linear_potential.html">🔸 Particle in a Linear Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stationary_phase_method.html">Stationary Phase Method applied to Airy function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="path_integrals.html">Path integral representation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/rolandmitric/quantum_dynamics_2026/main?urlpath=lab/tree/./position_momentum_representation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/edit/main/./position_momentum_representation.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rolandmitric/quantum_dynamics_2026/issues/new?title=Issue%20on%20page%20%2Fposition_momentum_representation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/position_momentum_representation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🔸 Position and Momentum Representation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 Position and Momentum Representation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-operator-and-its-generator">Translation Operator and Its Generator</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-of-expectation-value">Shift of Expectation Value</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-as-generator-of-translations">Momentum as Generator of Translations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-as-a-one-parameter-unitary-group">Translation as a One-Parameter Unitary Group</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-stones-theorem">Connection to Stone’s Theorem</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#commutator-of-hat-x-and-hat-p">Commutator of <span class="math notranslate nohighlight">\(\hat{x}\)</span> and <span class="math notranslate nohighlight">\(\hat{p}\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenstates-of-position-and-momentum">Eigenstates of Position and Momentum</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#action-of-operators-in-position-representation">Action of Operators in Position Representation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#position-operator">Position operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-operator">Momentum operator</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heisenbergs-uncertainty-relation">🔹 Heisenberg’s Uncertainty Relation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-uncertainty-wave-packet-and-derivation-of-the-fourier-kernel">🔹 Minimum uncertainty wave packet and derivation of the Fourier kernel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-in-position-representation">Solution in position representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-in-momentum-representation">Solution in momentum representation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="position-and-momentum-representation">
+<h1>🔸 Position and Momentum Representation<a class="headerlink" href="#position-and-momentum-representation" title="Link to this heading">#</a></h1>
+<p>Let us now consider quantum systems whose dynamics take place in real space, such that a position <span class="math notranslate nohighlight">\(x\)</span> is an observable taking any real value. According to the rules of quantum mechanics, we associate to the position observable a Hermitian operator <span class="math notranslate nohighlight">\(\hat{x}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{x}^\dagger = \hat{x},
+\]</div>
+<p>i.e., <span class="math notranslate nohighlight">\(\hat{x}\)</span> is self-adjoint.</p>
+<p>Let <span class="math notranslate nohighlight">\(|\psi\rangle \in \mathcal{H}\)</span> be a normalized state,</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \psi | \psi \rangle = 1.
+\]</div>
+<p>To such a state we can assign its <strong>average position</strong> (expectation value of position) defined by</p>
+<div class="math notranslate nohighlight">
+\[
+\langle x \rangle = \langle \psi | \hat{x} | \psi \rangle.
+\]</div>
+<p>In principle, we can label any state <span class="math notranslate nohighlight">\(|\psi\rangle \in \mathcal{H}\)</span> by the value of its expectation <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>. Thus we may write:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle \rightarrow |\psi_{\langle x \rangle} \rangle.
+\]</div>
+<p>This notation is informal and not unique, since many different states can share the same expectation value <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>, but it is suggestive of the position “center” of the state.</p>
+<hr class="docutils" />
+</section>
+<section id="translation-operator-and-its-generator">
+<h1>Translation Operator and Its Generator<a class="headerlink" href="#translation-operator-and-its-generator" title="Link to this heading">#</a></h1>
+<p>We now define a unitary operator called the <strong>translation operator</strong>, denoted by <span class="math notranslate nohighlight">\(\hat{T}(\Delta x)\)</span>, that shifts a quantum state in space by a distance <span class="math notranslate nohighlight">\(\Delta x\)</span>. Specifically, this operator satisfies:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{T}^\dagger(\Delta x) \hat{T}(\Delta x) = \hat{T}(\Delta x) \hat{T}^\dagger(\Delta x) = \mathbb{I},
+\]</div>
+<p>i.e., <span class="math notranslate nohighlight">\(\hat{T}(\Delta x)\)</span> is <strong>unitary</strong> for all <span class="math notranslate nohighlight">\(\Delta x \in \mathbb{R}\)</span>. <span class="math notranslate nohighlight">\(\Delta x\)</span> itself is a real parameter that labels each translation operator.</p>
+<section id="shift-of-expectation-value">
+<h2>Shift of Expectation Value<a class="headerlink" href="#shift-of-expectation-value" title="Link to this heading">#</a></h2>
+<p>To fix the form of <span class="math notranslate nohighlight">\(\hat{T}(\Delta x)\)</span>, we demand that it shifts the expectation value of position:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle \psi_{\langle x \rangle} \right| \hat{T}^\dagger(\Delta x) \hat{x} \hat{T}(\Delta x) \left| \psi_{\langle x \rangle} \right\rangle = \langle x \rangle + \Delta x.
+\]</div>
+<p>This condition implies the operator identity:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{T}^\dagger(\Delta x) \hat{x} \hat{T}(\Delta x) = \hat{x} + \Delta x \cdot \mathbb{I}.
+\]</div>
+<p>Multiplying both sides from the left with <span class="math notranslate nohighlight">\(\hat{T}(\Delta x)\)</span>, we obtain the <strong>commutator relation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{x} \hat{T}(\Delta x) - \hat{T}(\Delta x) \hat{x} = \Delta x \cdot \hat{T}(\Delta x),
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+[\hat{x}, \hat{T}(\Delta x)] = \Delta x \cdot \hat{T}(\Delta x).
+\]</div>
+<p>We observe that the translation operator does not commute with the position operator.</p>
+</section>
+</section>
+<section id="momentum-as-generator-of-translations">
+<h1>Momentum as Generator of Translations<a class="headerlink" href="#momentum-as-generator-of-translations" title="Link to this heading">#</a></h1>
+<p>To explore the structure of the translation operator, we differentiate the unitarity condition:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{T}^\dagger(x) \hat{T}(x) = \mathbb{I}.
+\]</div>
+<p>Differentiating both sides with respect to <span class="math notranslate nohighlight">\(x\)</span>, we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \hat{T}}{\partial x} \hat{T}^\dagger + \hat{T} \frac{\partial \hat{T}^\dagger}{\partial x} = 0.
+\]</div>
+<p>This implies that</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{\partial \hat{T}}{\partial x} \hat{T}^\dagger \right) + \left( \frac{\partial \hat{T}}{\partial x} \hat{T}^\dagger \right)^\dagger = 0,
+\]</div>
+<p>which shows that the operator</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \hat{T}}{\partial x} \hat{T}^\dagger
+\]</div>
+<p>is <strong>anti-Hermitian</strong>.</p>
+<p>We denote this anti-Hermitian operator by <span class="math notranslate nohighlight">\(\pi\)</span>, and write</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \hat{T}}{\partial x} \hat{T}^\dagger = \pi.
+\]</div>
+<p>Multiplying both sides on the right by <span class="math notranslate nohighlight">\(\hat{T}\)</span>, we get the differential equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \hat{T}}{\partial x} = \pi \hat{T}.
+\]</div>
+<p>Assuming <span class="math notranslate nohighlight">\(\pi\)</span> is independent of <span class="math notranslate nohighlight">\(x\)</span>, this can be formally solved as</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{T}(x) = e^{\pi x}.
+\]</div>
+<p>We now <strong>define the momentum operator <span class="math notranslate nohighlight">\(\hat{p}\)</span></strong> as the Hermitian generator of translations by setting</p>
+<div class="math notranslate nohighlight">
+\[
+\pi = -\frac{i}{\hbar} \hat{p}.
+\]</div>
+<p>Then the translation operator becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{T}(x) = e^{- \frac{i}{\hbar} \hat{p} x}.
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(x = \Delta x\)</span>, we thus have</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{T}(\Delta x) = e^{- \frac{i}{\hbar} \hat{p} \Delta x}.
+\]</div>
+<hr class="docutils" />
+<section id="translation-as-a-one-parameter-unitary-group">
+<h2>Translation as a One-Parameter Unitary Group<a class="headerlink" href="#translation-as-a-one-parameter-unitary-group" title="Link to this heading">#</a></h2>
+<p>From a mathematical point of view, the family of translation operators <span class="math notranslate nohighlight">\(\{ \hat{T}(x) \}_{x \in \mathbb{R}}\)</span> forms a <strong>one-parameter unitary group</strong> under composition as a group operation:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{T}(0) = \mathbb{I}\)</span> (identity element),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{T}(x_1)\hat{T}(x_2) = \hat{T}(x_1 + x_2)\)</span> (group property),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{T}(x)\)</span> is continuous in the parameter <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>.</p></li>
+</ol>
+<p>These properties imply that translations in space form a continuous group structure where each group element is labeled by a real parameter <span class="math notranslate nohighlight">\(x\)</span>, and multiplication of translation operators corresponds to addition of their displacement parameters.</p>
+</section>
+<section id="connection-to-stones-theorem">
+<h2>Connection to Stone’s Theorem<a class="headerlink" href="#connection-to-stones-theorem" title="Link to this heading">#</a></h2>
+<p>According to <strong>Stone’s theorem</strong> on one-parameter unitary groups, every (strongly) continuous one-parameter unitary group <span class="math notranslate nohighlight">\(\{ U(t) \}_{t \in \mathbb{R}}\)</span> on a Hilbert space <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> can be written in the form</p>
+<div class="math notranslate nohighlight">
+\[
+U(t) = e^{-i t A}
+\]</div>
+<p>for some unique <strong>self-adjoint operator</strong> <span class="math notranslate nohighlight">\(A\)</span>, which is called the <strong>generator</strong> of the unitary group.</p>
+<p>In our case, the group <span class="math notranslate nohighlight">\(\hat{T}(x)\)</span> is parametrized by the real displacement <span class="math notranslate nohighlight">\(x\)</span>, and the generator of spatial translations is a Hermitian operator which we identify with the <strong>momentum operator</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{T}(x) = e^{- \frac{i}{\hbar} \hat{p} x}.
+\]</div>
+<p>This shows that the momentum operator <span class="math notranslate nohighlight">\(\hat{p}\)</span> is (up to a factor <span class="math notranslate nohighlight">\(\hbar\)</span>) the generator of spatial translations in quantum mechanics meaning that the infinitesimal translations are induced by the action of <span class="math notranslate nohighlight">\(\hat{p}\)</span> on a given state.</p>
+</section>
+</section>
+<section id="commutator-of-hat-x-and-hat-p">
+<h1>Commutator of <span class="math notranslate nohighlight">\(\hat{x}\)</span> and <span class="math notranslate nohighlight">\(\hat{p}\)</span><a class="headerlink" href="#commutator-of-hat-x-and-hat-p" title="Link to this heading">#</a></h1>
+<p>We now ask the question whether the position and the momentum as we have defined them are simultaeously determined. In order to answer this we must find out wheter the position and momentum operators commute.
+We recall the earlier derived commutator:</p>
+<div class="math notranslate nohighlight">
+\[
+[\hat{x}, \hat{T}( x)] =  x \cdot \hat{T}(\Delta x).
+\]</div>
+<p>Inserting the exponential form of <span class="math notranslate nohighlight">\(\hat{T}\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\hat{x}, e^{- \frac{i}{\hbar} \hat{p} x} \right] = x \cdot e^{- \frac{i}{\hbar} \hat{p} x}.
+\]</div>
+<p>Differentiating both sides with respect to <span class="math notranslate nohighlight">\(x\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\hat{x}, -\frac{i}{\hbar} \hat{p} e^{- \frac{i}{\hbar} \hat{p} x} \right] = e^{- \frac{i}{\hbar} \hat{p} x} + x \left(-\frac{i}{\hbar} \hat{p}\right) e^{- \frac{i}{\hbar} \hat{p} x}.
+\]</div>
+<p>Now set <span class="math notranslate nohighlight">\(x = 0\)</span>. Using the fact that <span class="math notranslate nohighlight">\(e^0 = \mathbb{I}\)</span>, we find</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\hat{x}, -\frac{i}{\hbar} \hat{p} \right] = \mathbb{I}
+\quad \Rightarrow \quad
+[\hat{x}, \hat{p}] = i \hbar.
+\]</div>
+<p>Thus, <strong>position and momentum do not commute</strong>. Their canonical commutation relation is:</p>
+<div class="math notranslate nohighlight">
+\[
+[\hat{x}, \hat{p}] = i \hbar.
+\]</div>
+<p>This is one of the fundamental structures of quantum mechanics and leads directly to  the Heisenberg’s uncertainty principle.</p>
+<hr class="docutils" />
+</section>
+<section id="eigenstates-of-position-and-momentum">
+<h1>Eigenstates of Position and Momentum<a class="headerlink" href="#eigenstates-of-position-and-momentum" title="Link to this heading">#</a></h1>
+<p>The fact that <span class="math notranslate nohighlight">\(\hat{x}\)</span> and <span class="math notranslate nohighlight">\(\hat{p}\)</span> do not commute implies that there is <strong>no basis</strong> in which both operators are diagonal—there are <strong>no common eigenstates</strong>.</p>
+<p>Assume <span class="math notranslate nohighlight">\(\hat{x}\)</span> has eigenstates <span class="math notranslate nohighlight">\(|x\rangle\)</span> satisfying:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{x} |x\rangle = x \cdot |x\rangle.
+\]</div>
+<p>We assume these states form a <strong>complete set</strong> in the Hilbert space:</p>
+<div class="math notranslate nohighlight">
+\[
+\int dx\, |x\rangle\langle x| = \mathbb{I}.
+\]</div>
+<p>Then any state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> can be decomposed as:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle = \int dx' \, |x'\rangle \langle x' | \psi \rangle.
+\]</div>
+<p>Define the <strong>position-space wavefunction</strong> as</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x') := \langle x' | \psi \rangle.
+\]</div>
+<p>Then projecting onto <span class="math notranslate nohighlight">\(\langle x|\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle x | \psi \rangle = \int dx' \langle x | x' \rangle \psi(x').
+\]</div>
+<p>This shows that <span class="math notranslate nohighlight">\(\langle x | x' \rangle\)</span> acts like a <strong>Dirac delta function</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle x | x' \rangle = \delta(x - x'), \quad \text{with} \quad \int dx' \delta(x - x') = 1.
+\]</div>
+<hr class="docutils" />
+</section>
+<section id="action-of-operators-in-position-representation">
+<h1>Action of Operators in Position Representation<a class="headerlink" href="#action-of-operators-in-position-representation" title="Link to this heading">#</a></h1>
+<p>Let us now examine how operators act in the position representation.</p>
+<section id="position-operator">
+<h2>Position operator<a class="headerlink" href="#position-operator" title="Link to this heading">#</a></h2>
+<p>We compute:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle x | \hat{x} | \psi \rangle = x \cdot \langle x | \psi \rangle = x \cdot \psi(x).
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{x} \psi(x) = x \cdot \psi(x).
+\]</div>
+<p>This means that in the position representation, the position operator acts as <strong>multiplication by <span class="math notranslate nohighlight">\(x\)</span></strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="momentum-operator">
+<h2>Momentum operator<a class="headerlink" href="#momentum-operator" title="Link to this heading">#</a></h2>
+<p>We now compute how <span class="math notranslate nohighlight">\(\hat{p}\)</span> acts on a wavefunction <span class="math notranslate nohighlight">\(\psi(x)\)</span>. Recall that</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{T}(\Delta x) = e^{- \frac{i}{\hbar} \hat{p} \Delta x}
+\approx \mathbb{I} - \frac{i}{\hbar} \hat{p} \Delta x + \mathcal{O}(\Delta x^2),
+\]</div>
+<p>so that:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p} = i \hbar \lim_{\Delta x \to 0} \frac{\hat{T}(\Delta x) - \mathbb{I}}{\Delta x}.
+\]</div>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle x | \hat{p} | \psi \rangle
+&amp;= i \hbar \lim_{\Delta x \to 0} \frac{1}{\Delta x} \left( \langle x | \hat{T}(\Delta x) | \psi \rangle - \langle x | \psi \rangle \right) \\
+&amp;= i \hbar \lim_{\Delta x \to 0} \frac{1}{\Delta x} \left( \psi(x - \Delta x) - \psi(x) \right) \\
+&amp;= -i \hbar \frac{d\psi}{dx}(x).
+\end{aligned}
+\end{split}\]</div>
+<p>Hence:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p} \psi(x) = -i \hbar \frac{d}{dx} \psi(x).
+\]</div>
+<p>So, in the position representation, the momentum operator acts as a <strong>differential operator</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p} = -i \hbar \frac{d}{dx}.
+\]</div>
+</section>
+</section>
+<section id="heisenbergs-uncertainty-relation">
+<h1>🔹 Heisenberg’s Uncertainty Relation<a class="headerlink" href="#heisenbergs-uncertainty-relation" title="Link to this heading">#</a></h1>
+<p>We now examine to what extent the position and the momentum of a quantum particle can be simultaneously determined.</p>
+<p>Let us define the uncertainty in the position and in the momentum as the expectation value of the squared deviation from the mean:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \left\langle(\Delta x)^2\right\rangle := \langle \psi | (\hat{x} - \langle x \rangle)^2 | \psi \rangle \\
+&amp; \left\langle(\Delta p)^2\right\rangle := \langle \psi | (\hat{p} - \langle p \rangle)^2 | \psi \rangle
+\end{aligned}
+\end{split}\]</div>
+<p>We are interested in the product of the position and momentum variances:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle(\Delta x)^2\right\rangle \cdot \left\langle(\Delta p)^2\right\rangle = 
+\langle \psi | (\hat{x} - \langle x \rangle)^2 | \psi \rangle \cdot \langle \psi | (\hat{p} - \langle p \rangle)^2 | \psi \rangle.
+\]</div>
+<p>Since both ( \hat{x} - \langle x \rangle ) and ( \hat{p} - \langle p \rangle ) are self-adjoint operators, we can write these variances as squared norms of the corresponding vectors:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left\langle(\Delta x)^2\right\rangle &amp;= \| (\hat{x} - \langle x \rangle) \psi \|^2 \\
+\left\langle(\Delta p)^2\right\rangle &amp;= \| (\hat{p} - \langle p \rangle) \psi \|^2
+\end{aligned}
+\end{split}\]</div>
+<p>Their product is therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle(\Delta x)^2\right\rangle \cdot \left\langle(\Delta p)^2\right\rangle 
+= \| (\hat{x} - \langle x \rangle) \psi \|^2 \cdot \| (\hat{p} - \langle p \rangle) \psi \|^2.
+\]</div>
+<p>We now apply the <strong>Cauchy-Schwarz inequality</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+| \langle a | b \rangle |^2 \leq \|a\|^2 \cdot \|b\|^2,
+\]</div>
+<p>with ( a = (\hat{x} - \langle x \rangle)\psi ) and ( b = (\hat{p} - \langle p \rangle)\psi ). This yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle(\Delta x)^2\right\rangle \cdot \left\langle(\Delta p)^2\right\rangle 
+\geq \left| \langle (\hat{x} - \langle x \rangle)\psi \mid (\hat{p} - \langle p \rangle)\psi \rangle \right|^2.
+\]</div>
+<p>Let us denote this inner product as:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle (\Delta x)\psi \mid (\Delta p)\psi \rangle := \langle \psi | (\hat{x} - \langle x \rangle)(\hat{p} - \langle p \rangle) | \psi \rangle.
+\]</div>
+<p>We now separate this complex number into real and imaginary parts. Let:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A \rangle := \langle \psi | (\hat{x} - \langle x \rangle)(\hat{p} - \langle p \rangle) | \psi \rangle.
+\]</div>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left| \langle A \rangle \right|^2 &amp;= \left( \operatorname{Re} \langle A \rangle \right)^2 + \left( \operatorname{Im} \langle A \rangle \right)^2 \\
+&amp;\geq \left( \operatorname{Im} \langle A \rangle \right)^2.
+\end{aligned}
+\end{split}\]</div>
+<p>We now evaluate the imaginary part:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\operatorname{Im} \langle A \rangle 
+&amp;= \frac{1}{2i} \left( \langle A \rangle - \langle A \rangle^* \right) \\
+&amp;= \frac{1}{2i} \left( \langle \psi | (\hat{x} - \langle x \rangle)(\hat{p} - \langle p \rangle) | \psi \rangle 
+- \langle \psi | (\hat{p} - \langle p \rangle)(\hat{x} - \langle x \rangle) | \psi \rangle \right) \\
+&amp;= \frac{1}{2i} \langle \psi | [\hat{x}, \hat{p}] | \psi \rangle = \frac{1}{2i} \cdot i\hbar = \frac{\hbar}{2}.
+\end{aligned}
+\end{split}\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\left| \langle A \rangle \right|^2 \geq \left( \frac{\hbar}{2} \right)^2.
+\]</div>
+<p>Putting everything together:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle(\Delta x)^2\right\rangle \cdot \left\langle(\Delta p)^2\right\rangle \geq \left( \frac{\hbar}{2} \right)^2,
+\]</div>
+<p>and finally,</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{\left\langle(\Delta x)^2\right\rangle} \cdot \sqrt{\left\langle(\Delta p)^2\right\rangle} \geq \frac{\hbar}{2}.
+\]</div>
+<p>This is the <strong>Heisenberg uncertainty relation</strong>.</p>
+<section id="minimum-uncertainty-wave-packet-and-derivation-of-the-fourier-kernel">
+<h2>🔹 Minimum uncertainty wave packet and derivation of the Fourier kernel<a class="headerlink" href="#minimum-uncertainty-wave-packet-and-derivation-of-the-fourier-kernel" title="Link to this heading">#</a></h2>
+<p>We have seen that there is a lower bound to the product of the uncerntainties in the position and momentum. We now construct special kind of states for which the product of the uncerntainties reaches its minimal value.</p>
+<p>A necessary and sufficient condition for such a minimum uncertainty state is that it satisfies the operator identity:</p>
+<div class="math notranslate nohighlight">
+\[
+(\hat{p} - \langle \hat{p} \rangle)|\psi\rangle = \lambda (\hat{x} - \langle \hat{x} \rangle)|\psi\rangle,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\( \lambda \in \mathbb{C} \)</span>. We now derive the form of such a wavefunction in both position and momentum representation.</p>
+<hr class="docutils" />
+<section id="solution-in-position-representation">
+<h3>Solution in position representation<a class="headerlink" href="#solution-in-position-representation" title="Link to this heading">#</a></h3>
+<p>Projecting onto position eigenstates and using <span class="math notranslate nohighlight">\( \hat{p} = -i\hbar \frac{d}{dx} \)</span>, <span class="math notranslate nohighlight">\( \hat{x} = x \)</span>, we obtain a first-order differential equation for the position representation of the minimum uncertainty state:</p>
+<div class="math notranslate nohighlight">
+\[
+\left( -i\hbar \frac{d}{dx} - \langle p \rangle \right)\psi(x) = \lambda (x - \langle x \rangle) \psi(x).
+\]</div>
+<p>Since the variables are separated we can rewrite:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\psi}{dx} = \frac{i}{\hbar} \left[ \lambda(x - \langle x \rangle) + \langle p \rangle \right] \psi(x).
+\]</div>
+<p>and integrate:</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = A \exp\left[ \frac{i\lambda}{2\hbar}(x - \langle x \rangle)^2 + \frac{i\langle p \rangle}{\hbar} x \right].
+\]</div>
+<p>To ensure normalizability, we must set <span class="math notranslate nohighlight">\( \lambda = i a \)</span> to be purely imaginary, with <span class="math notranslate nohighlight">\( a &gt; 0 \)</span>. Using these properties we can define <span class="math notranslate nohighlight">\( a = \hbar / (2\sigma_x^2) \)</span>. Then the state becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = N_x \exp\left[ -\frac{(x - \langle x \rangle)^2}{4\sigma_x^2} + \frac{i\langle p \rangle}{\hbar} x \right],
+\]</div>
+<p>with normalization constant given by:</p>
+<div class="math notranslate nohighlight">
+\[
+N_x = \left( \frac{1}{2\pi \sigma_x^2} \right)^{1/4}.
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="solution-in-momentum-representation">
+<h3>Solution in momentum representation<a class="headerlink" href="#solution-in-momentum-representation" title="Link to this heading">#</a></h3>
+<p>The same problem can of course be also solved in the momentum basis. Recalling how the operators act in the momentum basis:  <span class="math notranslate nohighlight">\( \hat{p} = p\times \)</span>, <span class="math notranslate nohighlight">\( \hat{x} = i\hbar \frac{d}{dp} \)</span>, the same condition becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+(p - \langle p \rangle)\phi(p) = i\hbar \lambda \frac{d\phi}{dp} - \lambda \langle x \rangle \phi(p),
+\]</div>
+<p>which simplifies again to a first-order differential equation that now reads:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\phi}{dp} = \frac{1}{i\hbar \lambda} \left[ (p - \langle p \rangle) + \lambda \langle x \rangle \right] \phi(p).
+\]</div>
+<p>Integration gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(p) = A' \exp\left[ \frac{1}{2 i\hbar \lambda}(p - \langle p \rangle)^2 + \frac{\langle x \rangle}{i\hbar} p \right].
+\]</div>
+<p>Setting again <span class="math notranslate nohighlight">\( \lambda = i a \)</span>, with <span class="math notranslate nohighlight">\( \sigma_p = \hbar / (2\sigma_x)\)</span> we obtain:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(p) = N_p \exp\left[ -\frac{(p - \langle p \rangle)^2}{4\sigma_p^2} + \frac{i \langle x \rangle}{\hbar} p \right],
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[
+N_p = \left( \frac{1}{2\pi \sigma_p^2} \right)^{1/4}.
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\psi(x)\)</span> and <span class="math notranslate nohighlight">\(\phi(p)\)</span> are two representations of the same state in two different bases they must be related by a linear transformation. In other words, the position-space wave function <span class="math notranslate nohighlight">\(\psi(x)\)</span> can be expressed as a continuous superposition of momentum eigenstates (and vice versa!) by:</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = \int_{-\infty}^{+\infty} K(x, p)\, \phi(p)\, dp,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi(p)\)</span> is the wave function in the momentum representation, and <span class="math notranslate nohighlight">\(K(x, p)\)</span> is the transformation kernel from momentum to position basis. This kernel must implement a <strong>unitary transformation</strong> from one basis to another which is a continuous analogue of a change of orthonormal basis in finite-dimensional Hilbert spaces.</p>
+<p>We now assume that the momentum-space wave function <span class="math notranslate nohighlight">\(\phi(p)\)</span> is given by the <strong>minimum uncertainty wave packet</strong> (centered at <span class="math notranslate nohighlight">\(\langle p \rangle\)</span>, with width <span class="math notranslate nohighlight">\(\sigma_p\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(p) = N_p \cdot \exp\left[ -\frac{(p - \langle p \rangle)^2}{4\sigma_p^2} + \frac{i}{\hbar} \langle x \rangle p \right],
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_p\)</span> is a normalization constant.</p>
+<p>Substituting this into the expression for <span class="math notranslate nohighlight">\(\psi(x)\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = N_p \int_{-\infty}^{+\infty} K(x, p)\, \exp\left[ -\frac{(p - \langle p \rangle)^2}{4\sigma_p^2} + \frac{i}{\hbar} \langle x \rangle p \right] dp.
+\]</div>
+<p>Since the position representation of the state is also a Gaussian, and remembering the properties of Gaussian integrals that we used before, we realize that in order for the relation</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = \int_{-\infty}^{+\infty} K(x, p)\, \phi(p)\, dp
+\]</div>
+<p>to yield a Gaussian in <span class="math notranslate nohighlight">\(x\)</span>, the kernel must contain an exponential factor of the form</p>
+<div class="math notranslate nohighlight">
+\[
+K(x, p) = \mathcal{N} \cdot e^{\frac{i}{\hbar} x p},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> is a normalization constant that needs to be properly chosen.</p>
+<p>Substituting this into the integral representation of the wave function, using the known form of the minimum uncertainty wave packet in momentum space,</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(p) = N_p \cdot \exp\left[ -\frac{(p - \langle p \rangle)^2}{4\sigma_p^2} + \frac{i}{\hbar} \langle x \rangle p \right],
+\]</div>
+<p>we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = \mathcal{N} N_p \int_{-\infty}^{+\infty} \exp\left[ -\frac{(p - \langle p \rangle)^2}{4\sigma_p^2} + \frac{i}{\hbar} \langle x \rangle p + \frac{i}{\hbar} x p \right] dp.
+\]</div>
+<p>This simplifies to</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = \mathcal{N} N_p \int_{-\infty}^{+\infty} \exp\left[ -\frac{(p - \langle p \rangle)^2}{4\sigma_p^2} + \frac{i}{\hbar}(x + \langle x \rangle) p \right] dp.
+\]</div>
+<p>This is a <strong>Gaussian integral</strong> in <span class="math notranslate nohighlight">\(p\)</span>, and hence can be evaluated analytically. The exponent is a quadratic polynomial in <span class="math notranslate nohighlight">\(p\)</span>, so the result of the integration is again a Gaussian — now in <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Carrying out the integration (and absorbing constant factors into <span class="math notranslate nohighlight">\(N_x\)</span>), we obtain the known result</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = N_x \cdot \exp\left[ -\frac{(x - \langle x \rangle)^2}{4\sigma_x^2} + \frac{i}{\hbar} \langle p \rangle x \right],
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\sigma_x \sigma_p = \hbar / 2\)</span>.</p>
+<p>This confirms that the transformation kernel</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{
+K(x, p) = \frac{1}{\sqrt{2\pi \hbar}} \cdot e^{\frac{i}{\hbar} x p}
+}
+\]</div>
+<p>maps the Gaussian wave packet in momentum space to its correct position space counterpart. This is the <strong>Fourier kernel</strong>, now derived directly from the requirement that it preserves the form of the minimum uncertainty wave packet.</p>
+<p>This is the <strong>Fourier transformation kernel</strong> that relates the momentum and position representations in quantum mechanics. We have derived it purely from the requirement that it transforms the minimum uncertainty wave packet <span class="math notranslate nohighlight">\(\phi(p)\)</span> into its correct position-space counterpart <span class="math notranslate nohighlight">\(\psi(x)\)</span>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "rolandmitric/quantum_dynamics_2026",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="interaction_picture.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🔸 Interaction Picture of Quantum Mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="particle_linear_potential.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🔸 Particle in a Linear Potential</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 Position and Momentum Representation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-operator-and-its-generator">Translation Operator and Its Generator</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-of-expectation-value">Shift of Expectation Value</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-as-generator-of-translations">Momentum as Generator of Translations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-as-a-one-parameter-unitary-group">Translation as a One-Parameter Unitary Group</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-stones-theorem">Connection to Stone’s Theorem</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#commutator-of-hat-x-and-hat-p">Commutator of <span class="math notranslate nohighlight">\(\hat{x}\)</span> and <span class="math notranslate nohighlight">\(\hat{p}\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenstates-of-position-and-momentum">Eigenstates of Position and Momentum</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#action-of-operators-in-position-representation">Action of Operators in Position Representation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#position-operator">Position operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-operator">Momentum operator</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heisenbergs-uncertainty-relation">🔹 Heisenberg’s Uncertainty Relation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-uncertainty-wave-packet-and-derivation-of-the-fourier-kernel">🔹 Minimum uncertainty wave packet and derivation of the Fourier kernel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-in-position-representation">Solution in position representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-in-momentum-representation">Solution in momentum representation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roland Mitric
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
