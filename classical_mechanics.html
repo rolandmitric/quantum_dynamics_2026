@@ -179,30 +179,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">🔸 Crash course in Classical Mechanics</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="formalism_hilbert_spaces.html">🔸 Formalism of Quantum Mechanics: Hilbert Spaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formalism_linear_operators.html">🔸 Linear maps, operators and functionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formalism_unitary_time_evolution.html">🔸 Formalism of Quantum Mechanics: Unitary time evolution</a></li>
@@ -508,148 +484,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 Crash course in Classical Mechanics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamilton-s-principle-and-lagrangian-mechanics">Hamilton’s Principle and Lagrangian Mechanics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-get-lagrangians-from">Where Do We Get Lagrangians From?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-the-lagrangian-look-like-in-the-general-case">What Does the Lagrangian Look Like in the General Case?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-unique-is-the-lagrangian-the-freedom-of-gauge">How unique is the Lagrangian: The freedom of gauge…</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#we-now-evaluate-the-euler-lagrange-equation-for-l-first-the-derivative-with-respect-to-dot-q-i-is-frac-partial-l-partial-dot-q-i">We now evaluate the Euler-Lagrange equation for <span class="math notranslate nohighlight">\(L'\)</span>. First, the derivative with respect to <span class="math notranslate nohighlight">\(\dot q_i\)</span> is
-$$
-\frac{\partial L’}{\partial \dot q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-l-partial-dot-q-i-frac-partial-f-partial-q-i-taking-the-time-derivative-gives-frac-d-dt-frac-partial-l-partial-dot-q-i">\frac{\partial L}{\partial \dot q_i}
-+
-\frac{\partial F}{\partial q_i}.
-$<span class="math notranslate nohighlight">\(
-Taking the time derivative gives
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-dt-frac-partial-l-partial-dot-q-i-frac-d-dt-frac-partial-f-partial-q-i-since-f-depends-only-on-the-coordinates-frac-d-dt-frac-partial-f-partial-q-i">\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\frac{d}{dt}\frac{\partial F}{\partial q_i}.
-$<span class="math notranslate nohighlight">\(
-Since \)</span>F<span class="math notranslate nohighlight">\( depends only on the coordinates,
-\)</span>$
-\frac{d}{dt}\frac{\partial F}{\partial q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-hence-frac-d-dt-frac-partial-l-partial-dot-q-i">\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j.
-$<span class="math notranslate nohighlight">\(
-Hence
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-compute-the-derivative-of-l-with-respect-to-q-i-frac-partial-l-partial-q-i">Next, we compute the derivative of <span class="math notranslate nohighlight">\(L'\)</span> with respect to <span class="math notranslate nohighlight">\(q_i\)</span>:
-$$
-\frac{\partial L’}{\partial q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-l-partial-q-i-frac-partial-partial-q-i-left-sum-j-1-n-frac-partial-f-partial-q-j-dot-q-j-right-since-the-velocities-dot-q-j-are-independent-of-the-coordinates-in-this-differentiation-we-obtain-frac-partial-l-partial-q-i">\frac{\partial L}{\partial q_i}
-+
-\frac{\partial}{\partial q_i}
-\left(
-\sum_{j=1}^n \frac{\partial F}{\partial q_j}\dot q_j
-\right).
-$<span class="math notranslate nohighlight">\(
-Since the velocities \)</span>\dot q_j<span class="math notranslate nohighlight">\( are independent of the coordinates in this differentiation, we obtain
-\)</span>$
-\frac{\partial L’}{\partial q_i}</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substituting-these-expressions-into-the-euler-lagrange-equation-for-l-frac-d-dt-frac-partial-l-partial-dot-q-i">Substituting these expressions into the Euler-Lagrange equation for <span class="math notranslate nohighlight">\(L'\)</span>,
-$$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-l-partial-q-i-0-we-find-left-frac-d-dt-frac-partial-l-partial-dot-q-i-sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-right">\frac{\partial L’}{\partial q_i}
-=0,
-$<span class="math notranslate nohighlight">\(
-we find
-\)</span>$
-\left[
-\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j
-\right]</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-frac-partial-l-partial-q-i-sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-right-0-the-additional-terms-cancel-and-we-are-left-with-frac-d-dt-frac-partial-l-partial-dot-q-i">\left[
-\frac{\partial L}{\partial q_i}
-+
-\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j
-\right]
-=0.
-$<span class="math notranslate nohighlight">\(
-The additional terms cancel, and we are left with
-\)</span>$
-\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-same-result-can-be-understood-directly-from-hamilton-s-principle-let-l-q-dot-q-t-l-q-dot-q-t-frac-d-dt-f-q-where-f-depends-only-on-the-coordinates-the-corresponding-action-is-then-s-q">The same result can be understood directly from Hamilton’s principle. Let
-$<span class="math notranslate nohighlight">\(
-L'(q,\dot q,t)=L(q,\dot q,t)+\frac{d}{dt}F(q),
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>F<span class="math notranslate nohighlight">\( depends only on the coordinates. The corresponding action is then
-\)</span>$
-S’[q]</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#int-t-1-t-2-l-q-dot-q-t-dt">\int_{t_1}^{t_2} L’(q,\dot q,t),dt</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#we-now-take-the-variation-of-this-expression-this-gives-delta-s">We now take the variation of this expression. This gives
-$$
-\delta S’</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-s-delta-f-q-t-2">\delta S
-+
-\delta F(q(t_2))</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-harmonic-oscillator-with-a-more-exotic-regauging">Example: Harmonic Oscillator with a More Exotic Regauging</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-us-derive-the-equation-of-motion-from-this-regauged-lagrangian-first-frac-partial-l-partial-dot-q-m-dot-q-alpha-cos-q-and-therefore-frac-d-dt-frac-partial-l-partial-dot-q">Let us derive the equation of motion from this regauged Lagrangian. First,
-$<span class="math notranslate nohighlight">\(
-\frac{\partial L'}{\partial \dot q}=m\dot q+\alpha \cos q,
-\)</span><span class="math notranslate nohighlight">\(
-and therefore
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m-ddot-q-alpha-sin-q-dot-q-next-frac-partial-l-partial-q">m\ddot q-\alpha \sin q,\dot q.
-$<span class="math notranslate nohighlight">\(
-Next,
-\)</span>$
-\frac{\partial L’}{\partial q}</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kq-alpha-sin-q-dot-q-substituting-into-the-euler-lagrange-equation-frac-d-dt-frac-partial-l-partial-dot-q">-kq-\alpha \sin q,\dot q.
-$<span class="math notranslate nohighlight">\(
-Substituting into the Euler-Lagrange equation,
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q}</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-l-partial-q-0-we-obtain-left-m-ddot-q-alpha-sin-q-dot-q-right">\frac{\partial L’}{\partial q}=0,
-$<span class="math notranslate nohighlight">\(
-we obtain
-\)</span>$
-\left(m\ddot q-\alpha \sin q,\dot q\right)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-classical-path-a-minimum-or-only-stationary">Is the Classical Path a Minimum or Only Stationary?</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#substituting-this-into-the-action-we-obtain-s-q-mathrm-cl-eta">Substituting this into the action, we obtain
-$$
-S[q_{\mathrm{cl}}+\eta]</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#s-q-mathrm-cl-m-int-t-1-t-2-left-dot-q-mathrm-cl-dot-eta-omega-2-q-mathrm-cl-eta-right-dt-frac-m-2-int-t-1-t-2-left-dot-eta-2-omega-2-eta-2-right-dt-the-term-linear-in-eta-vanishes-because-q-mathrm-cl-satisfies-the-euler-lagrange-equation-hence-s-q-mathrm-cl-eta-s-q-mathrm-cl">S[q_{\mathrm{cl}}]
-+
-m\int_{t_1}^{t_2}
-\left(
-\dot q_{\mathrm{cl}}\dot\eta-\omega^2 q_{\mathrm{cl}}\eta
-\right)dt
-+
-\frac{m}{2}\int_{t_1}^{t_2}
-\left(
-\dot\eta^2-\omega^2\eta^2
-\right)dt.
-$<span class="math notranslate nohighlight">\(
-The term linear in \)</span>\eta<span class="math notranslate nohighlight">\( vanishes because \)</span>q_{\mathrm{cl}}<span class="math notranslate nohighlight">\( satisfies the Euler-Lagrange equation. Hence
-\)</span>$
-S[q_{\mathrm{cl}}+\eta]-S[q_{\mathrm{cl}}]</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-analyze-this-let-us-choose-the-family-of-variations-eta-n-t-sin-left-frac-n-pi-t-t-1-t-right-qquad-n-1-2-3-dots-which-satisfy-the-fixed-endpoint-conditions-for-these-variations-dot-eta-n-t-frac-n-pi-t-cos-left-frac-n-pi-t-t-1-t-right-and-a-straightforward-calculation-gives-s-q-mathrm-cl-eta-n-s-q-mathrm-cl">To analyze this, let us choose the family of variations
-$<span class="math notranslate nohighlight">\(
-\eta_n(t)=\sin\!\left(\frac{n\pi(t-t_1)}{T}\right),
-\qquad n=1,2,3,\dots
-\)</span><span class="math notranslate nohighlight">\(
-which satisfy the fixed-endpoint conditions. For these variations,
-\)</span><span class="math notranslate nohighlight">\(
-\dot\eta_n(t)=\frac{n\pi}{T}\cos\!\left(\frac{n\pi(t-t_1)}{T}\right),
-\)</span><span class="math notranslate nohighlight">\(
-and a straightforward calculation gives
-\)</span>$
-S[q_{\mathrm{cl}}+\eta_n]-S[q_{\mathrm{cl}}]</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-momentum">Canonical Momentum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-free-particle-in-cartesian-coordinates">Example 1: Free Particle in Cartesian Coordinates</a></li>
@@ -663,74 +503,6 @@ S[q_{\mathrm{cl}}+\eta_n]-S[q_{\mathrm{cl}}]</a><ul class="visible nav section-n
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-central-potential-in-polar-coordinates">Example 2: Central Potential in Polar Coordinates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-a-coordinate-that-is-not-cyclic">Example 3: A Coordinate That Is Not Cyclic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-energy-function-and-conservation-of-energy">The Energy Function and Conservation of Energy</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-l-l-q-dot-q-t-and-consider-a-path-q-t-that-is-a-solution-of-the-equations-of-motion-along-this-trajectory-the-total-time-derivative-of-the-lagrangian-is-frac-dl-dt">Let
-$<span class="math notranslate nohighlight">\(
-L=L(q,\dot q,t),
-\)</span><span class="math notranslate nohighlight">\(
-and consider a path \)</span>q(t)<span class="math notranslate nohighlight">\( that is a solution of the equations of motion. Along this trajectory, the total time derivative of the Lagrangian is
-\)</span>$
-\frac{dL}{dt}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-frac-partial-l-partial-q-i-dot-q-i-sum-i-1-n-frac-partial-l-partial-dot-q-i-ddot-q-i-frac-partial-l-partial-t-since-the-trajectory-satisfies-the-euler-lagrange-equations-we-may-replace-frac-partial-l-partial-q-i">\sum_{i=1}^n \frac{\partial L}{\partial q_i}\dot q_i
-+
-\sum_{i=1}^n \frac{\partial L}{\partial \dot q_i}\ddot q_i
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-Since the trajectory satisfies the Euler-Lagrange equations, we may replace
-\)</span>$
-\frac{\partial L}{\partial q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-dt-frac-partial-l-partial-dot-q-i-hence-frac-dl-dt">\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}.
-$<span class="math notranslate nohighlight">\(
-Hence
-\)</span>$
-\frac{dL}{dt}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-dot-q-i-frac-d-dt-frac-partial-l-partial-dot-q-i-sum-i-1-n-frac-partial-l-partial-dot-q-i-ddot-q-i-frac-partial-l-partial-t-the-first-two-terms-can-be-combined-into-a-total-derivative-frac-dl-dt">\sum_{i=1}^n \dot q_i \frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\sum_{i=1}^n \frac{\partial L}{\partial \dot q_i}\ddot q_i
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-The first two terms can be combined into a total derivative:
-\)</span>$
-\frac{dL}{dt}</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-dt-left-sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i-right-frac-partial-l-partial-t-rearranging-we-obtain-frac-d-dt-left-sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i">\frac{d}{dt}
-\left(
-\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}
-\right)
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-Rearranging, we obtain
-\)</span>$
-\frac{d}{dt}
-\left(
-\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#l-right">L
-\right)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#this-suggests-introducing-the-quantity-e">This suggests introducing the quantity
-$$
-E</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i">\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#for-the-important-class-of-mechanical-systems-with-l-t-v-where-the-potential-energy-v-does-not-depend-on-the-velocities-and-the-kinetic-energy-t-is-quadratic-in-the-velocities-one-finds-sum-i-1-n-dot-q-i-frac-partial-t-partial-dot-q-i-2t-therefore-e">For the important class of mechanical systems with
-$<span class="math notranslate nohighlight">\(
-L=T-V,
-\)</span><span class="math notranslate nohighlight">\(
-where the potential energy \)</span>V<span class="math notranslate nohighlight">\( does not depend on the velocities and the kinetic energy \)</span>T<span class="math notranslate nohighlight">\( is quadratic in the velocities, one finds
-\)</span><span class="math notranslate nohighlight">\(
-\sum_{i=1}^n \dot q_i \frac{\partial T}{\partial \dot q_i}=2T.
-\)</span><span class="math notranslate nohighlight">\(
-Therefore,
-\)</span>$
-E</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i-l">\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}-L</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-dot-q-i-frac-partial-t-partial-dot-q-i-t-v">\sum_{i=1}^n \dot q_i \frac{\partial T}{\partial \dot q_i}-(T-V)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#t-t-v">2T-T+V</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-oscillations-in-a-molecular-potential-the-morse-potential">Small Oscillations in a Molecular Potential: The Morse Potential</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-modes-of-polyatomic-molecules">Normal Modes of Polyatomic Molecules</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution-by-superposition-of-eigensolutions">General Solution by Superposition of Eigensolutions</a></li>
@@ -738,9 +510,6 @@ E</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -1064,341 +833,163 @@ $<span class="math notranslate nohighlight">\(
 L'(q,\dot q,t)=L(q,\dot q,t)+\frac{d}{dt}F(q).
 \)</span><span class="math notranslate nohighlight">\(
 We shall show that the equations of motion obtained from \)</span>L’<span class="math notranslate nohighlight">\( are exactly the same as those obtained from the original Lagrangian \)</span>L$.</p>
-<p>Let
-$<span class="math notranslate nohighlight">\(
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
 L'(q,\dot q,t)=L(q,\dot q,t)+\frac{d}{dt}F(q),
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>F<span class="math notranslate nohighlight">\( depends only on the coordinates. Since
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span> depends only on the coordinates. Since</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{d}{dt}F(q)=\sum_{j=1}^n \frac{\partial F}{\partial q_j}\dot q_j,
-\)</span><span class="math notranslate nohighlight">\(
-the new Lagrangian can be written as
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>the new Lagrangian can be written as</p>
+<div class="math notranslate nohighlight">
+\[
 L'(q,\dot q,t)=L(q,\dot q,t)+\sum_{j=1}^n \frac{\partial F}{\partial q_j}\dot q_j.
-\)</span>$</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="we-now-evaluate-the-euler-lagrange-equation-for-l-first-the-derivative-with-respect-to-dot-q-i-is-frac-partial-l-partial-dot-q-i">
-<h1>We now evaluate the Euler-Lagrange equation for <span class="math notranslate nohighlight">\(L'\)</span>. First, the derivative with respect to <span class="math notranslate nohighlight">\(\dot q_i\)</span> is
-$$
-\frac{\partial L’}{\partial \dot q_i}<a class="headerlink" href="#we-now-evaluate-the-euler-lagrange-equation-for-l-first-the-derivative-with-respect-to-dot-q-i-is-frac-partial-l-partial-dot-q-i" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="frac-partial-l-partial-dot-q-i-frac-partial-f-partial-q-i-taking-the-time-derivative-gives-frac-d-dt-frac-partial-l-partial-dot-q-i">
-<h1>\frac{\partial L}{\partial \dot q_i}
-+
-\frac{\partial F}{\partial q_i}.
-$<span class="math notranslate nohighlight">\(
-Taking the time derivative gives
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}<a class="headerlink" href="#frac-partial-l-partial-dot-q-i-frac-partial-f-partial-q-i-taking-the-time-derivative-gives-frac-d-dt-frac-partial-l-partial-dot-q-i" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="frac-d-dt-frac-partial-l-partial-dot-q-i-frac-d-dt-frac-partial-f-partial-q-i-since-f-depends-only-on-the-coordinates-frac-d-dt-frac-partial-f-partial-q-i">
-<h1>\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\frac{d}{dt}\frac{\partial F}{\partial q_i}.
-$<span class="math notranslate nohighlight">\(
-Since \)</span>F<span class="math notranslate nohighlight">\( depends only on the coordinates,
-\)</span>$
-\frac{d}{dt}\frac{\partial F}{\partial q_i}<a class="headerlink" href="#frac-d-dt-frac-partial-l-partial-dot-q-i-frac-d-dt-frac-partial-f-partial-q-i-since-f-depends-only-on-the-coordinates-frac-d-dt-frac-partial-f-partial-q-i" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-hence-frac-d-dt-frac-partial-l-partial-dot-q-i">
-<h1>\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j.
-$<span class="math notranslate nohighlight">\(
-Hence
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}<a class="headerlink" href="#sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-hence-frac-d-dt-frac-partial-l-partial-dot-q-i" title="Link to this heading">#</a></h1>
-<p>\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j.
-$$</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="next-we-compute-the-derivative-of-l-with-respect-to-q-i-frac-partial-l-partial-q-i">
-<h1>Next, we compute the derivative of <span class="math notranslate nohighlight">\(L'\)</span> with respect to <span class="math notranslate nohighlight">\(q_i\)</span>:
-$$
-\frac{\partial L’}{\partial q_i}<a class="headerlink" href="#next-we-compute-the-derivative-of-l-with-respect-to-q-i-frac-partial-l-partial-q-i" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="frac-partial-l-partial-q-i-frac-partial-partial-q-i-left-sum-j-1-n-frac-partial-f-partial-q-j-dot-q-j-right-since-the-velocities-dot-q-j-are-independent-of-the-coordinates-in-this-differentiation-we-obtain-frac-partial-l-partial-q-i">
-<h1>\frac{\partial L}{\partial q_i}
-+
-\frac{\partial}{\partial q_i}
-\left(
-\sum_{j=1}^n \frac{\partial F}{\partial q_j}\dot q_j
-\right).
-$<span class="math notranslate nohighlight">\(
-Since the velocities \)</span>\dot q_j<span class="math notranslate nohighlight">\( are independent of the coordinates in this differentiation, we obtain
-\)</span>$
-\frac{\partial L’}{\partial q_i}<a class="headerlink" href="#frac-partial-l-partial-q-i-frac-partial-partial-q-i-left-sum-j-1-n-frac-partial-f-partial-q-j-dot-q-j-right-since-the-velocities-dot-q-j-are-independent-of-the-coordinates-in-this-differentiation-we-obtain-frac-partial-l-partial-q-i" title="Link to this heading">#</a></h1>
-<p>\frac{\partial L}{\partial q_i}
-+
-\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j.
-$$</p>
-<section id="substituting-these-expressions-into-the-euler-lagrange-equation-for-l-frac-d-dt-frac-partial-l-partial-dot-q-i">
-<h2>Substituting these expressions into the Euler-Lagrange equation for <span class="math notranslate nohighlight">\(L'\)</span>,
-$$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}<a class="headerlink" href="#substituting-these-expressions-into-the-euler-lagrange-equation-for-l-frac-d-dt-frac-partial-l-partial-dot-q-i" title="Link to this heading">#</a></h2>
-</section>
-<section id="frac-partial-l-partial-q-i-0-we-find-left-frac-d-dt-frac-partial-l-partial-dot-q-i-sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-right">
-<h2>\frac{\partial L’}{\partial q_i}
-=0,
-$<span class="math notranslate nohighlight">\(
-we find
-\)</span>$
-\left[
-\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j
-\right]<a class="headerlink" href="#frac-partial-l-partial-q-i-0-we-find-left-frac-d-dt-frac-partial-l-partial-dot-q-i-sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-right" title="Link to this heading">#</a></h2>
-</section>
-<section id="left-frac-partial-l-partial-q-i-sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-right-0-the-additional-terms-cancel-and-we-are-left-with-frac-d-dt-frac-partial-l-partial-dot-q-i">
-<h2>\left[
-\frac{\partial L}{\partial q_i}
-+
-\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j
-\right]
-=0.
-$<span class="math notranslate nohighlight">\(
-The additional terms cancel, and we are left with
-\)</span>$
-\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}<a class="headerlink" href="#left-frac-partial-l-partial-q-i-sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-right-0-the-additional-terms-cancel-and-we-are-left-with-frac-d-dt-frac-partial-l-partial-dot-q-i" title="Link to this heading">#</a></h2>
-<p>\frac{\partial L}{\partial q_i}
-=0.
-$$</p>
-<p>Thus the Euler-Lagrange equations derived from <span class="math notranslate nohighlight">\(L'\)</span> are exactly the same as those derived from <span class="math notranslate nohighlight">\(L\)</span>. We conclude that adding a total time derivative to the Lagrangian does not change the equations of motion.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-same-result-can-be-understood-directly-from-hamilton-s-principle-let-l-q-dot-q-t-l-q-dot-q-t-frac-d-dt-f-q-where-f-depends-only-on-the-coordinates-the-corresponding-action-is-then-s-q">
-<h1>The same result can be understood directly from Hamilton’s principle. Let
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>We now evaluate the Euler-Lagrange equation for <span class="math notranslate nohighlight">\(L'\)</span>. First,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L'}{\partial \dot q_i}=\frac{\partial L}{\partial \dot q_i}+\frac{\partial F}{\partial q_i},
+\]</div>
+<p>hence</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}\frac{\partial L'}{\partial \dot q_i}
+=\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
++\sum_{j=1}^n\frac{\partial^2 F}{\partial q_i\partial q_j}\dot q_j.
+\]</div>
+<p>Further,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L'}{\partial q_i}
+=\frac{\partial L}{\partial q_i}
++\sum_{j=1}^n\frac{\partial^2 F}{\partial q_i\partial q_j}\dot q_j.
+\]</div>
+<p>Substituting into</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}\frac{\partial L'}{\partial \dot q_i}-\frac{\partial L'}{\partial q_i}=0,
+\]</div>
+<p>the additional terms cancel and we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}-\frac{\partial L}{\partial q_i}=0.
+\]</div>
+<p>Thus the Euler-Lagrange equations derived from <span class="math notranslate nohighlight">\(L'\)</span> are exactly the same as those derived from <span class="math notranslate nohighlight">\(L\)</span>.</p>
+<p>The same result can be understood directly from Hamilton’s principle. Let</p>
+<div class="math notranslate nohighlight">
+\[
 L'(q,\dot q,t)=L(q,\dot q,t)+\frac{d}{dt}F(q),
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>F<span class="math notranslate nohighlight">\( depends only on the coordinates. The corresponding action is then
-\)</span>$
-S’[q]<a class="headerlink" href="#the-same-result-can-be-understood-directly-from-hamilton-s-principle-let-l-q-dot-q-t-l-q-dot-q-t-frac-d-dt-f-q-where-f-depends-only-on-the-coordinates-the-corresponding-action-is-then-s-q" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="int-t-1-t-2-l-q-dot-q-t-dt">
-<h1>\int_{t_1}^{t_2} L’(q,\dot q,t),dt<a class="headerlink" href="#int-t-1-t-2-l-q-dot-q-t-dt" title="Link to this heading">#</a></h1>
-<p>\int_{t_1}^{t_2} L(q,\dot q,t),dt
-+
-\int_{t_1}^{t_2} \frac{d}{dt}F(q),dt.
-$<span class="math notranslate nohighlight">\(
-Hence
-\)</span><span class="math notranslate nohighlight">\(
-S'[q]=S[q]+F(q(t_2))-F(q(t_1)).
-\)</span>$</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="we-now-take-the-variation-of-this-expression-this-gives-delta-s">
-<h1>We now take the variation of this expression. This gives
-$$
-\delta S’<a class="headerlink" href="#we-now-take-the-variation-of-this-expression-this-gives-delta-s" title="Link to this heading">#</a></h1>
-<section id="delta-s-delta-f-q-t-2">
-<h2>\delta S
-+
-\delta F(q(t_2))<a class="headerlink" href="#delta-s-delta-f-q-t-2" title="Link to this heading">#</a></h2>
-<p>\delta F(q(t_1)).
-$<span class="math notranslate nohighlight">\(
-In Hamilton's principle, however, the endpoints are fixed, so that
-\)</span><span class="math notranslate nohighlight">\(
-\delta q(t_1)=\delta q(t_2)=0.
-\)</span><span class="math notranslate nohighlight">\(
-Therefore,
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>with corresponding action</p>
+<div class="math notranslate nohighlight">
+\[
+S'[q]=\int_{t_1}^{t_2}L'\,dt
+=\int_{t_1}^{t_2}L\,dt+\int_{t_1}^{t_2}\frac{d}{dt}F(q)\,dt
+=S[q]+F(q(t_2))-F(q(t_1)).
+\]</div>
+<p>Taking variations,</p>
+<div class="math notranslate nohighlight">
+\[
+\delta S' = \delta S + \delta F(q(t_2)) - \delta F(q(t_1)).
+\]</div>
+<p>For fixed endpoints, <span class="math notranslate nohighlight">\(\delta q(t_1)=\delta q(t_2)=0\)</span>, so</p>
+<div class="math notranslate nohighlight">
+\[
 \delta F(q(t_1))=\delta F(q(t_2))=0,
-\)</span><span class="math notranslate nohighlight">\(
-and we obtain
-\)</span><span class="math notranslate nohighlight">\(
-\delta S'=\delta S.
-\)</span>$</p>
-<p>Thus the stationarity condition
-$<span class="math notranslate nohighlight">\(
-\delta S'=0
-\)</span><span class="math notranslate nohighlight">\(
-is completely equivalent to
-\)</span><span class="math notranslate nohighlight">\(
-\delta S=0.
-\)</span><span class="math notranslate nohighlight">\(
-It follows that the two Lagrangians \)</span>L<span class="math notranslate nohighlight">\( and \)</span>L’$ lead to exactly the same equations of motion.</p>
-<p>We see, therefore, that the invariance of the equations of motion under the transformation
-$<span class="math notranslate nohighlight">\(
-L \longrightarrow L+\frac{d}{dt}F(q)
-\)</span>$
-is a direct consequence of Hamilton’s principle together with the fixed-endpoint condition. The additional total time derivative changes the action only by a boundary term, and this boundary term does not contribute to the variation when the endpoints are held fixed.</p>
+\]</div>
+<p>and therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\delta S' = \delta S.
+\]</div>
+<p>Hence <span class="math notranslate nohighlight">\(\delta S'=0\)</span> is equivalent to <span class="math notranslate nohighlight">\(\delta S=0\)</span>, and both Lagrangians yield the same equations of motion.</p>
 </section>
 <section id="example-harmonic-oscillator-with-a-more-exotic-regauging">
 <h2>Example: Harmonic Oscillator with a More Exotic Regauging<a class="headerlink" href="#example-harmonic-oscillator-with-a-more-exotic-regauging" title="Link to this heading">#</a></h2>
-<p>Consider again the standard harmonic-oscillator Lagrangian
-$<span class="math notranslate nohighlight">\(
-L(q,\dot q)=\frac{m}{2}\dot q^{\,2}-\frac{k}{2}q^2.
-\)</span><span class="math notranslate nohighlight">\(
-Its Euler-Lagrange equation is
-\)</span><span class="math notranslate nohighlight">\(
+<p>Consider the standard harmonic-oscillator Lagrangian</p>
+<div class="math notranslate nohighlight">
+\[
+L(q,\dot q)=\frac{m}{2}\dot q^{\,2}-\frac{k}{2}q^2,
+\]</div>
+<p>with equation of motion</p>
+<div class="math notranslate nohighlight">
+\[
 m\ddot q+kq=0.
-\)</span>$</p>
-<p>We now construct a more exotic but equivalent Lagrangian by adding the total time derivative of the function
-$<span class="math notranslate nohighlight">\(
-F(q)=\alpha \sin q,
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\alpha<span class="math notranslate nohighlight">\( is a constant. Since
-\)</span><span class="math notranslate nohighlight">\(
-\frac{dF}{dt}=\alpha \cos q\,\dot q,
-\)</span><span class="math notranslate nohighlight">\(
-the new Lagrangian is
-\)</span><span class="math notranslate nohighlight">\(
-L'(q,\dot q)=\frac{m}{2}\dot q^{\,2}-\frac{k}{2}q^2+\alpha \cos q\,\dot q.
-\)</span>$</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="let-us-derive-the-equation-of-motion-from-this-regauged-lagrangian-first-frac-partial-l-partial-dot-q-m-dot-q-alpha-cos-q-and-therefore-frac-d-dt-frac-partial-l-partial-dot-q">
-<h1>Let us derive the equation of motion from this regauged Lagrangian. First,
-$<span class="math notranslate nohighlight">\(
-\frac{\partial L'}{\partial \dot q}=m\dot q+\alpha \cos q,
-\)</span><span class="math notranslate nohighlight">\(
-and therefore
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q}<a class="headerlink" href="#let-us-derive-the-equation-of-motion-from-this-regauged-lagrangian-first-frac-partial-l-partial-dot-q-m-dot-q-alpha-cos-q-and-therefore-frac-d-dt-frac-partial-l-partial-dot-q" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="m-ddot-q-alpha-sin-q-dot-q-next-frac-partial-l-partial-q">
-<h1>m\ddot q-\alpha \sin q,\dot q.
-$<span class="math notranslate nohighlight">\(
-Next,
-\)</span>$
-\frac{\partial L’}{\partial q}<a class="headerlink" href="#m-ddot-q-alpha-sin-q-dot-q-next-frac-partial-l-partial-q" title="Link to this heading">#</a></h1>
-<section id="kq-alpha-sin-q-dot-q-substituting-into-the-euler-lagrange-equation-frac-d-dt-frac-partial-l-partial-dot-q">
-<h2>-kq-\alpha \sin q,\dot q.
-$<span class="math notranslate nohighlight">\(
-Substituting into the Euler-Lagrange equation,
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q}<a class="headerlink" href="#kq-alpha-sin-q-dot-q-substituting-into-the-euler-lagrange-equation-frac-d-dt-frac-partial-l-partial-dot-q" title="Link to this heading">#</a></h2>
-</section>
-<section id="frac-partial-l-partial-q-0-we-obtain-left-m-ddot-q-alpha-sin-q-dot-q-right">
-<h2>\frac{\partial L’}{\partial q}=0,
-$<span class="math notranslate nohighlight">\(
-we obtain
-\)</span>$
-\left(m\ddot q-\alpha \sin q,\dot q\right)<a class="headerlink" href="#frac-partial-l-partial-q-0-we-obtain-left-m-ddot-q-alpha-sin-q-dot-q-right" title="Link to this heading">#</a></h2>
-<p>\left(-kq-\alpha \sin q,\dot q\right)=0.
-$<span class="math notranslate nohighlight">\(
-The additional terms cancel, and we are left with
-\)</span><span class="math notranslate nohighlight">\(
-m\ddot q+kq=0.
-\)</span>$</p>
-<p>Thus even this more unusual Lagrangian leads to exactly the same equation of motion. The reason is that the extra term
-$<span class="math notranslate nohighlight">\(
-\alpha \cos q\,\dot q
-\)</span>$
-comes from a total time derivative and therefore changes the action only by a boundary term.</p>
+\]</div>
+<p>Add the total derivative of</p>
+<div class="math notranslate nohighlight">
+\[
+F(q)=\alpha\sin q,
+\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dF}{dt}=\alpha\cos q\,\dot q,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+L'(q,\dot q)=\frac{m}{2}\dot q^{\,2}-\frac{k}{2}q^2+\alpha\cos q\,\dot q.
+\]</div>
+<p>Now,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L'}{\partial\dot q}=m\dot q+\alpha\cos q,
+\qquad
+\frac{d}{dt}\frac{\partial L'}{\partial\dot q}=m\ddot q-\alpha\sin q\,\dot q,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L'}{\partial q}=-kq-\alpha\sin q\,\dot q.
+\]</div>
+<p>Therefore,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}\frac{\partial L'}{\partial\dot q}-\frac{\partial L'}{\partial q}
+=\left(m\ddot q-\alpha\sin q\,\dot q\right)-\left(-kq-\alpha\sin q\,\dot q\right)
+=m\ddot q+kq=0.
+\]</div>
+<p>So the regauged Lagrangian leads to exactly the same dynamics.</p>
 </section>
 <section id="is-the-classical-path-a-minimum-or-only-stationary">
 <h2>Is the Classical Path a Minimum or Only Stationary?<a class="headerlink" href="#is-the-classical-path-a-minimum-or-only-stationary" title="Link to this heading">#</a></h2>
-<p>The harmonic oscillator provides a useful example showing that Hamilton’s principle is, in general, a principle of stationarity rather than strict minimization.</p>
-<p>Consider the Lagrangian
-$<span class="math notranslate nohighlight">\(
+<p>For the harmonic oscillator,</p>
+<div class="math notranslate nohighlight">
+\[
 L(q,\dot q)=\frac{m}{2}\dot q^2-\frac{m\omega^2}{2}q^2,
-\)</span><span class="math notranslate nohighlight">\(
-with action
-\)</span><span class="math notranslate nohighlight">\(
+\qquad
 S[q]=\int_{t_1}^{t_2}\left(\frac{m}{2}\dot q^2-\frac{m\omega^2}{2}q^2\right)dt.
-\)</span><span class="math notranslate nohighlight">\(
-Let \)</span>q_{\mathrm{cl}}(t)<span class="math notranslate nohighlight">\( be the classical trajectory satisfying
-\)</span><span class="math notranslate nohighlight">\(
-\ddot q_{\mathrm{cl}}+\omega^2 q_{\mathrm{cl}}=0,
-\)</span><span class="math notranslate nohighlight">\(
-with fixed endpoints. We now consider a nearby path
-\)</span><span class="math notranslate nohighlight">\(
-q(t)=q_{\mathrm{cl}}(t)+\eta(t),
-\)</span><span class="math notranslate nohighlight">\(
-where
-\)</span><span class="math notranslate nohighlight">\(
-\eta(t_1)=\eta(t_2)=0.
-\)</span>$</p>
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(q_{\mathrm{cl}}\)</span> satisfy <span class="math notranslate nohighlight">\(\ddot q_{\mathrm{cl}}+\omega^2 q_{\mathrm{cl}}=0\)</span> with fixed endpoints, and set</p>
+<div class="math notranslate nohighlight">
+\[
+q(t)=q_{\mathrm{cl}}(t)+\eta(t),\qquad \eta(t_1)=\eta(t_2)=0.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+S[q_{\mathrm{cl}}+\eta]-S[q_{\mathrm{cl}}]
+=\frac{m}{2}\int_{t_1}^{t_2}\left(\dot\eta^2-\omega^2\eta^2\right)dt,
+\]</div>
+<p>because the term linear in <span class="math notranslate nohighlight">\(\eta\)</span> vanishes on the classical path.</p>
+<p>Choose</p>
+<div class="math notranslate nohighlight">
+\[
+\eta_n(t)=\sin\!\left(\frac{n\pi(t-t_1)}{T}\right),\qquad T=t_2-t_1,
+\]</div>
+<p>which gives</p>
+<div class="math notranslate nohighlight">
+\[
+S[q_{\mathrm{cl}}+\eta_n]-S[q_{\mathrm{cl}}]
+=\frac{m}{4}T\left(\frac{n^2\pi^2}{T^2}-\omega^2\right).
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(T&lt;\pi/\omega\)</span>, this is positive (for small nonzero variations), so the classical path is a local minimum.
+If <span class="math notranslate nohighlight">\(T&gt;\pi/\omega\)</span>, it can be negative for low <span class="math notranslate nohighlight">\(n\)</span> and positive for large <span class="math notranslate nohighlight">\(n\)</span>, so the classical path is only stationary (saddle-type), not a minimum.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="substituting-this-into-the-action-we-obtain-s-q-mathrm-cl-eta">
-<h1>Substituting this into the action, we obtain
-$$
-S[q_{\mathrm{cl}}+\eta]<a class="headerlink" href="#substituting-this-into-the-action-we-obtain-s-q-mathrm-cl-eta" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="s-q-mathrm-cl-m-int-t-1-t-2-left-dot-q-mathrm-cl-dot-eta-omega-2-q-mathrm-cl-eta-right-dt-frac-m-2-int-t-1-t-2-left-dot-eta-2-omega-2-eta-2-right-dt-the-term-linear-in-eta-vanishes-because-q-mathrm-cl-satisfies-the-euler-lagrange-equation-hence-s-q-mathrm-cl-eta-s-q-mathrm-cl">
-<h1>S[q_{\mathrm{cl}}]
-+
-m\int_{t_1}^{t_2}
-\left(
-\dot q_{\mathrm{cl}}\dot\eta-\omega^2 q_{\mathrm{cl}}\eta
-\right)dt
-+
-\frac{m}{2}\int_{t_1}^{t_2}
-\left(
-\dot\eta^2-\omega^2\eta^2
-\right)dt.
-$<span class="math notranslate nohighlight">\(
-The term linear in \)</span>\eta<span class="math notranslate nohighlight">\( vanishes because \)</span>q_{\mathrm{cl}}<span class="math notranslate nohighlight">\( satisfies the Euler-Lagrange equation. Hence
-\)</span>$
-S[q_{\mathrm{cl}}+\eta]-S[q_{\mathrm{cl}}]<a class="headerlink" href="#s-q-mathrm-cl-m-int-t-1-t-2-left-dot-q-mathrm-cl-dot-eta-omega-2-q-mathrm-cl-eta-right-dt-frac-m-2-int-t-1-t-2-left-dot-eta-2-omega-2-eta-2-right-dt-the-term-linear-in-eta-vanishes-because-q-mathrm-cl-satisfies-the-euler-lagrange-equation-hence-s-q-mathrm-cl-eta-s-q-mathrm-cl" title="Link to this heading">#</a></h1>
-<p>\frac{m}{2}\int_{t_1}^{t_2}
-\left(
-\dot\eta^2-\omega^2\eta^2
-\right)dt.
-$$</p>
-<p>We see that the sign of the difference is not obvious. It depends on the time interval
-$<span class="math notranslate nohighlight">\(
-T=t_2-t_1
-\)</span><span class="math notranslate nohighlight">\(
-and on the form of the variation \)</span>\eta(t)$.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="to-analyze-this-let-us-choose-the-family-of-variations-eta-n-t-sin-left-frac-n-pi-t-t-1-t-right-qquad-n-1-2-3-dots-which-satisfy-the-fixed-endpoint-conditions-for-these-variations-dot-eta-n-t-frac-n-pi-t-cos-left-frac-n-pi-t-t-1-t-right-and-a-straightforward-calculation-gives-s-q-mathrm-cl-eta-n-s-q-mathrm-cl">
-<h1>To analyze this, let us choose the family of variations
-$<span class="math notranslate nohighlight">\(
-\eta_n(t)=\sin\!\left(\frac{n\pi(t-t_1)}{T}\right),
-\qquad n=1,2,3,\dots
-\)</span><span class="math notranslate nohighlight">\(
-which satisfy the fixed-endpoint conditions. For these variations,
-\)</span><span class="math notranslate nohighlight">\(
-\dot\eta_n(t)=\frac{n\pi}{T}\cos\!\left(\frac{n\pi(t-t_1)}{T}\right),
-\)</span><span class="math notranslate nohighlight">\(
-and a straightforward calculation gives
-\)</span>$
-S[q_{\mathrm{cl}}+\eta_n]-S[q_{\mathrm{cl}}]<a class="headerlink" href="#to-analyze-this-let-us-choose-the-family-of-variations-eta-n-t-sin-left-frac-n-pi-t-t-1-t-right-qquad-n-1-2-3-dots-which-satisfy-the-fixed-endpoint-conditions-for-these-variations-dot-eta-n-t-frac-n-pi-t-cos-left-frac-n-pi-t-t-1-t-right-and-a-straightforward-calculation-gives-s-q-mathrm-cl-eta-n-s-q-mathrm-cl" title="Link to this heading">#</a></h1>
-<p>\frac{m}{4},T
-\left(
-\frac{n^2\pi^2}{T^2}-\omega^2
-\right).
-$$</p>
-<p>This result has an important consequence:</p>
-<p>If
-$<span class="math notranslate nohighlight">\(
-T&lt;\frac{\pi}{\omega},
-\)</span><span class="math notranslate nohighlight">\(
-then even for \)</span>n=1<span class="math notranslate nohighlight">\( we have
-\)</span><span class="math notranslate nohighlight">\(
-\frac{n^2\pi^2}{T^2}-\omega^2&gt;0,
-\)</span><span class="math notranslate nohighlight">\(
-and therefore
-\)</span><span class="math notranslate nohighlight">\(
-S[q_{\mathrm{cl}}+\eta]-S[q_{\mathrm{cl}}]&gt;0
-\)</span>$
-for all sufficiently small nonzero variations. In this case, the classical path is a local minimum of the action.</p>
-<p>On the other hand, if
-$<span class="math notranslate nohighlight">\(
-T&gt;\frac{\pi}{\omega},
-\)</span><span class="math notranslate nohighlight">\(
-then for \)</span>n=1<span class="math notranslate nohighlight">\( we obtain
-\)</span><span class="math notranslate nohighlight">\(
-\frac{\pi^2}{T^2}-\omega^2&lt;0,
-\)</span><span class="math notranslate nohighlight">\(
-so that
-\)</span><span class="math notranslate nohighlight">\(
-S[q_{\mathrm{cl}}+\eta_1]-S[q_{\mathrm{cl}}]&lt;0.
-\)</span>$
-Thus the action can be made smaller than its value on the classical path, and the classical trajectory is no longer a minimum.</p>
-<p>At the same time, by choosing <span class="math notranslate nohighlight">\(n\)</span> sufficiently large, one can make
-$<span class="math notranslate nohighlight">\(
-\frac{n^2\pi^2}{T^2}-\omega^2&gt;0,
-\)</span>$
-so there are also nearby paths for which the action increases. Therefore, for sufficiently long time intervals, the classical path is not a minimum or a maximum, but only a stationary path of the action.</p>
 <section id="canonical-momentum">
 <h2>Canonical Momentum<a class="headerlink" href="#canonical-momentum" title="Link to this heading">#</a></h2>
 <p>For a system described by generalized coordinates</p>
@@ -1594,132 +1185,57 @@ which is not zero in general.</p>
 </section>
 <section id="the-energy-function-and-conservation-of-energy">
 <h2>The Energy Function and Conservation of Energy<a class="headerlink" href="#the-energy-function-and-conservation-of-energy" title="Link to this heading">#</a></h2>
-<p>A natural question is the following: how does the Lagrangian change along a trajectory that satisfies the Euler-Lagrange equations?</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="let-l-l-q-dot-q-t-and-consider-a-path-q-t-that-is-a-solution-of-the-equations-of-motion-along-this-trajectory-the-total-time-derivative-of-the-lagrangian-is-frac-dl-dt">
-<h1>Let
-$<span class="math notranslate nohighlight">\(
-L=L(q,\dot q,t),
-\)</span><span class="math notranslate nohighlight">\(
-and consider a path \)</span>q(t)<span class="math notranslate nohighlight">\( that is a solution of the equations of motion. Along this trajectory, the total time derivative of the Lagrangian is
-\)</span>$
-\frac{dL}{dt}<a class="headerlink" href="#let-l-l-q-dot-q-t-and-consider-a-path-q-t-that-is-a-solution-of-the-equations-of-motion-along-this-trajectory-the-total-time-derivative-of-the-lagrangian-is-frac-dl-dt" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sum-i-1-n-frac-partial-l-partial-q-i-dot-q-i-sum-i-1-n-frac-partial-l-partial-dot-q-i-ddot-q-i-frac-partial-l-partial-t-since-the-trajectory-satisfies-the-euler-lagrange-equations-we-may-replace-frac-partial-l-partial-q-i">
-<h1>\sum_{i=1}^n \frac{\partial L}{\partial q_i}\dot q_i
-+
-\sum_{i=1}^n \frac{\partial L}{\partial \dot q_i}\ddot q_i
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-Since the trajectory satisfies the Euler-Lagrange equations, we may replace
-\)</span>$
-\frac{\partial L}{\partial q_i}<a class="headerlink" href="#sum-i-1-n-frac-partial-l-partial-q-i-dot-q-i-sum-i-1-n-frac-partial-l-partial-dot-q-i-ddot-q-i-frac-partial-l-partial-t-since-the-trajectory-satisfies-the-euler-lagrange-equations-we-may-replace-frac-partial-l-partial-q-i" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="frac-d-dt-frac-partial-l-partial-dot-q-i-hence-frac-dl-dt">
-<h1>\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}.
-$<span class="math notranslate nohighlight">\(
-Hence
-\)</span>$
-\frac{dL}{dt}<a class="headerlink" href="#frac-d-dt-frac-partial-l-partial-dot-q-i-hence-frac-dl-dt" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sum-i-1-n-dot-q-i-frac-d-dt-frac-partial-l-partial-dot-q-i-sum-i-1-n-frac-partial-l-partial-dot-q-i-ddot-q-i-frac-partial-l-partial-t-the-first-two-terms-can-be-combined-into-a-total-derivative-frac-dl-dt">
-<h1>\sum_{i=1}^n \dot q_i \frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\sum_{i=1}^n \frac{\partial L}{\partial \dot q_i}\ddot q_i
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-The first two terms can be combined into a total derivative:
-\)</span>$
-\frac{dL}{dt}<a class="headerlink" href="#sum-i-1-n-dot-q-i-frac-d-dt-frac-partial-l-partial-dot-q-i-sum-i-1-n-frac-partial-l-partial-dot-q-i-ddot-q-i-frac-partial-l-partial-t-the-first-two-terms-can-be-combined-into-a-total-derivative-frac-dl-dt" title="Link to this heading">#</a></h1>
-<section id="frac-d-dt-left-sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i-right-frac-partial-l-partial-t-rearranging-we-obtain-frac-d-dt-left-sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i">
-<h2>\frac{d}{dt}
-\left(
-\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}
-\right)
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-Rearranging, we obtain
-\)</span>$
-\frac{d}{dt}
-\left(
-\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}<a class="headerlink" href="#frac-d-dt-left-sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i-right-frac-partial-l-partial-t-rearranging-we-obtain-frac-d-dt-left-sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i" title="Link to this heading">#</a></h2>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="l-right">
-<h1>L
-\right)<a class="headerlink" href="#l-right" title="Link to this heading">#</a></h1>
-<p>-\frac{\partial L}{\partial t}.
-$$</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="this-suggests-introducing-the-quantity-e">
-<h1>This suggests introducing the quantity
-$$
-E<a class="headerlink" href="#this-suggests-introducing-the-quantity-e" title="Link to this heading">#</a></h1>
-<section id="sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i">
-<h2>\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}<a class="headerlink" href="#sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i" title="Link to this heading">#</a></h2>
-<p>L,
-$<span class="math notranslate nohighlight">\(
-which is called the **energy function**. We then have
-\)</span><span class="math notranslate nohighlight">\(
+<p>Let <span class="math notranslate nohighlight">\(L=L(q,\dot q,t)\)</span>. Along a solution trajectory,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dL}{dt}
+=\sum_{i=1}^n\frac{\partial L}{\partial q_i}\dot q_i
++\sum_{i=1}^n\frac{\partial L}{\partial\dot q_i}\ddot q_i
++\frac{\partial L}{\partial t}.
+\]</div>
+<p>Using Euler-Lagrange equations,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial q_i}=\frac{d}{dt}\frac{\partial L}{\partial\dot q_i},
+\]</div>
+<p>we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}\left(\sum_{i=1}^n\dot q_i\frac{\partial L}{\partial\dot q_i}-L\right)
+=-\frac{\partial L}{\partial t}.
+\]</div>
+<p>Define the energy function</p>
+<div class="math notranslate nohighlight">
+\[
+E=\sum_{i=1}^n\dot q_i\frac{\partial L}{\partial\dot q_i}-L.
+\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{dE}{dt}=-\frac{\partial L}{\partial t}.
-\)</span>$</p>
-<p>We immediately see that if the Lagrangian has no explicit time dependence, that is,
-$<span class="math notranslate nohighlight">\(
-\frac{\partial L}{\partial t}=0,
-\)</span><span class="math notranslate nohighlight">\(
-then
-\)</span><span class="math notranslate nohighlight">\(
-\frac{dE}{dt}=0,
-\)</span><span class="math notranslate nohighlight">\(
-and therefore
-\)</span><span class="math notranslate nohighlight">\(
-E=\text{constant}.
-\)</span>$
-Thus, whenever the Lagrangian is invariant under time translations, the energy function is conserved.</p>
+\]</div>
+<p>So if <span class="math notranslate nohighlight">\(\partial L/\partial t=0\)</span>, energy is conserved.</p>
+<p>For mechanical systems <span class="math notranslate nohighlight">\(L=T-V\)</span> with velocity-independent <span class="math notranslate nohighlight">\(V\)</span> and quadratic <span class="math notranslate nohighlight">\(T\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_i \dot q_i\frac{\partial T}{\partial\dot q_i}=2T,
+\]</div>
+<p>hence</p>
+<div class="math notranslate nohighlight">
+\[
+E=\sum_i\dot q_i\frac{\partial L}{\partial\dot q_i}-L
+=\sum_i\dot q_i\frac{\partial T}{\partial\dot q_i}-(T-V)
+=2T-T+V=T+V.
+\]</div>
+<p>Example (harmonic oscillator):</p>
+<div class="math notranslate nohighlight">
+\[
+L=\frac{m}{2}\dot q^2-\frac{k}{2}q^2
+\quad\Rightarrow\quad
+E=\frac{m}{2}\dot q^2+\frac{k}{2}q^2,
+\]</div>
+<p>which is conserved.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="for-the-important-class-of-mechanical-systems-with-l-t-v-where-the-potential-energy-v-does-not-depend-on-the-velocities-and-the-kinetic-energy-t-is-quadratic-in-the-velocities-one-finds-sum-i-1-n-dot-q-i-frac-partial-t-partial-dot-q-i-2t-therefore-e">
-<h1>For the important class of mechanical systems with
-$<span class="math notranslate nohighlight">\(
-L=T-V,
-\)</span><span class="math notranslate nohighlight">\(
-where the potential energy \)</span>V<span class="math notranslate nohighlight">\( does not depend on the velocities and the kinetic energy \)</span>T<span class="math notranslate nohighlight">\( is quadratic in the velocities, one finds
-\)</span><span class="math notranslate nohighlight">\(
-\sum_{i=1}^n \dot q_i \frac{\partial T}{\partial \dot q_i}=2T.
-\)</span><span class="math notranslate nohighlight">\(
-Therefore,
-\)</span>$
-E<a class="headerlink" href="#for-the-important-class-of-mechanical-systems-with-l-t-v-where-the-potential-energy-v-does-not-depend-on-the-velocities-and-the-kinetic-energy-t-is-quadratic-in-the-velocities-one-finds-sum-i-1-n-dot-q-i-frac-partial-t-partial-dot-q-i-2t-therefore-e" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i-l">
-<h1>\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}-L<a class="headerlink" href="#sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i-l" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sum-i-1-n-dot-q-i-frac-partial-t-partial-dot-q-i-t-v">
-<h1>\sum_{i=1}^n \dot q_i \frac{\partial T}{\partial \dot q_i}-(T-V)<a class="headerlink" href="#sum-i-1-n-dot-q-i-frac-partial-t-partial-dot-q-i-t-v" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="t-t-v">
-<h1>2T-T+V<a class="headerlink" href="#t-t-v" title="Link to this heading">#</a></h1>
-<p>T+V.
-$$
-In this case, the energy function coincides with the familiar total mechanical energy.</p>
-<p>As an example, for the harmonic oscillator
-$<span class="math notranslate nohighlight">\(
-L=\frac{m}{2}\dot q^2-\frac{k}{2}q^2,
-\)</span><span class="math notranslate nohighlight">\(
-the energy function is
-\)</span><span class="math notranslate nohighlight">\(
-E=\dot q \frac{\partial L}{\partial \dot q}-L
-=\dot q(m\dot q)-\left(\frac{m}{2}\dot q^2-\frac{k}{2}q^2\right),
-\)</span><span class="math notranslate nohighlight">\(
-so that
-\)</span><span class="math notranslate nohighlight">\(
-E=\frac{m}{2}\dot q^2+\frac{k}{2}q^2.
-\)</span>$
-This is precisely the sum of kinetic and potential energy, and it is conserved.</p>
 <section id="small-oscillations-in-a-molecular-potential-the-morse-potential">
 <h2>Small Oscillations in a Molecular Potential: The Morse Potential<a class="headerlink" href="#small-oscillations-in-a-molecular-potential-the-morse-potential" title="Link to this heading">#</a></h2>
 <p>A realistic example of small oscillations is provided by the vibrational motion of a diatomic molecule. In this case, the interaction between the two atoms is often modeled  by the <strong>Morse potential</strong></p>
@@ -1995,148 +1511,12 @@ b_j=\frac12\left(q_j^0+\frac{i}{\omega_j}v_j^0\right).
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🔸 Crash course in Classical Mechanics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamilton-s-principle-and-lagrangian-mechanics">Hamilton’s Principle and Lagrangian Mechanics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-get-lagrangians-from">Where Do We Get Lagrangians From?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-the-lagrangian-look-like-in-the-general-case">What Does the Lagrangian Look Like in the General Case?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-unique-is-the-lagrangian-the-freedom-of-gauge">How unique is the Lagrangian: The freedom of gauge…</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#we-now-evaluate-the-euler-lagrange-equation-for-l-first-the-derivative-with-respect-to-dot-q-i-is-frac-partial-l-partial-dot-q-i">We now evaluate the Euler-Lagrange equation for <span class="math notranslate nohighlight">\(L'\)</span>. First, the derivative with respect to <span class="math notranslate nohighlight">\(\dot q_i\)</span> is
-$$
-\frac{\partial L’}{\partial \dot q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-l-partial-dot-q-i-frac-partial-f-partial-q-i-taking-the-time-derivative-gives-frac-d-dt-frac-partial-l-partial-dot-q-i">\frac{\partial L}{\partial \dot q_i}
-+
-\frac{\partial F}{\partial q_i}.
-$<span class="math notranslate nohighlight">\(
-Taking the time derivative gives
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-dt-frac-partial-l-partial-dot-q-i-frac-d-dt-frac-partial-f-partial-q-i-since-f-depends-only-on-the-coordinates-frac-d-dt-frac-partial-f-partial-q-i">\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\frac{d}{dt}\frac{\partial F}{\partial q_i}.
-$<span class="math notranslate nohighlight">\(
-Since \)</span>F<span class="math notranslate nohighlight">\( depends only on the coordinates,
-\)</span>$
-\frac{d}{dt}\frac{\partial F}{\partial q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-hence-frac-d-dt-frac-partial-l-partial-dot-q-i">\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j.
-$<span class="math notranslate nohighlight">\(
-Hence
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-compute-the-derivative-of-l-with-respect-to-q-i-frac-partial-l-partial-q-i">Next, we compute the derivative of <span class="math notranslate nohighlight">\(L'\)</span> with respect to <span class="math notranslate nohighlight">\(q_i\)</span>:
-$$
-\frac{\partial L’}{\partial q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-l-partial-q-i-frac-partial-partial-q-i-left-sum-j-1-n-frac-partial-f-partial-q-j-dot-q-j-right-since-the-velocities-dot-q-j-are-independent-of-the-coordinates-in-this-differentiation-we-obtain-frac-partial-l-partial-q-i">\frac{\partial L}{\partial q_i}
-+
-\frac{\partial}{\partial q_i}
-\left(
-\sum_{j=1}^n \frac{\partial F}{\partial q_j}\dot q_j
-\right).
-$<span class="math notranslate nohighlight">\(
-Since the velocities \)</span>\dot q_j<span class="math notranslate nohighlight">\( are independent of the coordinates in this differentiation, we obtain
-\)</span>$
-\frac{\partial L’}{\partial q_i}</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substituting-these-expressions-into-the-euler-lagrange-equation-for-l-frac-d-dt-frac-partial-l-partial-dot-q-i">Substituting these expressions into the Euler-Lagrange equation for <span class="math notranslate nohighlight">\(L'\)</span>,
-$$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q_i}</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-l-partial-q-i-0-we-find-left-frac-d-dt-frac-partial-l-partial-dot-q-i-sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-right">\frac{\partial L’}{\partial q_i}
-=0,
-$<span class="math notranslate nohighlight">\(
-we find
-\)</span>$
-\left[
-\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j
-\right]</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#left-frac-partial-l-partial-q-i-sum-j-1-n-frac-partial-2-f-partial-q-i-partial-q-j-dot-q-j-right-0-the-additional-terms-cancel-and-we-are-left-with-frac-d-dt-frac-partial-l-partial-dot-q-i">\left[
-\frac{\partial L}{\partial q_i}
-+
-\sum_{j=1}^n
-\frac{\partial^2 F}{\partial q_i \partial q_j}\dot q_j
-\right]
-=0.
-$<span class="math notranslate nohighlight">\(
-The additional terms cancel, and we are left with
-\)</span>$
-\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-same-result-can-be-understood-directly-from-hamilton-s-principle-let-l-q-dot-q-t-l-q-dot-q-t-frac-d-dt-f-q-where-f-depends-only-on-the-coordinates-the-corresponding-action-is-then-s-q">The same result can be understood directly from Hamilton’s principle. Let
-$<span class="math notranslate nohighlight">\(
-L'(q,\dot q,t)=L(q,\dot q,t)+\frac{d}{dt}F(q),
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>F<span class="math notranslate nohighlight">\( depends only on the coordinates. The corresponding action is then
-\)</span>$
-S’[q]</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#int-t-1-t-2-l-q-dot-q-t-dt">\int_{t_1}^{t_2} L’(q,\dot q,t),dt</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#we-now-take-the-variation-of-this-expression-this-gives-delta-s">We now take the variation of this expression. This gives
-$$
-\delta S’</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-s-delta-f-q-t-2">\delta S
-+
-\delta F(q(t_2))</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-harmonic-oscillator-with-a-more-exotic-regauging">Example: Harmonic Oscillator with a More Exotic Regauging</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-us-derive-the-equation-of-motion-from-this-regauged-lagrangian-first-frac-partial-l-partial-dot-q-m-dot-q-alpha-cos-q-and-therefore-frac-d-dt-frac-partial-l-partial-dot-q">Let us derive the equation of motion from this regauged Lagrangian. First,
-$<span class="math notranslate nohighlight">\(
-\frac{\partial L'}{\partial \dot q}=m\dot q+\alpha \cos q,
-\)</span><span class="math notranslate nohighlight">\(
-and therefore
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#m-ddot-q-alpha-sin-q-dot-q-next-frac-partial-l-partial-q">m\ddot q-\alpha \sin q,\dot q.
-$<span class="math notranslate nohighlight">\(
-Next,
-\)</span>$
-\frac{\partial L’}{\partial q}</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kq-alpha-sin-q-dot-q-substituting-into-the-euler-lagrange-equation-frac-d-dt-frac-partial-l-partial-dot-q">-kq-\alpha \sin q,\dot q.
-$<span class="math notranslate nohighlight">\(
-Substituting into the Euler-Lagrange equation,
-\)</span>$
-\frac{d}{dt}\frac{\partial L’}{\partial \dot q}</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-partial-l-partial-q-0-we-obtain-left-m-ddot-q-alpha-sin-q-dot-q-right">\frac{\partial L’}{\partial q}=0,
-$<span class="math notranslate nohighlight">\(
-we obtain
-\)</span>$
-\left(m\ddot q-\alpha \sin q,\dot q\right)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-classical-path-a-minimum-or-only-stationary">Is the Classical Path a Minimum or Only Stationary?</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#substituting-this-into-the-action-we-obtain-s-q-mathrm-cl-eta">Substituting this into the action, we obtain
-$$
-S[q_{\mathrm{cl}}+\eta]</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#s-q-mathrm-cl-m-int-t-1-t-2-left-dot-q-mathrm-cl-dot-eta-omega-2-q-mathrm-cl-eta-right-dt-frac-m-2-int-t-1-t-2-left-dot-eta-2-omega-2-eta-2-right-dt-the-term-linear-in-eta-vanishes-because-q-mathrm-cl-satisfies-the-euler-lagrange-equation-hence-s-q-mathrm-cl-eta-s-q-mathrm-cl">S[q_{\mathrm{cl}}]
-+
-m\int_{t_1}^{t_2}
-\left(
-\dot q_{\mathrm{cl}}\dot\eta-\omega^2 q_{\mathrm{cl}}\eta
-\right)dt
-+
-\frac{m}{2}\int_{t_1}^{t_2}
-\left(
-\dot\eta^2-\omega^2\eta^2
-\right)dt.
-$<span class="math notranslate nohighlight">\(
-The term linear in \)</span>\eta<span class="math notranslate nohighlight">\( vanishes because \)</span>q_{\mathrm{cl}}<span class="math notranslate nohighlight">\( satisfies the Euler-Lagrange equation. Hence
-\)</span>$
-S[q_{\mathrm{cl}}+\eta]-S[q_{\mathrm{cl}}]</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-analyze-this-let-us-choose-the-family-of-variations-eta-n-t-sin-left-frac-n-pi-t-t-1-t-right-qquad-n-1-2-3-dots-which-satisfy-the-fixed-endpoint-conditions-for-these-variations-dot-eta-n-t-frac-n-pi-t-cos-left-frac-n-pi-t-t-1-t-right-and-a-straightforward-calculation-gives-s-q-mathrm-cl-eta-n-s-q-mathrm-cl">To analyze this, let us choose the family of variations
-$<span class="math notranslate nohighlight">\(
-\eta_n(t)=\sin\!\left(\frac{n\pi(t-t_1)}{T}\right),
-\qquad n=1,2,3,\dots
-\)</span><span class="math notranslate nohighlight">\(
-which satisfy the fixed-endpoint conditions. For these variations,
-\)</span><span class="math notranslate nohighlight">\(
-\dot\eta_n(t)=\frac{n\pi}{T}\cos\!\left(\frac{n\pi(t-t_1)}{T}\right),
-\)</span><span class="math notranslate nohighlight">\(
-and a straightforward calculation gives
-\)</span>$
-S[q_{\mathrm{cl}}+\eta_n]-S[q_{\mathrm{cl}}]</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-momentum">Canonical Momentum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-free-particle-in-cartesian-coordinates">Example 1: Free Particle in Cartesian Coordinates</a></li>
@@ -2150,74 +1530,6 @@ S[q_{\mathrm{cl}}+\eta_n]-S[q_{\mathrm{cl}}]</a><ul class="visible nav section-n
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-central-potential-in-polar-coordinates">Example 2: Central Potential in Polar Coordinates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-a-coordinate-that-is-not-cyclic">Example 3: A Coordinate That Is Not Cyclic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-energy-function-and-conservation-of-energy">The Energy Function and Conservation of Energy</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-l-l-q-dot-q-t-and-consider-a-path-q-t-that-is-a-solution-of-the-equations-of-motion-along-this-trajectory-the-total-time-derivative-of-the-lagrangian-is-frac-dl-dt">Let
-$<span class="math notranslate nohighlight">\(
-L=L(q,\dot q,t),
-\)</span><span class="math notranslate nohighlight">\(
-and consider a path \)</span>q(t)<span class="math notranslate nohighlight">\( that is a solution of the equations of motion. Along this trajectory, the total time derivative of the Lagrangian is
-\)</span>$
-\frac{dL}{dt}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-frac-partial-l-partial-q-i-dot-q-i-sum-i-1-n-frac-partial-l-partial-dot-q-i-ddot-q-i-frac-partial-l-partial-t-since-the-trajectory-satisfies-the-euler-lagrange-equations-we-may-replace-frac-partial-l-partial-q-i">\sum_{i=1}^n \frac{\partial L}{\partial q_i}\dot q_i
-+
-\sum_{i=1}^n \frac{\partial L}{\partial \dot q_i}\ddot q_i
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-Since the trajectory satisfies the Euler-Lagrange equations, we may replace
-\)</span>$
-\frac{\partial L}{\partial q_i}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-dt-frac-partial-l-partial-dot-q-i-hence-frac-dl-dt">\frac{d}{dt}\frac{\partial L}{\partial \dot q_i}.
-$<span class="math notranslate nohighlight">\(
-Hence
-\)</span>$
-\frac{dL}{dt}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-dot-q-i-frac-d-dt-frac-partial-l-partial-dot-q-i-sum-i-1-n-frac-partial-l-partial-dot-q-i-ddot-q-i-frac-partial-l-partial-t-the-first-two-terms-can-be-combined-into-a-total-derivative-frac-dl-dt">\sum_{i=1}^n \dot q_i \frac{d}{dt}\frac{\partial L}{\partial \dot q_i}
-+
-\sum_{i=1}^n \frac{\partial L}{\partial \dot q_i}\ddot q_i
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-The first two terms can be combined into a total derivative:
-\)</span>$
-\frac{dL}{dt}</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frac-d-dt-left-sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i-right-frac-partial-l-partial-t-rearranging-we-obtain-frac-d-dt-left-sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i">\frac{d}{dt}
-\left(
-\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}
-\right)
-+
-\frac{\partial L}{\partial t}.
-$<span class="math notranslate nohighlight">\(
-Rearranging, we obtain
-\)</span>$
-\frac{d}{dt}
-\left(
-\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#l-right">L
-\right)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#this-suggests-introducing-the-quantity-e">This suggests introducing the quantity
-$$
-E</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i">\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#for-the-important-class-of-mechanical-systems-with-l-t-v-where-the-potential-energy-v-does-not-depend-on-the-velocities-and-the-kinetic-energy-t-is-quadratic-in-the-velocities-one-finds-sum-i-1-n-dot-q-i-frac-partial-t-partial-dot-q-i-2t-therefore-e">For the important class of mechanical systems with
-$<span class="math notranslate nohighlight">\(
-L=T-V,
-\)</span><span class="math notranslate nohighlight">\(
-where the potential energy \)</span>V<span class="math notranslate nohighlight">\( does not depend on the velocities and the kinetic energy \)</span>T<span class="math notranslate nohighlight">\( is quadratic in the velocities, one finds
-\)</span><span class="math notranslate nohighlight">\(
-\sum_{i=1}^n \dot q_i \frac{\partial T}{\partial \dot q_i}=2T.
-\)</span><span class="math notranslate nohighlight">\(
-Therefore,
-\)</span>$
-E</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-dot-q-i-frac-partial-l-partial-dot-q-i-l">\sum_{i=1}^n \dot q_i \frac{\partial L}{\partial \dot q_i}-L</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-dot-q-i-frac-partial-t-partial-dot-q-i-t-v">\sum_{i=1}^n \dot q_i \frac{\partial T}{\partial \dot q_i}-(T-V)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#t-t-v">2T-T+V</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-oscillations-in-a-molecular-potential-the-morse-potential">Small Oscillations in a Molecular Potential: The Morse Potential</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-modes-of-polyatomic-molecules">Normal Modes of Polyatomic Molecules</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solution-by-superposition-of-eigensolutions">General Solution by Superposition of Eigensolutions</a></li>
@@ -2225,9 +1537,6 @@ E</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
