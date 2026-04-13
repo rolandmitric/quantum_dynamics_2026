@@ -528,8 +528,7 @@ document.write(`
 <p>We study a classical dynamical system described by generalized coordinates
 <span class="math notranslate nohighlight">\(q_1,\dots,q_n\)</span>, and let its motion be represented by a trajectory (path)
 <span class="math notranslate nohighlight">\(q(t) = (q_1(t),\dots,q_n(t))\)</span> in configuration space for a finite time interval between
-<span class="math notranslate nohighlight">\(t \in [t_1,t_2]\)</span>.</p>
-<p>The dynamics of such classical system is determined by the
+<span class="math notranslate nohighlight">\(t \in [t_1,t_2]\)</span>. The dynamics of such classical system is determined by the
 Lagrangian</p>
 <div class="math notranslate nohighlight">
 \[
@@ -623,7 +622,7 @@ leave the endpoints fixed.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9388e0d9c053491a8845d8688c9b504a", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "47e2f964ae5a4d7f88f3c2c8811b607a", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p>To make this precise, we consider a neighboring path of the form</p>
 <div class="math notranslate nohighlight">
@@ -794,31 +793,37 @@ L_{\mathrm{free}}=T.
 </section>
 <section id="what-does-the-lagrangian-look-like-in-the-general-case">
 <h2>What Does the Lagrangian Look Like in the General Case?<a class="headerlink" href="#what-does-the-lagrangian-look-like-in-the-general-case" title="Link to this heading">#</a></h2>
-<p>The free-particle example suggests that the Lagrangian should be built from quantities that characterize the motion of the system, namely the generalized coordinates
-$<span class="math notranslate nohighlight">\(
+<p>The free-particle example suggests that the Lagrangian should be built from quantities that characterize the motion of the system, namely the generalized coordinates</p>
+<div class="math notranslate nohighlight">
+\[
 q_1,\dots,q_n,
-\)</span><span class="math notranslate nohighlight">\(
-their velocities
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>their velocities</p>
+<div class="math notranslate nohighlight">
+\[
 \dot q_1,\dots,\dot q_n,
-\)</span><span class="math notranslate nohighlight">\(
-and, in general, possibly the time \)</span>t<span class="math notranslate nohighlight">\(. Thus, for a system with \)</span>n<span class="math notranslate nohighlight">\( degrees of freedom, we write
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and, in general, possibly the time <span class="math notranslate nohighlight">\(t\)</span>. Thus, for a system with <span class="math notranslate nohighlight">\(n\)</span> degrees of freedom, we write</p>
+<div class="math notranslate nohighlight">
+\[
 L = L(q,\dot q,t).
-\)</span>$</p>
-<p>For a large class of mechanical systems, the Lagrangian takes the form
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>For a large class of mechanical systems, the Lagrangian takes the form</p>
+<div class="math notranslate nohighlight">
+\[
 L(q,\dot q,t)=T(q,\dot q,t)-V(q,t),
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>T<span class="math notranslate nohighlight">\( is the kinetic energy and \)</span>V$ is the potential energy. This is the standard form used in classical mechanics. Substituting this expression into the Euler-Lagrange equations yields the equations of motion of the system.</p>
-<p>In Cartesian coordinates, for a single particle of mass <span class="math notranslate nohighlight">\(m\)</span>, this becomes
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the kinetic energy and <span class="math notranslate nohighlight">\(V\)</span> is the potential energy. This is the standard form used in classical mechanics. Substituting this expression into the Euler-Lagrange equations yields the equations of motion of the system.</p>
+<p>In Cartesian coordinates, for a single particle of mass <span class="math notranslate nohighlight">\(m\)</span>, this becomes</p>
+<div class="math notranslate nohighlight">
+\[
 L(\mathbf r,\dot{\mathbf r})=\frac{m}{2}\dot{\mathbf r}^{\,2}-V(\mathbf r).
-\)</span><span class="math notranslate nohighlight">\(
-For several particles, the kinetic energy is the sum of the individual kinetic energies, and the potential energy may depend on all coordinates:
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>For several particles, the kinetic energy is the sum of the individual kinetic energies, and the potential energy may depend on all coordinates:</p>
+<div class="math notranslate nohighlight">
+\[
 L = \sum_{a}\frac{m_a}{2}\dot{\mathbf r}_a^{\,2} - V(\mathbf r_1,\mathbf r_2,\dots).
-\)</span>$</p>
+\]</div>
 <p>More generally, after introducing suitable generalized coordinates, the kinetic energy need not have such a simple Cartesian form, but the Lagrangian is still often given by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -828,11 +833,12 @@ L=T-V.
 <section id="how-unique-is-the-lagrangian-the-freedom-of-gauge">
 <h2>How unique is the Lagrangian: The freedom of gauge…<a class="headerlink" href="#how-unique-is-the-lagrangian-the-freedom-of-gauge" title="Link to this heading">#</a></h2>
 <p>We have seen that the equations of motion of a mechanical system can be derived from the condition that the action functional be stationary for a suitable choice of Lagrangian. We now show that the Lagrangian is not unique, and that there is a certain freedom in its definition.</p>
-<p>Suppose that <span class="math notranslate nohighlight">\(L(q,\dot q,t)\)</span> is a Lagrangian describing a given mechanical system. Let us construct a new Lagrangian by adding the total time derivative of a function that depends only on the coordinates,
-$<span class="math notranslate nohighlight">\(
+<p>Suppose that <span class="math notranslate nohighlight">\(L(q,\dot q,t)\)</span> is a Lagrangian describing a given mechanical system. Let us construct a new Lagrangian by adding the total time derivative of a function that depends only on the coordinates,</p>
+<div class="math notranslate nohighlight">
+\[
 L'(q,\dot q,t)=L(q,\dot q,t)+\frac{d}{dt}F(q).
-\)</span><span class="math notranslate nohighlight">\(
-We shall show that the equations of motion obtained from \)</span>L’<span class="math notranslate nohighlight">\( are exactly the same as those obtained from the original Lagrangian \)</span>L$.</p>
+\]</div>
+<p>We shall show that the equations of motion obtained from <span class="math notranslate nohighlight">\(L'\)</span> are exactly the same as those obtained from the original Lagrangian <span class="math notranslate nohighlight">\(L\)</span>.</p>
 <p>Let</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1028,36 +1034,40 @@ p_i=p_i(q,\dot q,t).
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <section id="example-1-free-particle-in-cartesian-coordinates">
 <h3>Example 1: Free Particle in Cartesian Coordinates<a class="headerlink" href="#example-1-free-particle-in-cartesian-coordinates" title="Link to this heading">#</a></h3>
-<p>For a free particle,
-$<span class="math notranslate nohighlight">\(
+<p>For a free particle,</p>
+<div class="math notranslate nohighlight">
+\[
 L=\frac{m}{2}\dot{\mathbf r}^{\,2}
 =\frac{m}{2}(\dot x^2+\dot y^2+\dot z^2),
-\)</span><span class="math notranslate nohighlight">\(
-the canonical momenta are
-\)</span><span class="math notranslate nohighlight">\(
-p_x=\frac{\partial L}{\partial \dot x}=m\dot x,
+\]</div>
+<p>the canonical momenta are
+$$</p>
+<p>p_x=\frac{\partial L}{\partial \dot x}=m\dot x,
 \qquad
 p_y=\frac{\partial L}{\partial \dot y}=m\dot y,
 \qquad
 p_z=\frac{\partial L}{\partial \dot z}=m\dot z.
-\)</span>$
-In this case, the canonical momentum is just the usual linear momentum.</p>
+$$</p>
+<p>In this case, the canonical momentum is just the usual linear momentum.</p>
 </section>
 <section id="example-2-planar-motion-in-polar-coordinates">
 <h3>Example 2: Planar Motion in Polar Coordinates<a class="headerlink" href="#example-2-planar-motion-in-polar-coordinates" title="Link to this heading">#</a></h3>
-<p>Consider a particle moving in a plane in a potential <span class="math notranslate nohighlight">\(V(r)\)</span>. Using polar coordinates <span class="math notranslate nohighlight">\((r,\varphi)\)</span>, the Lagrangian is
-$<span class="math notranslate nohighlight">\(
+<p>Consider a particle moving in a plane in a potential <span class="math notranslate nohighlight">\(V(r)\)</span>. Using polar coordinates <span class="math notranslate nohighlight">\((r,\varphi)\)</span>, the Lagrangian is</p>
+<div class="math notranslate nohighlight">
+\[
 L=\frac{m}{2}\left(\dot r^2+r^2\dot\varphi^2\right)-V(r).
-\)</span><span class="math notranslate nohighlight">\(
-The canonical momenta are
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>The canonical momenta are</p>
+<div class="math notranslate nohighlight">
+\[
 p_r=\frac{\partial L}{\partial \dot r}=m\dot r,
-\)</span><span class="math notranslate nohighlight">\(
-and
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
 p_\varphi=\frac{\partial L}{\partial \dot \varphi}=mr^2\dot\varphi.
-\)</span><span class="math notranslate nohighlight">\(
-The quantity \)</span>p_\varphi<span class="math notranslate nohighlight">\( is the angular momentum for the rotation around the \)</span>z$-Axis.</p>
+\]</div>
+<p>The quantity <span class="math notranslate nohighlight">\(p_\varphi\)</span> is the angular momentum for the rotation around the <span class="math notranslate nohighlight">\(z\)</span>-Axis.</p>
 </section>
 <section id="example-3-simple-pendulum">
 <h3>Example 3: Simple Pendulum<a class="headerlink" href="#example-3-simple-pendulum" title="Link to this heading">#</a></h3>
