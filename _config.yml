@@ -1,0 +1,36 @@
+title: Quantum Dynamics
+author: Roland Mitric
+logo: logo.png
+
+execute:
+  execute_notebooks: "off"
+
+html:
+  use_thebe: true
+  use_repository_button: true
+  use_edit_page_button: true
+  use_issues_button: true
+
+launch_buttons:
+  thebe: true
+  binderhub_url: https://mybinder.org
+  notebook_interface: jupyterlab
+
+repository:
+  url: https://github.com/rolandmitric/quantum_dynamics_2026
+  branch: main
+  path_to_book: "."
+
+thebe:
+  binder:
+    repo_url: https://github.com/rolandmitric/quantum_dynamics_2026
+    ref: main
+  kernel_name: python3
+
+sphinx:
+  config:
+    html_static_path:
+      - _static
+    html_css_files:
+      - custom.css
+      - wide_v2.css

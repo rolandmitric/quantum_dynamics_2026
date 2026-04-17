@@ -1,0 +1,17 @@
+format: jb-book
+root: index
+chapters:
+  - file: classical_mechanics
+  - file: legendre_transformation
+  - file: formalism_hilbert_spaces
+  - file: formalism_linear_operators
+  - file: formalism_unitary_time_evolution
+  - file: qubit_dynamics
+  - file: rotating_wave
+  - file: heisenberg_picture
+  - file: history_heisenberg
+  - file: interaction_picture
+  - file: position_momentum_representation
+  - file: particle_linear_potential
+  - file: stationary_phase_method
+  - file: path_integrals
