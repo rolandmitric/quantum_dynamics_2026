@@ -6,6 +6,7 @@ chapters:
   - file: example_double_well_qp.ipynb
   - file: hamilton_jacobi.ipynb
   - file: canonical_transformations.ipynb
+  - file: hamilton_jacobi_waves.ipynb
   - file: axioms_quantum_mechanics.ipynb
   - file: position_momentum_representation
   - file: formalism_hilbert_spaces
