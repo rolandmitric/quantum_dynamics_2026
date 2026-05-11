@@ -4,6 +4,7 @@ chapters:
   - file: classical_mechanics
   - file: legendre_transformation
   - file: example_double_well_qp.ipynb
+  - file: canonical_transformations.ipynb
   - file: hamilton_jacobi.ipynb
   - file: axioms_quantum_mechanics.ipynb
   - file: position_momentum_representation
