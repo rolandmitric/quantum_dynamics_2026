@@ -6,3 +6,4 @@ ipykernel
 ipywidgets
 numpy
 matplotlib
+sympy
